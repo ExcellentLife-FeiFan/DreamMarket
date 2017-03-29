@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/list_cancel_logistic_reasons" android:focusable="false" android:focusableInTouchMode="false" android:scrollbars="none" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ImageView android:background="@color/white_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/divider" android:scaleType="fitXY" />
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_list_item_left" android:textColor="@color/text_black" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingTop="@dimen/default_ui_margin" android:paddingRight="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="补充原因:" />
+        <EditText android:textSize="@dimen/bottom_text_btn_size" android:textColorHint="#ffc2c2c2" android:gravity="top" android:id="@id/et_other_reason" android:background="@drawable/bg_stroke_rect_edittext" android:padding="@dimen/default_ui_margin_medium" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_marginLeft="@dimen/default_ui_margin_large" android:layout_marginRight="@dimen/default_ui_margin_large" android:layout_marginBottom="@dimen/default_ui_margin_large" android:hint="(最多30个字)" android:maxLength="30" />
+    </LinearLayout>
+</LinearLayout>

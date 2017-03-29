@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_preview_attr_container" android:background="@drawable/ic_foodinfo_attr_bg" android:layout_width="wrap_content" android:layout_height="29.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/foodinfo_default_txt_size" android:gravity="center" android:id="@id/attr_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

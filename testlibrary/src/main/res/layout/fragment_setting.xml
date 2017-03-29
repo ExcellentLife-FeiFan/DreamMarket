@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingBottom="@dimen/default_ui_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.sankuai.meituan.meituanwaimaibusiness.modules.restaurant.PoiHeaderView android:id="@id/rl_poi_info" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large">
+            <LinearLayout android:id="@id/ll_setting_poi_info" style="@style/list_item_layout">
+                <TextView android:text="@string/setting_poi_info" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_setting_self_in" style="@style/list_item_layout">
+                <TextView android:text="@string/setting_self_in" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_setting_restaurant_change" style="@style/list_item_layout">
+                <TextView android:text="@string/setting_restaurant_change" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large">
+            <LinearLayout android:id="@id/ll_setting_order_notice" style="@style/list_item_layout">
+                <TextView android:text="@string/setting_order_sound_setting" style="@style/left_text_layout" />
+                <TextView android:id="@id/tv_text_notice_state" style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_setting_printe" style="@style/list_item_layout">
+                <TextView android:text="@string/setting_printe" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+            <include android:id="@id/divider_expend_food" layout="@layout/view_divider_leftmargin" />
+            <RelativeLayout android:id="@id/ll_setting_expand_food_info" android:background="@drawable/bg_list_item" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingTop="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/text_list_item_left" android:textColor="@color/text_list_item_left" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_expand_food_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/setting_expand_food_info" android:maxLines="1" />
+                <TextView android:textColor="@color/text_color_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/setting_expand_food_info_tips" android:layout_below="@id/tv_expand_food_info" android:layout_alignLeft="@id/tv_expand_food_info" />
+                <org.jraf.android.backport.switchwidget.Switch android:id="@id/switch_setting_expand_food_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:textOn="@string/open" app:textOff="@string/close" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large">
+            <LinearLayout android:id="@id/ll_setting_check_update" style="@style/list_item_layout">
+                <TextView android:text="@string/setting_check_update" style="@style/left_text_layout" />
+                <TextView android:id="@id/tv_setting_current_version" style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_setting_service" style="@style/list_item_layout">
+                <TextView android:text="@string/setting_service" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+            <include android:id="@id/divider_service" layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_setting_feedback" style="@style/list_item_layout">
+                <TextView android:text="@string/setting_feedback" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_restaurant_contact_bd" style="@style/list_item_layout">
+                <TextView android:text="联系业务经理" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large">
+            <LinearLayout android:id="@id/ll_setting_account" style="@style/list_item_layout">
+                <TextView android:text="@string/setting_current_account" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/text_gray_light" android:gravity="center" android:id="@id/tv_setting_exit_account" android:background="@drawable/bg_list_item" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/setting_exit_account" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

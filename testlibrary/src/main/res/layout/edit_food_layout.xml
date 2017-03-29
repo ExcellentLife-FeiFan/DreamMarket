@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:orientation="vertical" android:id="@id/scroller" android:background="@color/white_background" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:paddingLeft="0.0dip" style="@style/list_item_layout">
+                <FrameLayout android:layout_gravity="top" android:layout_width="@dimen/food_null_margin" android:layout_height="wrap_content">
+                    <ImageView style="@style/star_img" />
+                </FrameLayout>
+                <TextView android:text="商品名称" style="@style/left_text_layout" />
+                <EditText android:id="@id/ed_food_name" android:hint="限30字以内" style="@style/list_item_right_edit_text" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_horizontal" />
+            <LinearLayout android:paddingLeft="0.0dip" style="@style/list_item_layout">
+                <FrameLayout android:layout_gravity="top" android:layout_width="@dimen/food_null_margin" android:layout_height="wrap_content">
+                    <ImageView style="@style/star_img" />
+                </FrameLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="商品分类" style="@style/left_text_layout" />
+                <TextView android:textSize="16.0sp" android:textColor="@color/text_black" android:id="@id/ed_tag_name" android:focusable="true" android:focusableInTouchMode="true" style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_horizontal" />
+            <RelativeLayout android:background="@drawable/bg_list_item" android:paddingTop="@dimen/default_ui_margin_large" android:paddingRight="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip">
+                <TextView android:id="@id/tv_tip_img" android:paddingLeft="@dimen/food_null_margin" android:text="上传图片" android:layout_alignParentLeft="true" style="@style/left_text_layout" />
+                <TextView android:textSize="@dimen/text_size_micro" android:textColor="@color/text_gray" android:paddingLeft="@dimen/food_null_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="图片需要大于600x450像素" android:layout_below="@id/tv_tip_img" />
+                <com.android.volley.toolbox.NetworkImageView android:id="@id/img_upload" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_add_img" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+            <LinearLayout android:id="@id/ll_multi_fomats" android:paddingLeft="@dimen/food_null_margin" android:layout_marginTop="10.0dip" style="@style/list_item_layout">
+                <TextView android:layout_width="0.0dip" android:text="商品规格" android:layout_weight="1.0" style="@style/left_text_layout" />
+                <TextView android:textColor="@color/green" android:gravity="right" android:id="@id/tv_edit_tomats" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="编辑规格" android:drawableLeft="@drawable/ic_edit_attr" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_horizontal" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_formats" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.sankuai.meituan.meituanwaimaibusiness.modules.food.view.FoodFormatView android:orientation="vertical" android:id="@id/ll_food_format_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <com.sankuai.meituan.meituanwaimaibusiness.modules.food.view.FoodForamtShowView android:orientation="vertical" android:id="@id/ll_food_format_show_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <TextView android:textSize="16.0sp" android:textColor="@color/green" android:gravity="right" android:layout_gravity="center|right" android:id="@id/tv_edit_multi_formats" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="多规格(多种价格设置)" android:drawableLeft="@drawable/icon_add_green" android:drawablePadding="5.0dip" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_emputy_attr" android:paddingLeft="@dimen/food_null_margin" android:layout_marginTop="10.0dip" style="@style/list_item_layout">
+                <TextView android:layout_width="0.0dip" android:text="商品属性" android:layout_weight="1.0" style="@style/left_text_layout" />
+                <TextView android:textColor="@color/green" android:gravity="right" android:id="@id/tv_edit_attr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="编辑属性" android:drawableLeft="@drawable/ic_edit_attr" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_horizontal" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.sankuai.meituan.meituanwaimaibusiness.modules.food.view.FoodAttributeShowView android:orientation="vertical" android:id="@id/ll_attr_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <RelativeLayout android:background="@drawable/bg_list_item" android:paddingTop="@dimen/default_ui_margin_large" android:paddingRight="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <TextView android:id="@id/tv_food_character" android:paddingLeft="@dimen/food_null_margin" android:text="商品特色" android:layout_alignParentLeft="true" style="@style/left_text_layout" />
+                <TextView android:textSize="@dimen/text_size_micro" android:textColor="@color/text_gray" android:paddingLeft="@dimen/food_null_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="每个门店最多设置5个招牌商品" android:layout_below="@id/tv_food_character" />
+                <TextView android:id="@id/tv_label_package" android:text="套餐" android:layout_alignParentRight="true" style="@style/food_label" />
+                <TextView android:id="@id/tv_label_sign" android:text="招牌" android:layout_toLeftOf="@id/tv_label_package" style="@style/food_label" />
+            </RelativeLayout>
+            <include layout="@layout/view_divider_horizontal" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_sub_attr" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:paddingLeft="@dimen/food_null_margin" style="@style/list_item_layout">
+                    <TextView android:text="套餐适用人数" style="@style/left_text_layout" />
+                    <EditText android:id="@id/ed_sub_attr" android:hint="请输入1-9间的数字" android:inputType="number" style="@style/list_item_right_edit_text" />
+                </LinearLayout>
+                <include layout="@layout/view_divider_horizontal" />
+            </LinearLayout>
+            <LinearLayout android:paddingLeft="@dimen/food_null_margin" style="@style/list_item_layout">
+                <TextView android:text="商品单位" style="@style/left_text_layout" />
+                <EditText android:id="@id/ed_food_unit" style="@style/list_item_right_edit_text" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_horizontal" />
+            <LinearLayout android:paddingLeft="@dimen/food_null_margin" style="@style/list_item_layout">
+                <TextView android:text="最小购买数量" style="@style/left_text_layout" />
+                <EditText android:id="@id/ed_food_mini_count" android:inputType="number" style="@style/list_item_right_edit_text" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_horizontal" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/text_black" android:background="@color/white" android:padding="19.0dip" android:paddingLeft="@dimen/food_null_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="商品描述" />
+            <EditText android:textSize="14.0sp" android:textColor="@color/text_black" android:textColorHint="@color/text_input_hint" android:gravity="left" android:id="@id/ed_food_desc" android:background="@color/white" android:paddingLeft="@dimen/food_null_margin" android:paddingRight="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_marginBottom="10.0dip" android:hint="介绍一下你的产品吧,200字以内就可以哦" />
+        </LinearLayout>
+    </ScrollView>
+    <include layout="@layout/view_divider_horizontal" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_action" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0dip" android:textColor="@color/text_black" android:gravity="center" android:id="@id/tv_save_new" android:background="@color/white" android:padding="@dimen/default_ui_margin_medium" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="保存并继续新建" android:singleLine="true" android:layout_weight="1.0" />
+        <include layout="@layout/view_divider_vertical" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_save_back" android:background="@color/green" android:padding="@dimen/default_ui_margin_medium" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="保存并返回" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_edit_action" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0dip" android:textColor="@color/red" android:gravity="center" android:id="@id/tv_delete_spu" android:background="@color/white" android:padding="@dimen/default_ui_margin_medium" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="删除" android:singleLine="true" android:layout_weight="1.0" />
+        <include layout="@layout/view_divider_vertical" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/text_black" android:gravity="center" android:id="@id/tv_shelf_control" android:background="@color/white" android:padding="@dimen/default_ui_margin_medium" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="下架" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

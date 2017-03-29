@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/title_bg_color" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/text_size_little_small" android:textColor="@color/pageheader_tab_text_color" android:id="@id/tv_page_tab" android:paddingLeft="@dimen/default_ui_margin_medium" android:paddingRight="@dimen/default_ui_margin_medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/default_ui_margin" android:text="进行中" android:layout_centerHorizontal="true" />
+    <View android:background="@drawable/pageheader_tab_color_selector" android:layout_width="wrap_content" android:layout_height="3.0dip" android:layout_below="@id/tv_page_tab" android:layout_alignLeft="@id/tv_page_tab" android:layout_alignRight="@id/tv_page_tab" />
+</RelativeLayout>

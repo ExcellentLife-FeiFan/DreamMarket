@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/fragment_content" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:layout_gravity="bottom" android:background="@color/red" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/bottom_text_btn_size" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_open_gate" android:background="@color/bg_yellow" android:paddingTop="@dimen/default_ui_margin_medium" android:paddingBottom="@dimen/default_ui_margin_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/default_ui_margin_large" android:text="我要开门" />
+    </LinearLayout>
+</FrameLayout>

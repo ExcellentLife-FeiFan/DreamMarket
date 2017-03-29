@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/default_ui_margin_top" android:paddingTop="@dimen/default_ui_margin" android:paddingRight="@dimen/default_ui_margin_top" android:paddingBottom="@dimen/default_ui_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/default_ui_margin_medium">
+        <TextView android:textSize="16.0sp" android:textColor="@color/text_color_gray" android:id="@id/tv_reply_role" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="12.0sp" android:textColor="@color/text_color_gray" android:id="@id/tv_reply_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:textSize="16.0sp" android:textColor="@color/order_txt_black" android:id="@id/tv_reply_content" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AutoCompleteTextViewMerchantstyle" parent="@android:style/Widget.Holo.Light.AutoCompleteTextView">
+        <item name="android:dropDownSelector">@drawable/merchantstyle_list_selector_holo_light</item>
+    </style>
+    <style name="ButtonMerchantstyle" parent="@android:style/Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/merchantstyle_btn_default_holo_light</item>
+    </style>
+    <style name="ImageButtonMerchantstyle" parent="@android:style/Widget.Holo.Light.ImageButton">
+        <item name="android:background">@drawable/merchantstyle_btn_default_holo_light</item>
+    </style>
+    <style name="Merchantstyle" parent="@style/_Merchantstyle" />
+    <style name="ProgressBarMerchantstyle" parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">@drawable/merchantstyle_progress_indeterminate_horizontal_holo_light</item>
+        <item name="android:progressDrawable">@drawable/merchantstyle_progress_horizontal_holo_light</item>
+    </style>
+    <style name="RatingBarBigMerchantstyle" parent="@android:style/Widget.Holo.Light.RatingBar.Indicator">
+        <item name="android:indeterminateDrawable">@drawable/merchantstyle_ratingbar_holo_light</item>
+        <item name="android:progressDrawable">@drawable/merchantstyle_ratingbar_holo_light</item>
+    </style>
+    <style name="RatingBarMerchantstyle" parent="@android:style/Widget.Holo.Light.RatingBar">
+        <item name="android:indeterminateDrawable">@drawable/merchantstyle_ratingbar_full_holo_light</item>
+        <item name="android:progressDrawable">@drawable/merchantstyle_ratingbar_full_holo_light</item>
+    </style>
+    <style name="RatingBarSmallMerchantstyle" parent="@android:style/Widget.Holo.Light.RatingBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/merchantstyle_ratingbar_small_holo_light</item>
+        <item name="android:progressDrawable">@drawable/merchantstyle_ratingbar_small_holo_light</item>
+    </style>
+    <style name="SeekBarMerchantstyle" parent="@android:style/Widget.Holo.Light.SeekBar">
+        <item name="android:indeterminateDrawable">@drawable/merchantstyle_scrubber_progress_horizontal_holo_light</item>
+        <item name="android:progressDrawable">@drawable/merchantstyle_scrubber_progress_horizontal_holo_light</item>
+        <item name="android:thumb">@drawable/merchantstyle_scrubber_control_selector_holo_light</item>
+    </style>
+    <style name="SpinnerMerchantstyle" parent="@android:style/Widget.Holo.Light.Spinner">
+        <item name="android:background">@drawable/merchantstyle_spinner_background_holo_light</item>
+        <item name="android:dropDownSelector">@drawable/merchantstyle_list_selector_holo_light</item>
+    </style>
+    <style name="Theme.Base" parent="@android:style/Theme.Holo">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="selectableItemBackground">?android:selectableItemBackground</item>
+    </style>
+    <style name="Theme.Base.AppCompat.Dialog.FixedSize" parent="@android:style/Theme.Holo.Dialog">
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="selectableItemBackground">?android:selectableItemBackground</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
+    </style>
+    <style name="Theme.Base.AppCompat.Dialog.Light.FixedSize" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="selectableItemBackground">?android:selectableItemBackground</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
+    </style>
+    <style name="Theme.Base.Light" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="buttonBarButtonStyle">?android:buttonBarButtonStyle</item>
+        <item name="buttonBarStyle">?android:buttonBarStyle</item>
+        <item name="selectableItemBackground">?android:selectableItemBackground</item>
+    </style>
+    <style name="ToggleMerchantstyle" parent="@android:style/Widget.Holo.Light.Button.Toggle">
+        <item name="android:background">@drawable/merchantstyle_btn_toggle_holo_light</item>
+    </style>
+    <style name="Widget.AppCompat.Base.AutoCompleteTextView" parent="@android:style/Widget.Holo.AutoCompleteTextView" />
+    <style name="Widget.AppCompat.Base.ProgressBar" parent="@android:style/Widget.Holo.ProgressBar" />
+    <style name="Widget.AppCompat.Base.ProgressBar.Horizontal" parent="@android:style/Widget.Holo.ProgressBar.Horizontal" />
+    <style name="Widget.AppCompat.Light.Base.AutoCompleteTextView" parent="@android:style/Widget.Holo.Light.AutoCompleteTextView" />
+    <style name="_Merchantstyle" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:buttonStyle">@style/ButtonMerchantstyle</item>
+        <item name="android:buttonStyleToggle">@style/ToggleMerchantstyle</item>
+        <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewMerchantstyle</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonMerchantstyle</item>
+        <item name="android:progressBarStyleHorizontal">@style/ProgressBarMerchantstyle</item>
+        <item name="android:seekBarStyle">@style/SeekBarMerchantstyle</item>
+        <item name="android:ratingBarStyle">@style/RatingBarMerchantstyle</item>
+        <item name="android:ratingBarStyleSmall">@style/RatingBarSmallMerchantstyle</item>
+        <item name="android:textColorHighlight">#99e15f00</item>
+        <item name="android:ratingBarStyleIndicator">@style/RatingBarBigMerchantstyle</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/merchantstyle_btn_radio_holo_light</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/merchantstyle_btn_check_holo_light</item>
+        <item name="android:textSelectHandleLeft">@drawable/merchantstyle_text_select_handle_left</item>
+        <item name="android:textSelectHandleRight">@drawable/merchantstyle_text_select_handle_right</item>
+        <item name="android:textSelectHandle">@drawable/merchantstyle_text_select_handle_middle</item>
+        <item name="android:dropDownSpinnerStyle">@style/SpinnerMerchantstyle</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/merchantstyle_list_selector_holo_light</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/merchantstyle_activated_background_holo_light</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/merchantstyle_fastscroll_thumb_holo</item>
+    </style>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/rl_order_compensate" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/divider" style="@style/OrderDivider" />
+    <RelativeLayout android:id="@id/rl_compensate_header" android:paddingTop="@dimen/default_ui_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/order_card_margin" android:layout_marginRight="@dimen/order_card_margin" android:layout_below="@id/divider">
+        <ImageView android:id="@id/iv_compensate_icon" android:layout_width="@dimen/order_card_icon_size" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginRight="@dimen/img_text_margin" android:src="@drawable/icon_cansun" />
+        <ImageView android:id="@id/iv_order_compensate_folder" android:layout_width="20.0dip" android:layout_height="wrap_content" android:src="@drawable/ic_arrow_down_green" android:scaleType="center" android:layout_alignTop="@id/tv_order_food_label" android:layout_alignBottom="@id/tv_order_food_label" android:layout_alignParentRight="true" />
+        <TextView android:textSize="@dimen/order_txt_size_medium" android:textStyle="bold" android:textColor="@color/order_txt_black" android:id="@id/tv_order_food_label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/order_food_compensate" android:layout_toLeftOf="@id/iv_order_compensate_folder" android:layout_toRightOf="@id/iv_compensate_icon" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_foods_compensate" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/rl_compensate_header">
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_compensate_item_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_compensate_container_last" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/ll_compensate_item_container" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_search" android:id="@id/food_search" android:title="" app:showAsAction="ifRoom|withText" />
+    <item android:id="@id/food_more" android:title="" android:actionLayout="@layout/menu_image_more" app:showAsAction="ifRoom|withText" />
+</menu>

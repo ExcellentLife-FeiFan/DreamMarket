@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/view_parent" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <com.sankuai.meituan.meituanwaimaibusiness.util.widget.recyclerview.EmptyRecyclerView android:id="@id/list_food_edit" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" />
+        <com.sankuai.meituan.meituanwaimaibusiness.util.widget.emptyview.EmptyView android:id="@id/food_empty_edit" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <View android:background="#ffe7e7e7" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <LinearLayout android:gravity="center" android:id="@id/ll_food_checkAll" android:layout_width="100.0dip" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <CheckBox android:id="@id/cb_food_check_all" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" android:button="@drawable/bg_recycle_food_check" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff505050" android:gravity="center" android:id="@id/tv_operation_bottom_check_all" android:clickable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="全部" />
+            </LinearLayout>
+        </LinearLayout>
+        <View android:background="#ffe7e7e7" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <TextView android:textColor="#fffe4d3d" android:gravity="center" android:id="@id/tv_operation_bottom_delete" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="删除" android:layout_weight="1.0" />
+        <View android:background="#ffe7e7e7" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <TextView android:textSize="16.0sp" android:textColor="#ff505050" android:gravity="center" android:id="@id/tv_operation_bottom_onsale" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="上架" android:layout_weight="1.0" />
+        <View android:background="#ffe7e7e7" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <TextView android:textSize="16.0sp" android:textColor="#ff505050" android:gravity="center" android:id="@id/tv_operation_bottom_nosale" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="下架" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

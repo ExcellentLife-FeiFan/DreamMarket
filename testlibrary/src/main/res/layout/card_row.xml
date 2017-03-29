@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="7.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/card_cell" />
+    <include layout="@layout/card_cell" />
+    <include layout="@layout/card_cell" />
+    <include layout="@layout/card_cell" />
+    <include layout="@layout/card_cell" />
+    <include layout="@layout/card_cell" />
+    <include layout="@layout/card_cell" />
+</LinearLayout>

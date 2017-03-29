@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_item_food_edit" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:id="@id/cb_food_select" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="@dimen/default_ui_margin_large" android:layout_marginRight="5.0dip" android:button="@drawable/bg_recycle_food_check" android:layout_alignParentLeft="true" />
+    <FrameLayout android:id="@id/fl_food_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/cb_food_select">
+        <ImageView android:id="@id/img_food" android:layout_width="55.0dip" android:layout_height="55.0dip" android:src="@drawable/ic_food_default" android:scaleType="fitXY" />
+        <TextView android:textColor="@color/white" android:gravity="center" android:id="@id/txt_food_offline" android:background="@drawable/rect_transparent_shadow" android:visibility="invisible" android:layout_width="55.0dip" android:layout_height="55.0dip" android:text="暂停\n售卖" />
+        <TextView android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom" android:id="@id/txt_food_audit" android:background="@drawable/rect_transparent_shadow" android:paddingTop="6.0dip" android:paddingBottom="6.0dip" android:layout_width="55.0dip" android:layout_height="wrap_content" android:text="审核中" />
+    </FrameLayout>
+    <ImageView android:id="@id/img_food_drag" android:background="@drawable/d_bg_drag_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/img_food_set_top" android:background="@drawable/d_bg_settop_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_toLeftOf="@id/img_food_drag" android:layout_centerVertical="true" />
+    <RelativeLayout android:id="@id/rl_food_edit_attris" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/img_food_set_top" android:layout_toRightOf="@id/fl_food_img">
+        <TextView android:textSize="16.0sp" android:textColor="#ff505050" android:ellipsize="end" android:id="@id/txt_food_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        <com.sankuai.meituan.meituanwaimaibusiness.util.widget.flowlayout.FlowLayout android:id="@id/fl_food_tags" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/txt_food_name" />
+        <TextView android:textSize="11.0sp" android:textColor="#ff909090" android:id="@id/txt_food_stock_sale_mounth" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/fl_food_tags" android:layout_alignParentLeft="true" />
+        <RelativeLayout android:id="@id/rl_food_price" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/txt_food_stock_sale_mounth">
+            <TextView android:textSize="18.0sp" android:textColor="#fffb4e44" android:id="@id/txt_food_current_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+            <TextView android:textSize="11.0sp" android:textColor="#ff999999" android:id="@id/txt_food_origin_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_toRightOf="@id/txt_food_current_price" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

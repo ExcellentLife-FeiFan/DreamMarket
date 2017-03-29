@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:paddingBottom="@dimen/activity_vertical_margin" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textColor="@color/done_disabled_dark" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingTop="@dimen/default_ui_margin_large" android:paddingRight="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/title_setting_printer" />
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:id="@id/ll_setting_print" style="@style/list_item_layout">
+                <TextView android:id="@id/txt_setting_print_printer_action" android:text="@string/setting_bluetooth_print" style="@style/left_text_layout" />
+                <TextView android:id="@id/txt_setting_print_printer_name" style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_setting_ticket" android:paddingRight="0.0dip" style="@style/list_item_layout">
+                <TextView android:text="自动打印小票" style="@style/left_text_layout" />
+                <org.jraf.android.backport.switchwidget.Switch android:layout_gravity="center_vertical" android:id="@id/switch_setting_print_auto_print" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" app:textOn="@string/open" app:textOff="@string/close" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textColor="@color/done_disabled_dark" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingTop="20.0dip" android:paddingRight="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="GPRS/WiFi打印机" />
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:id="@id/ll_add_gprs_printers" style="@style/list_item_layout">
+                <TextView android:text="打印机" style="@style/left_text_layout" />
+                <TextView android:text="添加打印机" style="@style/right_text_layout" />
+            </LinearLayout>
+            <include android:id="@id/gprs_divider" android:visibility="gone" layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_gprs_container" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:textColor="@color/done_disabled_dark" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingTop="20.0dip" android:paddingRight="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="其它" />
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:id="@id/ll_setting_print_help" style="@style/list_item_layout">
+                <TextView android:text="帮助" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_setting_print_purchase" style="@style/list_item_layout">
+                <TextView android:text="选购打印机" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

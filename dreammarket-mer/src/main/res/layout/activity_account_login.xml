@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_account"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/default_ui_margin_top"
+            android:layout_marginRight="@dimen/default_ui_margin_top"
+            android:src="@drawable/icon_user" />
+
+        <EditText
+            style="@style/Common_Et"
+            android:hint="@string/prompt_username"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="20.0dip"
+        android:background="@color/divider_line" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/default_ui_margin_top"
+            android:layout_marginRight="@dimen/default_ui_margin_top"
+            android:src="@drawable/icon_password" />
+
+        <EditText
+            style="@style/Common_Et"
+            android:hint="@string/prompt_password"
+            android:imeActionLabel="@string/action_sign_in"
+            android:imeOptions="normal|actionUnspecified"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20.0dip"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/default_ui_margin_top"
+            android:layout_marginRight="@dimen/default_ui_margin_top"
+            android:src="@drawable/ic_login_capture" />
+
+        <EditText
+            style="@style/Common_Et"
+            android:layout_width="0.0dip"
+            android:layout_weight="1.0"
+            android:hint="@string/img_captcha"
+            android:imeActionLabel="@string/action_sign_in"
+            android:imeOptions="normal|actionUnspecified" />
+
+        <ImageView
+            android:layout_width="66.0dip"
+            android:layout_height="30.0dip"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/default_ui_margin_top"
+            android:src="@drawable/bg_rect_gray" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/default_ui_margin_top"
+            android:layout_marginRight="@dimen/default_ui_margin_top"
+            android:src="@drawable/ic_refresh_capture" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:background="@color/white" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingTop="@dimen/default_ui_margin" android:paddingRight="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/text_size_medium" android:id="@id/txt_adapter_bluetooth_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="蓝牙设备" />
+    <TextView android:textSize="@dimen/text_size_medium" android:id="@id/txt_adapter_bluetooth_mac" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/txt_adapter_bluetooth_name" />
+    <TextView android:textSize="@dimen/text_size_medium" android:textColor="@color/gray" android:gravity="center" android:id="@id/txt_adapter_bluetooth_device_connect_status" android:background="@drawable/bg_rect_gray" android:layout_width="50.0dip" android:layout_height="30.0dip" android:text="连接" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

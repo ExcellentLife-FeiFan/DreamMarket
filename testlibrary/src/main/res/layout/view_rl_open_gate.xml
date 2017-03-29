@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/text_size_small" android:textColor="@color/order_txt_gray" android:id="@id/tv_open_gate_item" android:padding="@dimen/default_ui_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+    <TextView android:textSize="@dimen/text_size_small" android:textColor="@color/theme_color" android:id="@id/tv_open_gate_complete" android:padding="@dimen/default_ui_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="去完善" android:drawableRight="@drawable/ic_right_green_arron" android:drawablePadding="@dimen/drawable_list_child_padding" android:layout_alignParentRight="true" />
+    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/divider" android:scaleType="fitXY" android:layout_below="@id/tv_open_gate_complete" android:contentDescription="@null"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+</RelativeLayout>

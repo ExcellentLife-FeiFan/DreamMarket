@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:background="@drawable/bg_pageheader_item" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="@color/pageheader_text_color_dark" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_title" android:paddingLeft="12.0dip" android:paddingTop="8.0dip" android:paddingRight="12.0dip" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textSize="12.0dip" android:textColor="@color/text_white" android:gravity="center" android:layout_gravity="center|right|top" android:id="@id/tv_count" android:background="@drawable/bg_count_mark" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-3.0dip" />
+    </FrameLayout>
+    <View android:layout_gravity="center_vertical" android:id="@id/iv_divider" android:background="#ff70757d" android:layout_width="2.0dip" android:layout_height="15.0dip" />
+</LinearLayout>

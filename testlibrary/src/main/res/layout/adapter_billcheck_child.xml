@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="45.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/billcheck_list_child_name_size" android:textColor="@color/text_gray" android:gravity="center" android:id="@id/txt_billcheck_child_item_name" android:layout_width="wrap_content" android:layout_height="45.0dip" android:layout_marginLeft="@dimen/billcheck_default_margin" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="@dimen/billcheck_list_child_name_size" android:textColor="@color/text_gray" android:id="@id/txt_billcheck_child_item_sum" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/billcheck_default_margin" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/divider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/billcheck_default_margin" android:src="@drawable/divider" android:scaleType="fitXY" android:layout_alignParentTop="true" android:contentDescription="@null" />
+</RelativeLayout>

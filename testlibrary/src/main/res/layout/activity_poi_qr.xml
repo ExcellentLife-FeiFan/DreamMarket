@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/img_qr_code" android:background="@color/white" android:layout_width="150.0dip" android:layout_height="150.0dip" android:layout_marginTop="100.0dip" android:src="@drawable/ic_qrcode_loading" android:scaleType="centerCrop" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/text_gray_light" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/default_ui_margin" android:layout_marginTop="@dimen/default_ui_margin" android:text="@string/setting_qrcode_desc" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_setting_save_qrcode" android:background="@drawable/bg_green_btn" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="@dimen/default_ui_margin_large" android:layout_marginTop="@dimen/default_ui_margin" android:layout_marginRight="@dimen/default_ui_margin_large" android:text="@string/setting_qrcode_save" />
+</LinearLayout>

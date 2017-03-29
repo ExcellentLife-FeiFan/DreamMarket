@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/rl_root" android:background="@color/white_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/sr_attribute" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.sankuai.meituan.meituanwaimaibusiness.modules.food.view.FoodAttributeView android:orientation="vertical" android:id="@id/ll_food_attribute_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </ScrollView>
+    <include layout="@layout/view_divider_horizontal" />
+    <android.support.v7.widget.RecyclerView android:id="@id/rcv_tag" android:background="@color/white" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_add_new" android:background="@color/white" android:paddingLeft="40.0dip" android:paddingTop="8.0dip" android:paddingRight="40.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/rcv_tag">
+        <TextView android:textSize="16.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_add_attr" android:background="@drawable/bg_green_btn" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="＋添加属性" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/item_food" android:background="#fff4f4f8" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="45.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="12.0sp" android:textColor="#ff505050" android:ellipsize="end" android:gravity="center|left" android:id="@id/txt_foodcategory_name" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:maxLines="2" android:layout_weight="1.0" />
+    <TextView android:textSize="12.0sp" android:textColor="@color/theme_color" android:gravity="center" android:id="@id/txt_food_editsort" android:background="@drawable/d_bg_btn_green" android:padding="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="排序&amp;批量" />
+</LinearLayout>

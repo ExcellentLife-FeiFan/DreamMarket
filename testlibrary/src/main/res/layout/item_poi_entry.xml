@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_list_item" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.volley.toolbox.NetworkImageView android:id="@id/iv_icon" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:src="@drawable/ic_poi_entry_default" android:scaleType="fitXY" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="12.0dip" android:textColor="@color/text_white" android:gravity="center" android:id="@id/tv_count" android:background="@drawable/bg_poi_entry_count_rect" android:padding="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-10.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="15.0dip" android:layout_toRightOf="@id/iv_icon" android:layout_alignParentTop="true" />
+    <TextView android:textSize="14.0dip" android:textColor="#ff505050" android:id="@id/tv_title" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/iv_icon" android:layout_centerHorizontal="true" />
+</RelativeLayout>

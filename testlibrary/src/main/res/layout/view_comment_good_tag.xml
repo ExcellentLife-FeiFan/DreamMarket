@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="11.0sp" android:textColor="@color/poi_status_orange_light" android:tag="layout/view_comment_good_tag_0" android:background="@drawable/bg_stroke_rect_orange" android:padding="@dimen/default_ui_margin_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/default_ui_margin_small" android:text="不好吃"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

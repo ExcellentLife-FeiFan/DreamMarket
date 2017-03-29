@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:combinateEditView="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="@dimen/text_size_little_small" android:textColor="#ff505050" android:id="@id/txt_compensate_amount" android:background="@color/white" android:padding="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large">
+            <com.sankuai.meituan.meituanwaimaibusiness.util.widget.customview.MaxInputCountEditView android:id="@id/edit_compenate_reasons" android:layout_width="fill_parent" android:layout_height="wrap_content" combinateEditView:txt_count="140" combinateEditView:edit_hint="请填写申请理由，140字以内" />
+            <com.sankuai.meituan.meituanwaimaibusiness.util.widget.flowlayout.FlowLayout android:id="@id/fl_compensate_reasons" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/text_size_small" android:textColor="#ff909090" android:gravity="center_horizontal" android:id="@id/txt_compensate_apply_desc" android:padding="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

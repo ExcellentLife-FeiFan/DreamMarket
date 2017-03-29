@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingLeft="@dimen/icon_star_size" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:background="@color/green" android:layout_width="1.0dip" android:layout_height="8.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_black" android:gravity="left" android:id="@id/tv_attr_num" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="规格" android:layout_weight="1.0" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/red" android:id="@id/tv_delete" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="删除" />
+    </LinearLayout>
+    <LinearLayout android:paddingLeft="25.0dip" android:paddingTop="0.0dip" android:paddingBottom="10.0dip" style="@style/list_item_layout">
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_color_gray_light" android:id="@id/tv_format_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="规格名称:" style="@style/left_text_layout" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_color_gray_light" android:id="@id/tv_upc_code" android:text="条形码:" style="@style/right_text_layout_without_arron" />
+    </LinearLayout>
+    <include layout="@layout/view_divider_leftmargin" />
+    <LinearLayout android:paddingLeft="25.0dip" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" style="@style/list_item_layout">
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_color_gray_light" android:id="@id/tv_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="价格:" style="@style/left_text_layout" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_color_gray_light" android:gravity="right" android:id="@id/tv_weight" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="重量:" android:layout_weight="1.0" style="@style/left_text_layout" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_color_gray_light" android:id="@id/ed_attr_stock_num" android:text="库存:" style="@style/right_text_layout_without_arron" />
+    </LinearLayout>
+    <include layout="@layout/view_divider_leftmargin" />
+    <LinearLayout android:paddingLeft="25.0dip" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" style="@style/list_item_layout">
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_color_gray_light" android:id="@id/tv_box_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="餐盒数量:" style="@style/left_text_layout" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_color_gray_light" android:id="@id/tv_box_price" android:text="餐盒价格:" style="@style/right_text_layout_without_arron" />
+    </LinearLayout>
+    <include layout="@layout/view_divider_horizontal" />
+</LinearLayout>

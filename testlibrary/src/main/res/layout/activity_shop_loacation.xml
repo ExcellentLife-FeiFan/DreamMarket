@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textColor="#fffe4d3d" android:layout_gravity="center_vertical" android:id="@id/tv_tips" android:background="#fffef3d9" android:padding="15.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingExtra="8.0dip" />
+    <com.amap.api.maps2d.MapView android:id="@id/map" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <View android:background="@color/devider_bg" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_address" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_size_little_small" android:id="@id/tv_building" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingTop="@dimen/default_ui_margin_large" android:paddingRight="@dimen/default_ui_margin_large" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="@dimen/text_size_little_small" android:id="@id/tv_address" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingTop="@dimen/default_ui_margin_medium" android:paddingRight="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin_large" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:background="@color/devider_bg" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <Button android:textColor="@color/text_white" android:background="@drawable/bg_green" android:padding="@dimen/medium_font_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_ui_margin_medium" android:layout_marginTop="@dimen/default_ui_margin" android:layout_marginRight="@dimen/default_ui_margin_medium" android:layout_marginBottom="@dimen/default_ui_margin" android:text="确定" android:onClick="complete" />
+    </LinearLayout>
+</LinearLayout>

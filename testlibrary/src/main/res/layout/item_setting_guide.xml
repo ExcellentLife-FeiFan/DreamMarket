@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/list_item_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/tv_title" android:drawableLeft="@drawable/ic_setting_guide" style="@style/left_text_layout_and_draw" />
+    <TextView android:id="@id/tv_goto_settings" style="@style/right_text_layout" />
+</LinearLayout>

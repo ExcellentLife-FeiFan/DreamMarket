@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DreamMarket.iml" filepath="$PROJECT_DIR$/DreamMarket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dreammarket-mer/dreammarket-mer.iml" filepath="$PROJECT_DIR$/dreammarket-mer/dreammarket-mer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mobsharelibrary/mobsharelibrary.iml" filepath="$PROJECT_DIR$/mobsharelibrary/mobsharelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pickerview/pickerview.iml" filepath="$PROJECT_DIR$/pickerview/pickerview.iml" />
+    </modules>
+  </component>
+</project>

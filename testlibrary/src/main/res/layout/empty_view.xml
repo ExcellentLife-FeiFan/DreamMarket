@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/layout_empty" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingRight="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:id="@id/img_empty" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/empty_layout_margin_top" android:src="@drawable/ic_empty_order" android:scaleType="center" />
+        <TextView android:textSize="@dimen/empty_text_size" android:textColor="#ffa2a2a2" android:gravity="center" android:layout_gravity="center" android:id="@id/text_empty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        <TextView android:textSize="12.0sp" android:textColor="#ffc2c2c2" android:gravity="center" android:layout_gravity="center" android:id="@id/text_empty_sub" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingRight="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <TextView android:textSize="@dimen/text_size_small" android:textColor="#ffa2a2a2" android:gravity="center" android:id="@id/txt_order_footview" android:background="@drawable/bg_rect_order_footview" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin" android:layout_marginBottom="@dimen/default_ui_margin" android:text="查看昨日订单" />
+    </LinearLayout>
+</RelativeLayout>

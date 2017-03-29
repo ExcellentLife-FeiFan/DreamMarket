@@ -1,0 +1,67 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="padding_left">12.0dip</dimen>
+    <dimen name="padding_bottom">15.0dip</dimen>
+    <dimen name="actionbar_height">48.0dip</dimen>
+    <dimen name="padding_top">12.0dip</dimen>
+    <dimen name="padding_left2">10.0dip</dimen>
+
+    <dimen name="text_size_actionbar_title">20.0sp</dimen>
+    <dimen name="text_size_actionbar_right">16.0sp</dimen>
+    <dimen name="text_size_common_btn">18.0sp</dimen>
+    <dimen name="divider_height">0.5dp</dimen>
+    <dimen name="common_viewgroup_height">45.0dip</dimen>
+
+
+
+
+    <dimen name="sp10">10.0sp</dimen>
+    <dimen name="sp12">12.0sp</dimen>
+    <dimen name="sp14">14.0sp</dimen>
+    <dimen name="sp16">16.0sp</dimen>
+    <dimen name="sp18">18.0sp</dimen>
+    <dimen name="sp20">20.0sp</dimen>
+    <dimen name="sp22">22.0sp</dimen>
+    <dimen name="sp24">24.0sp</dimen>
+    <dimen name="sp26">26.0sp</dimen>
+    <dimen name="sp28">28.0sp</dimen>
+    <dimen name="sp30">30.0sp</dimen>
+    <dimen name="sp32">32.0sp</dimen>
+    <dimen name="sp34">34.0sp</dimen>
+    <dimen name="sp36">36.0sp</dimen>
+    <dimen name="sp38">38.0sp</dimen>
+    <dimen name="sp40">40.0sp</dimen>
+
+
+
+    <dimen name="text_list_item_left">16.0sp</dimen>
+    <dimen name="text_list_item_right">14.0sp</dimen>
+    <dimen name="text_size_huge">26.0sp</dimen>
+    <dimen name="text_size_large">22.0sp</dimen>
+    <dimen name="text_size_little_micro">11.0sp</dimen>
+    <dimen name="text_size_little_small">16.0sp</dimen>
+    <dimen name="text_size_medium">18.0sp</dimen>
+    <dimen name="text_size_micro">12.0sp</dimen>
+    <dimen name="text_size_small">14.0sp</dimen>
+    <dimen name="text_size_tag_small">10.0sp</dimen>
+    <dimen name="empty_text_size">16.0sp</dimen>
+
+
+    <dimen name="drawable_padding">10.0dip</dimen>
+    <dimen name="drawable_list_child_padding">10.0dip</dimen>
+    <dimen name="default_ui_height">48.0dip</dimen>
+    <dimen name="default_ui_margin">8.0dip</dimen>
+    <dimen name="default_ui_margin_great">20.0dip</dimen>
+    <dimen name="default_ui_margin_huge">32.0dip</dimen>
+    <dimen name="default_ui_margin_large">15.0dip</dimen>
+    <dimen name="default_ui_margin_medium">12.0dip</dimen>
+    <dimen name="default_ui_margin_medium_s">7.0dip</dimen>
+    <dimen name="default_ui_margin_medium_small">5.0dip</dimen>
+    <dimen name="default_ui_margin_micro">2.0dip</dimen>
+    <dimen name="default_ui_margin_small">4.0dip</dimen>
+    <dimen name="default_ui_margin_top">10.0dip</dimen>
+</resources>

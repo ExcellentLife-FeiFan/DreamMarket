@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="12.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/save" android:background="@drawable/selectable_background_merchantstyle" android:layout_width="60.0dip" android:layout_height="fill_parent" android:text="保存" android:layout_alignParentRight="true" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_food_category" android:background="@drawable/bg_rect_gray_food_category" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:layout_toLeftOf="@id/save">
+        <TextView android:textSize="@dimen/text_size_small" android:textColor="#ffc2c2c2" android:ellipsize="end" android:gravity="center" android:id="@id/food_category_change" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:maxLines="1" android:drawableRight="@drawable/ic_arrow_down" android:drawablePadding="4.0dip" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/foodinfo_edit_title_small" android:id="@id/tv_describe" android:paddingLeft="@dimen/foodinfo_edit_leftright_margin" android:paddingTop="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:id="@id/divider_label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/divider" android:scaleType="fitXY" android:contentDescription="@null" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_edit_food_info_label" android:background="@color/white" android:paddingLeft="@dimen/foodinfo_edit_leftright_margin" android:paddingTop="@dimen/food_label_container_margin" android:paddingRight="@dimen/foodinfo_edit_leftright_margin" android:paddingBottom="@dimen/food_label_container_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/foodinfo_default_txt_size" android:id="@id/tv_label" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/default_ui_margin" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_food_info_labels_container" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/divider" android:scaleType="fitXY" android:contentDescription="@null" />
+    <EditText android:textSize="@dimen/foodinfo_default_txt_size" android:textColor="@color/light_gray" android:id="@id/et_edit_food_info_description" android:background="@color/white" android:paddingLeft="@dimen/foodinfo_edit_leftright_margin" android:paddingTop="@dimen/default_ui_margin_large" android:paddingRight="@dimen/foodinfo_edit_leftright_margin" android:paddingBottom="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin" android:maxLength="50" />
+    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/divider" android:scaleType="fitXY" android:contentDescription="@null" />
+</merge>

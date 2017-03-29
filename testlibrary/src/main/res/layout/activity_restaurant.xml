@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@color/white_background" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large">
+            <LinearLayout android:id="@id/rl_my_restaurant_status" style="@style/list_item_layout">
+                <TextView android:text="营业状态" style="@style/left_text_layout" />
+                <TextView android:id="@id/txt_restaurant_status" style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_my_restaurant_notice" style="@style/list_item_layout">
+                <TextView android:id="@id/txt_restaurant_notice" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:id="@id/rl_restaurant_activities" android:layout_marginTop="@dimen/default_ui_margin_large" style="@style/list_item_layout">
+            <ImageView android:id="@id/img_ic_right_activities" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_right" android:scaleType="center" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <com.sankuai.meituan.meituanwaimaibusiness.modules.restaurant.phoneview.PoiActIconView android:layout_gravity="center" android:orientation="horizontal" android:id="@id/ll_activities_img" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/drawable_list_child_padding" android:layout_toLeftOf="@id/img_ic_right_activities" android:layout_centerVertical="true" />
+            <TextView android:text="优惠信息" android:layout_alignParentLeft="true" style="@style/left_text_layout" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large">
+            <LinearLayout android:id="@id/ll_poi_info_poi_phone" style="@style/list_item_layout">
+                <TextView android:id="@id/tv_phone" style="@style/left_text_layout" />
+                <com.sankuai.meituan.meituanwaimaibusiness.modules.restaurant.phoneview.PhoneTextView android:id="@id/txt_poi_info_poi_phone" style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout style="@style/list_item_layout">
+                <TextView android:id="@id/tv_address" style="@style/left_text_layout" />
+                <TextView android:id="@id/txt_poi_info_poi_address" style="@style/right_text_layout_without_arron" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_poi_info_open_time" style="@style/list_item_layout">
+                <TextView android:text="@string/title_poi_info_open_time" style="@style/left_text_layout" />
+                <TextView android:id="@id/txt_poi_info_open_time" style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_poi_info_pre_book" style="@style/list_item_layout">
+                <TextView android:text="预订单设置" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large">
+            <LinearLayout android:id="@id/ll_restaurant_qualification" style="@style/list_item_layout">
+                <TextView android:text="营业资质" style="@style/left_text_layout" />
+                <TextView android:id="@id/txt_restaurant_qualification" style="@style/right_text_layout" />
+            </LinearLayout>
+            <include android:id="@id/divider_logistic" layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_restaurant_logistic" style="@style/list_item_layout">
+                <TextView android:text="配送信息" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin_large" android:layout_marginBottom="@dimen/default_ui_margin_large">
+            <LinearLayout android:id="@id/ll_restaurant_merchant_protocol" style="@style/list_item_layout">
+                <TextView android:text="商家协议" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_restaurant_hybrid_protocol" android:visibility="gone" style="@style/list_item_layout">
+                <TextView android:text="混合配送补充协议" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+            <include layout="@layout/view_divider_leftmargin" />
+            <LinearLayout android:id="@id/ll_restaurant_logistic_protocol" android:visibility="gone" style="@style/list_item_layout">
+                <TextView android:text="众包配送补充协议" style="@style/left_text_layout" />
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

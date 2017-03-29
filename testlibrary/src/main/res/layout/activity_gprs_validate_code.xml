@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip">
+        <TextView android:textSize="@dimen/bottom_text_btn_size" android:textStyle="bold" android:gravity="center" android:id="@id/txt_gprs_num" android:paddingTop="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="GPRS设备编号:" />
+        <include layout="@layout/view_divider_leftmargin" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff666666" android:gravity="center" android:id="@id/txt_gprs_code_input_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="请输入该GPRS打印机打印出的验证码" />
+        <com.sankuai.meituan.meituanwaimaibusiness.util.widget.gridpasswordview.GridPasswordView android:id="@id/gpv_passwordType" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_margin="@dimen/default_ui_margin_large" />
+    </LinearLayout>
+    <TextView android:textSize="12.0sp" android:textColor="#ff909090" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="如未打印出验证码，请确保打印机开启后，重新扫描！" />
+    <TextView android:textSize="@dimen/bottom_text_btn_size" android:textColor="@color/d_color_text_green_selector" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/txt_gprs_validate_confirm" android:background="@drawable/d_bg_btn_green_selector" android:paddingTop="@dimen/default_ui_margin_medium" android:paddingBottom="@dimen/default_ui_margin_medium" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/default_ui_margin_large" android:text="确认绑定" />
+</LinearLayout>

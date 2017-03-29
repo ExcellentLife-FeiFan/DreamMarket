@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/fl_shadow" android:background="@color/transparent_black" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/order_txt_blue" android:gravity="center" android:id="@id/tv_open_gallery" android:background="@color/white" android:paddingTop="@dimen/default_ui_margin_medium" android:paddingBottom="@dimen/default_ui_margin_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/feedback_open_gallery" />
+    <View android:background="@color/divider_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/order_txt_blue" android:gravity="center" android:id="@id/tv_camera" android:background="@color/white" android:paddingTop="@dimen/default_ui_margin_medium" android:paddingBottom="@dimen/default_ui_margin_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/feedback_camera" />
+    <View android:background="@color/divider_line" android:layout_width="fill_parent" android:layout_height="8.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/order_txt_blue" android:gravity="center" android:id="@id/tv_cancel" android:background="@color/white" android:paddingTop="@dimen/default_ui_margin_medium" android:paddingBottom="@dimen/default_ui_margin_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/feedback_cancel" />
+</LinearLayout>

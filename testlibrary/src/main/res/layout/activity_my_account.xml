@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/ll_setting_vibrator" style="@style/list_item_layout">
+        <TextView android:text="账户名" style="@style/left_text_layout" />
+        <TextView android:id="@id/txt_my_account_name" style="@style/right_text_layout" />
+    </LinearLayout>
+    <include layout="@layout/view_divider_horizontal" />
+    <LinearLayout android:id="@id/ll_my_account_modify_password" style="@style/list_item_layout">
+        <TextView android:text="账户密码" style="@style/left_text_layout" />
+        <TextView android:text="修改" style="@style/right_text_layout" />
+    </LinearLayout>
+    <include layout="@layout/view_divider_horizontal" />
+    <LinearLayout android:id="@id/ll_my_account_bind_phone" style="@style/list_item_layout">
+        <TextView android:id="@id/txt_my_account_bind_status" android:text="账户名" style="@style/left_text_layout" />
+        <TextView android:id="@id/txt_my_account_bind_phone" style="@style/right_text_layout" />
+    </LinearLayout>
+    <include layout="@layout/view_divider_horizontal" />
+    <LinearLayout style="@style/list_item_layout">
+        <TextView android:text="新设备首次登录手机验证" style="@style/left_text_layout" />
+        <Switch android:id="@id/switch_check_device_setting" android:textOn="@string/open" android:textOff="@string/close" style="@style/right_text_layout_without_arron" />
+    </LinearLayout>
+</LinearLayout>

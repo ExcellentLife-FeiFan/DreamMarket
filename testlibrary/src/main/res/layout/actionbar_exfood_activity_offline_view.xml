@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/txt_actionbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="下架商品库" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <RelativeLayout android:layout_gravity="right" android:id="@id/fl_my_feedback" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_alignParentRight="true">
+        <ImageView android:layout_gravity="right" android:id="@id/img_search" android:layout_width="45.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_search" android:scaleType="center" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

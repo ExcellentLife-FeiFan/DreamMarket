@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@color/white" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingTop="@dimen/default_ui_margin" android:paddingRight="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/text_size_medium" android:gravity="center" android:layout_gravity="center" android:id="@id/txt_adapter_open_hours_start" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <View android:layout_gravity="center" android:background="@color/text_primary" android:layout_width="16.0dip" android:layout_height="2.0dip" />
+    <TextView android:textSize="@dimen/text_size_medium" android:gravity="center" android:layout_gravity="center" android:id="@id/txt_adapter_open_hours_end" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <ImageView android:layout_gravity="center" android:id="@id/img_adapter_open_hours_delete" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_delete" android:contentDescription="@null" />
+</LinearLayout>

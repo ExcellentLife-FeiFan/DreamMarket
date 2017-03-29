@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" />
+    <corners android:radius="10.0dip" />
+    <stroke android:width="@dimen/stroke_rect_width" android:color="@color/logistics_scope_audit_refuse" />
+</shape>

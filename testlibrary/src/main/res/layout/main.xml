@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.sankuai.meituan.meituanwaimaibusiness.modules.reminder.view.PageTab android:gravity="center" android:id="@id/tab" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="44.0dip" android:layout_alignParentBottom="true" />
+    <ImageView android:id="@id/iv_divider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/divider" android:scaleType="fitXY" android:layout_above="@id/tab" android:contentDescription="@null" />
+    <FrameLayout android:id="@id/content" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/iv_divider" />
+</RelativeLayout>
