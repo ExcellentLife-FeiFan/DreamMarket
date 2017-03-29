@@ -1,7 +1,6 @@
 package com.dm.excellent.baselibrary.utils;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.widget.Toast;
@@ -57,7 +56,7 @@ public class ToastUtil {
         builder.show();
     }
 
-    private static ProgressDialog progressDialog;
+/*    private static ProgressDialog progressDialog;
 
     public static void showProgressDialog(Context context) {
         if (progressDialog == null) {
@@ -83,7 +82,7 @@ public class ToastUtil {
             progressDialog = null;
         }
 
-    }
+    }*/
 
 }
 
