@@ -76,7 +76,7 @@ public class BaseActivity extends AppCompatActivity {
         Fade enterTransition = new Fade();
         enterTransition.setDuration(500);
         // This view will not be affected by enter transition animation
-        enterTransition.excludeTarget(R.id.btn1, true);
+//        enterTransition.excludeTarget(R.id.btn1, true);
         return enterTransition;
     }
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

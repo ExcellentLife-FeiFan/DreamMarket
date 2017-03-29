@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_1"
+        icon="@drawable/menu_order_selector"
+        title="订单管理" />
+    <tab
+        id="@+id/tab_2"
+        icon="@drawable/menu_shop_selector"
+        title="超市运营" />
+    <tab
+        id="@+id/tab_3"
+        icon="@drawable/menu_setting_selector"
+        title="我的" />
+</tabs>
