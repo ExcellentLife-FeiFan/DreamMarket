@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="horizontal" android:background="@drawable/bg_pageheader_rect" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:id="@id/iv_divider" android:background="@color/theme_color" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
-    <TextView android:textSize="14.0dip" android:textColor="@color/pageheader_text_color_light" android:gravity="center" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/iv_divider" android:layout_centerVertical="true" />
-</RelativeLayout>

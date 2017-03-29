@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@drawable/bg_pageheader_item" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/iv_icon" android:background="@drawable/bg_pre_order_item_bg" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:scaleType="center" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="12.0sp" android:textColor="@color/text_white" android:gravity="center" android:layout_gravity="top" android:id="@id/tv_count" android:background="@drawable/bg_count_mark" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-6.0dip" android:layout_marginTop="3.0dip" android:layout_toRightOf="@id/iv_icon" />
-    <TextView android:textSize="12.0sp" android:textColor="@color/preorder_title_text_color" android:gravity="center" android:id="@id/tv_title" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/iv_icon" android:layout_centerHorizontal="true" />
-</RelativeLayout>

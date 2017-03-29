@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center" android:id="@id/ll_page_tab" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerHorizontal="true">
-        <TextView android:textSize="@dimen/text_size_micro" android:textColor="@color/pageheader_tab_text_color_black" android:id="@id/tv_page_tab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11" />
-    </LinearLayout>
-    <View android:background="@drawable/pageheader_tab_color_selector" android:layout_width="wrap_content" android:layout_height="3.0dip" android:layout_alignLeft="@id/ll_page_tab" android:layout_alignRight="@id/ll_page_tab" android:layout_alignParentBottom="true" />
-</RelativeLayout>

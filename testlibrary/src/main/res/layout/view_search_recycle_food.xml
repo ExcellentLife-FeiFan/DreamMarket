@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:background="@color/title_bg_color" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/default_ui_margin" android:layout_marginBottom="@dimen/default_ui_margin"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_search_recycle_layout" android:background="@drawable/bg_gray_border" android:layout_width="fill_parent" android:layout_height="36.0dip">
-        <ImageView android:visibility="visible" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginLeft="@dimen/default_ui_margin_medium" android:src="@drawable/ic_order_search" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
-        <TextView android:textSize="@dimen/text_size_small" android:textColor="#ffc2c2c2" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_search_recycle_keyword" android:background="@color/transparent" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="36.0dip" android:text="搜索回收站内商品" android:singleLine="true" />
-    </LinearLayout>
-</FrameLayout>

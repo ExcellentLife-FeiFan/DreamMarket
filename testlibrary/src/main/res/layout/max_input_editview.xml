@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:background="@drawable/bg_border_gray" android:padding="@dimen/default_ui_margin" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <EditText android:textSize="@dimen/text_size_little_small" android:textColor="#ff505050" android:gravity="top" android:id="@id/edit_input" android:background="@color/white" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="140.0dip" />
-    <TextView android:textSize="@dimen/text_size_micro" android:textColor="#ffa2a2a2" android:gravity="right" android:layout_gravity="bottom" android:id="@id/txt_count" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="20.0dip" android:text="140" />
-</FrameLayout>

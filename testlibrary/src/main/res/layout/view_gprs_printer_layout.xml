@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout style="@style/list_item_layout"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:id="@id/txt_gprs_printer_name" android:drawableLeft="@drawable/circle_dot_orange" android:drawablePadding="@dimen/default_ui_margin" style="@style/left_text_layout" />
-    <TextView android:id="@id/txt_gprs_num" style="@style/right_text_layout" />
-</LinearLayout>

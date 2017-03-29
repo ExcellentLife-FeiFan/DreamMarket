@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/text_size_huge" android:textColor="@color/text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_ui_margin_large" android:layout_marginTop="@dimen/default_ui_height" android:layout_marginRight="@dimen/default_ui_margin_large" android:text="您当前账号还未绑定手机号码" />
-    <TextView android:textSize="@dimen/text_size_medium" android:textColor="@color/text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_ui_margin_large" android:layout_marginTop="@dimen/default_ui_margin_huge" android:layout_marginRight="@dimen/default_ui_margin_large" android:text="您必须绑定手机后才能修改密码" />
-    <Button android:id="@id/btn_unbind_phone_bind" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_ui_margin_large" android:layout_marginTop="@dimen/default_ui_height" android:layout_marginRight="@dimen/default_ui_margin_large" android:text="去绑定手机号" />
-</LinearLayout>

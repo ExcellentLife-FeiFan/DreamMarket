@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/order_card_large_margin" android:paddingTop="@dimen/default_ui_margin_medium_s" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/order_txt_size_medium" android:textColor="@color/text_color_gray" android:id="@id/txt_order_common_adapter_food_card" android:layout_width="fill_parent" android:layout_height="wrap_content" android:drawableLeft="@drawable/ic_food_card_bag" android:drawablePadding="@dimen/order_default_padding_half" />
-</LinearLayout>

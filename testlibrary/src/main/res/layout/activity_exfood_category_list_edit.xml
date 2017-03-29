@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/view_parent" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/fl_food_category_edit" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
-        <com.sankuai.meituan.meituanwaimaibusiness.util.widget.recyclerview.EmptyRecyclerView android:id="@id/list_food_category_edit" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" />
-        <com.sankuai.meituan.meituanwaimaibusiness.util.widget.emptyview.EmptyView android:id="@id/food_empty_category_edit" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    </FrameLayout>
-</LinearLayout>

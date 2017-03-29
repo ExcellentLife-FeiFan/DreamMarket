@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textSize="@dimen/text_size_micro" android:textColor="@color/text_orange" android:ellipsize="end" android:background="@drawable/bg_border_orange_light" android:paddingLeft="@dimen/default_ui_margin" android:paddingTop="@dimen/default_ui_margin_micro" android:paddingRight="@dimen/default_ui_margin" android:paddingBottom="@dimen/default_ui_margin_micro" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/default_ui_margin" android:singleLine="true"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

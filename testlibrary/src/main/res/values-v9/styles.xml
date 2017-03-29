@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Merchantstyle" parent="@style/_Merchantstyle">
-        <item name="android:textSelectHandleLeft">@drawable/merchantstyle_text_select_handle_left</item>
-        <item name="android:textSelectHandleRight">@drawable/merchantstyle_text_select_handle_right</item>
-        <item name="android:textSelectHandle">@drawable/merchantstyle_text_select_handle_middle</item>
-    </style>
-</resources>

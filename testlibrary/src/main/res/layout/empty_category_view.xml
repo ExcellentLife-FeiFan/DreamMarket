@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/layout_empty" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/default_ui_margin_large" android:paddingRight="@dimen/default_ui_margin_large" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
-        <ImageView android:id="@id/img_empty" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/empty_layout_margin_top" android:src="@drawable/ic_empty_order" android:scaleType="center" />
-        <TextView android:textSize="@dimen/empty_text_size" android:textColor="#ffa2a2a2" android:gravity="center" android:layout_gravity="center" android:id="@id/text_empty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
-        <TextView android:textSize="16.0sp" android:textColor="@color/d_color_text_green_selector" android:gravity="center" android:layout_gravity="center" android:id="@id/text_add_category" android:background="@drawable/d_bg_btn_green_selector" android:paddingLeft="20.0dip" android:paddingTop="10.0dip" android:paddingRight="20.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="新建分类" android:drawableLeft="@drawable/ic_category_add" android:drawablePadding="15.0dip" />
-    </LinearLayout>
-</RelativeLayout>

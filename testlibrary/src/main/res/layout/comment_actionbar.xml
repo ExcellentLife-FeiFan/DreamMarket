@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@color/title_bg_color" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageButton android:background="@drawable/selectable_background_merchantstyle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_actionbar_back" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
-    <com.sankuai.meituan.meituanwaimaibusiness.modules.reminder.view.PageTab android:gravity="bottom" android:id="@id/tab_page" android:background="@color/title_bg_color" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
-</RelativeLayout>

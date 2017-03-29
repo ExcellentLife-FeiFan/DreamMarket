@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:paddingLeft="@dimen/foodinfo_edit_leftright_margin" android:paddingTop="@dimen/default_ui_margin_large" android:paddingBottom="@dimen/default_ui_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/food_info_attri" />
-    <LinearLayout android:orientation="vertical" android:id="@id/ll_food_attri_container" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <ImageView android:id="@id/img_food_attri_devider" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/divider" android:scaleType="fitXY" android:contentDescription="@null" />
-    <TextView android:textSize="@dimen/foodinfo_default_txt_size" android:gravity="center_vertical" android:id="@id/txt_add_foodinfo_attri" android:background="@color/white" android:paddingLeft="@dimen/foodinfo_edit_leftright_margin" android:paddingTop="@dimen/default_ui_margin" android:paddingRight="@dimen/foodinfo_edit_leftright_margin" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/food_info_add_attri" android:drawableLeft="@drawable/ic_add_food" android:drawablePadding="@dimen/foodinfo_drawable_margin" />
-</merge>

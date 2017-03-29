@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_itemview" android:background="@color/transparent" android:paddingLeft="15.0dip" android:paddingTop="12.0dip" android:paddingRight="15.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="16.0dip" android:textColor="@color/text_secondary" android:ellipsize="end" android:gravity="left" android:id="@id/tv_food_category_edit_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:maxLength="10" />
-    <TextView android:textSize="12.0sp" android:textColor="@color/category_dailog_spucount" android:id="@id/tv_product_spu_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
-</LinearLayout>

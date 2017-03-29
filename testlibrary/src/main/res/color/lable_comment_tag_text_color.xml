@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:color="@color/label_txt_light_orange" app:select_color="true" />
-    <item android:color="@color/label_txt_light_gray" app:unselect_color="true" />
-    <item android:color="@color/label_txt_light_orange" />
-</selector>

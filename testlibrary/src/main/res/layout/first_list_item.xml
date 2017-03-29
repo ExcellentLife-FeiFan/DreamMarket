@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_fist_item" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:id="@id/img_check" android:background="@color/textview_hight_light" android:visibility="invisible" android:layout_width="3.0dip" android:layout_height="22.0dip" />
-    <TextView android:textSize="@dimen/text_size_small" android:id="@id/tv_first" android:padding="@dimen/three_list_item_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-</LinearLayout>

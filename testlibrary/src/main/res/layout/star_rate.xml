@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:tag="layout/star_rate_0" style="@style/progress_ll"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RatingBar android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5" style="@style/RatingBar_Yellow" />
-    <ProgressBar android:tag="binding_2" style="@style/comment_progress" />
-    <TextView android:tag="binding_3" style="@style/comment_progress_text" />
-</LinearLayout>
