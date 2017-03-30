@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DreamMarket</string>
+
+    <string name="home_b_tab_0">待处理</string>
+    <string name="home_b_tab_1">订单管理</string>
+    <string name="home_b_tab_2">超市运营</string>
+    <string name="home_b_tab_3">我的</string>
 </resources>

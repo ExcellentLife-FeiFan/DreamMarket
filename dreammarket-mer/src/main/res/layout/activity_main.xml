@@ -4,25 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/myScrollingContent"
-        android:fillViewport="true"
+
+    <FrameLayout
+        android:id="@+id/contentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <FrameLayout
-            android:id="@+id/contentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-    </android.support.v4.widget.NestedScrollView>
+        android:layout_height="match_parent" />
 
 
-    <com.roughike.bottombar.BottomBar
-        android:id="@+id/bottomBar"
+    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:bb_behavior="shy"
-        app:bb_tabXmlResource="@xml/home_bottom_tab" />
+        app:selectedBackgroundVisible="false" />
+
 </android.support.design.widget.CoordinatorLayout>

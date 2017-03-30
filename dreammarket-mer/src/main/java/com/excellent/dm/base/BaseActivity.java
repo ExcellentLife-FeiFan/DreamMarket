@@ -52,9 +52,11 @@ public class BaseActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         AppManager.getInstance().addActivity(this);
-        EventBus.getDefault().register(this);
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
         activity = this;
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             setupWindowAnimations();
         }
 
@@ -71,6 +73,7 @@ public class BaseActivity extends AppCompatActivity {
         getWindow().setReturnTransition(buildReturnTransition());
         getWindow().setEnterTransition(buildEnterTransition());
     }
+
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private Visibility buildEnterTransition() {
         Fade enterTransition = new Fade();
@@ -79,6 +82,7 @@ public class BaseActivity extends AppCompatActivity {
 //        enterTransition.excludeTarget(R.id.btn1, true);
         return enterTransition;
     }
+
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private Visibility buildReturnTransition() {
         Visibility enterTransition = new Slide();
@@ -92,11 +96,12 @@ public class BaseActivity extends AppCompatActivity {
 //        i.putExtra("sample", sample);
         activity.startActivity(intent, transitionActivityOptions.toBundle());
     }
-    private void transitionToActivityForResult(Intent intent,int requestCode) {
+
+    private void transitionToActivityForResult(Intent intent, int requestCode) {
         final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(activity, true);
         ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pairs);
 //        i.putExtra("sample", sample);
-        activity.startActivityForResult(intent, requestCode,transitionActivityOptions.toBundle());
+        activity.startActivityForResult(intent, requestCode, transitionActivityOptions.toBundle());
     }
 
     protected boolean isNetConnected() {
@@ -181,18 +186,19 @@ public class BaseActivity extends AppCompatActivity {
         startActivityForResultIntent(intent, requestCode);
     }
 
-    private void startActivityIntent(Intent intent){
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
+    private void startActivityIntent(Intent intent) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             transitionToActivity(intent);
-        }else{
+        } else {
             startActivity(intent);
         }
     }
-    private void startActivityForResultIntent(Intent intent,int requestCode){
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
-            transitionToActivityForResult(intent,requestCode);
-        }else{
-            startActivityForResult(intent,requestCode);
+
+    private void startActivityForResultIntent(Intent intent, int requestCode) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            transitionToActivityForResult(intent, requestCode);
+        } else {
+            startActivityForResult(intent, requestCode);
         }
     }
 
@@ -283,6 +289,7 @@ public class BaseActivity extends AppCompatActivity {
         }
         tv.setText(txt);
     }
+
     protected void setText(EditText tv, String txt) {
         if (AbStrUtil.isEmpty(txt)) {
             return;
@@ -307,7 +314,9 @@ public class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         System.gc();
-        EventBus.getDefault().unregister(this);
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
     }
 
     @Override

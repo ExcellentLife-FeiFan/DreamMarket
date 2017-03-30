@@ -10,7 +10,6 @@
     </style>
 
 
-
     <!-- 自定义loading dialog -->
     <style name="loading_dialog" parent="android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
@@ -61,7 +60,6 @@
     </style>
 
 
-
     <style name="Common_Btn2">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/actionbar_height</item>
@@ -71,6 +69,7 @@
         <item name="android:textSize">@dimen/text_size_common_btn</item>
         <item name="android:background">@drawable/selectable_login_btn_bg</item>
     </style>
+
     <style name="Common_Btn">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/actionbar_height</item>
@@ -124,6 +123,10 @@
         <item name="android:maxLines">1</item>
     </style>
 
+    <style name="CustomBottomTabTitleTextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 
     <style name="left_text_layout">
@@ -137,22 +140,20 @@
         <item name="android:layout_marginRight">@dimen/default_ui_margin</item>
         <item name="android:maxLines">1</item>
     </style>
-<!--    <style name="left_text_layout_and_draw" parent="@style/left_text_layout">
-        <item name="android:drawableLeft">@drawable/txt_sound_setting_style</item>
-        <item name="android:drawablePadding">@dimen/drawable_padding</item>
+
+    <style name="TV_bottom_tab_number">
+        <item name="android:textSize">@dimen/sp8</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/default_ui_margin_medium_s</item>
+        <item name="android:layout_marginTop">@dimen/default_ui_margin_medium_small</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">16.0dip</item>
+        <item name="android:layout_height">16.0dip</item>
+        <item name="android:background">@drawable/shape_price_color_circle</item>
     </style>
-    <style name="left_text_layout_without_arrow">
-        <item name="android:textSize">@dimen/text_size_medium</item>
-        <item name="android:textColor">@color/text_list_item_left</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:gravity">center|left</item>
-        <item name="android:layout_gravity">center_vertical</item>
-        <item name="android:layout_width">0.0dip</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:maxLines">2</item>
-        <item name="android:drawablePadding">@dimen/drawable_list_child_padding</item>
-        <item name="android:layout_weight">1.0</item>
-    </style>-->
+
     <style name="list_item_layout">
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
@@ -164,6 +165,7 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
     <style name="list_item_right_edit_text">
         <item name="android:textSize">16.0sp</item>
         <item name="android:textColor">@color/text_black</item>
@@ -177,6 +179,7 @@
         <item name="android:inputType">text</item>
         <item name="android:imeOptions">actionNext</item>
     </style>
+
     <style name="right_text_layout">
         <item name="android:textSize">@dimen/text_list_item_right</item>
         <item name="android:textColor">@color/text_list_item_right</item>
@@ -190,10 +193,12 @@
         <item name="android:drawablePadding">@dimen/drawable_list_child_padding</item>
         <item name="android:layout_weight">1.0</item>
     </style>
+
     <style name="right_text_layout_audiotion" parent="@style/right_text_layout">
         <item name="android:textColor">@color/text_gray_middle</item>
         <item name="android:text">试听</item>
     </style>
+
     <style name="right_text_layout_noimg">
         <item name="android:textSize">@dimen/text_size_micro</item>
         <item name="android:textColor">@color/text_list_item_right</item>
@@ -204,6 +209,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:maxLines">2</item>
     </style>
+
     <style name="right_text_layout_without_arron">
         <item name="android:textSize">@dimen/text_list_item_right</item>
         <item name="android:textColor">@color/text_list_item_right</item>
@@ -215,5 +221,6 @@
         <item name="android:maxLines">2</item>
         <item name="android:layout_weight">1.0</item>
     </style>
+
 
 </resources>
