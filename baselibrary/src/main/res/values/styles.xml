@@ -157,7 +157,7 @@
     <style name="list_item_layout">
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
-        <item name="android:background">@drawable/selector_bg_view_click</item>
+        <item name="android:background">@drawable/selector_bg_viewgroup_click</item>
         <item name="android:paddingLeft">@dimen/default_ui_margin_large</item>
         <item name="android:paddingTop">@dimen/default_ui_margin_large</item>
         <item name="android:paddingRight">@dimen/default_ui_margin_large</item>

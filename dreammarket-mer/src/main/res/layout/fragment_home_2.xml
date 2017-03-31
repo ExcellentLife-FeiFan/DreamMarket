@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textColor="@color/colorPrimary"
-        android:text="门店运营"/>
+        android:background="@color/white"
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:background="@color/title_bg_color"
+            android:gravity="center"
+            android:text="@string/title_poi_info"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_size_actionbar_title" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/title_bg_color"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_order_amount"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@color/title_bg_color"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_order_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10.0dip"
+                    android:textColor="@color/white"
+                    android:textSize="24.0sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_ui_margin_large"
+                    android:text="@string/today_effective_order"
+                    android:textColor="#ffacafb3"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1.0dip"
+                android:layout_height="40.0dip"
+                android:layout_gravity="center_vertical"
+                android:background="#ff4e555e" />
+
+            <LinearLayout
+                android:id="@+id/ll_order_count"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@color/title_bg_color"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/default_ui_margin_large">
+
+                <TextView
+                    android:id="@+id/tv_order_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:padding="10.0dip"
+                    android:textColor="@color/white"
+                    android:textSize="24.0sp" />
+
+                <TextView
+                    android:id="@+id/sumofsales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/tv_order_amount"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/today_estimate_earning"
+                    android:textColor="#ffacafb3"
+                    android:textSize="12.0sp" />
+
+                <ImageView
+                    android:id="@+id/sales_remark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_toRightOf="@+id/sumofsales"
+                    android:paddingBottom="2.0dip"
+                    android:paddingLeft="5.0dip"
+                    android:paddingRight="5.0dip"
+                    android:paddingTop="5.0dip"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/question_remark" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="10.0dip"
+            android:background="#ffecedef" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

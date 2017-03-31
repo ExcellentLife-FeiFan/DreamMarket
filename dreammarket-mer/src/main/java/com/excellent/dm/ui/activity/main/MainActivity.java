@@ -12,12 +12,14 @@ import android.widget.FrameLayout;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
+import com.dm.excellent.baselibrary.utils.StatusBarCompat;
 import com.excellent.dm.R;
 import com.excellent.dm.base.BaseActivity;
 import com.excellent.dm.ui.fragment.Homefragment0;
 import com.excellent.dm.ui.fragment.Homefragment1;
 import com.excellent.dm.ui.fragment.Homefragment2;
 import com.excellent.dm.ui.fragment.Homefragment3;
+import com.excellent.dm.utils.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +46,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        StatusBarCompat.compat(this, CommonUtils.getColor(this,R.color.title_bg_color));
         if (null == savedInstanceState) {
             homefragment0 = new Homefragment0();
             homefragment1 = new Homefragment1();
@@ -64,9 +67,9 @@ public class MainActivity extends BaseActivity {
         bottomBar.addItem(item3);
         bottomBar.addItem(item4);
 
-        bottomBar.setBehaviorTranslationEnabled(true);
+        bottomBar.setBehaviorTranslationEnabled(false);
 // Manage titles
-        bottomBar.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
+        bottomBar.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
 
         // Set background color
         bottomBar.setDefaultBackgroundColor(Color.parseColor("#FFFFFF"));
