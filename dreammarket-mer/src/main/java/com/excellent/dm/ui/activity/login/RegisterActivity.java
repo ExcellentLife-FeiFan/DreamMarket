@@ -1,6 +1,8 @@
 package com.excellent.dm.ui.activity.login;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -33,6 +35,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
         getBar().initActionBar("注册", false, true, this);
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setEnterTransition(TransitionInflater.from(this).inflateTransition(R.transition.explode));
+        }
     }
 
 

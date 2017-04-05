@@ -1,12 +1,11 @@
 package com.excellent.dm.utils;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.util.Pair;
-import android.view.View;
 
 import com.dm.excellent.baselibrary.utils.LogUtils;
 
@@ -109,16 +108,18 @@ public class IntentUtils {
             activity.startActivityForResult(intent,requestCode);
         }
     }
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void transitionToActivity(Intent intent) {
-        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(activity, true);
-        ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pairs);
+//        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(activity, true);
+//        ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pairs);
 //        i.putExtra("sample", sample);
-        activity.startActivity(intent, transitionActivityOptions.toBundle());
+        activity.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(activity).toBundle());
     }
-    private void transitionToActivityForResult(Intent intent,int requestCode) {
-        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(activity, true);
-        ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pairs);
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void transitionToActivityForResult(Intent intent, int requestCode) {
+//        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(activity, true);
+//        ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pairs);
 //        i.putExtra("sample", sample);
-        activity.startActivityForResult(intent, requestCode,transitionActivityOptions.toBundle());
+        activity.startActivityForResult(intent, requestCode,ActivityOptions.makeSceneTransitionAnimation(activity).toBundle());
     }
 }

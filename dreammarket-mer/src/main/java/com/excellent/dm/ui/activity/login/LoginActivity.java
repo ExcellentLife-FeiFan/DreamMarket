@@ -6,7 +6,9 @@ import android.animation.Keyframe;
 import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.os.Build;
 import android.os.Bundle;
+import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -14,9 +16,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.excellent.dm.R;
+import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseActivity;
 import com.excellent.dm.ui.activity.main.MainActivity;
 import com.excellent.dm.utils.CommonUtils;
+import com.excellent.dm.utils.IntentUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -68,6 +72,10 @@ public class LoginActivity extends BaseActivity {
         //设置给ViewGroup容器
         flLoginType.setLayoutTransition(mTransitioner);
         setupCustomAnimations();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setEnterTransition(TransitionInflater.from(this).inflateTransition(R.transition.slide));
+        }
+
     }
 
 
@@ -99,7 +107,9 @@ public class LoginActivity extends BaseActivity {
             case R.id.tv_getsms:
                 break;
             case R.id.btn_login:
-                startActivity(MainActivity.class);
+                new IntentUtils(this).startActivity(MainActivity.class);
+//                startActivity(MainActivity.class);
+                AppManager.getInstance().killActivity(activity);
                 break;
             case R.id.tv_register:
                 showDialog();

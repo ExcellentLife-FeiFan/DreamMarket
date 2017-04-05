@@ -71,7 +71,6 @@ public class AppManager {
             }else{
                 activity.finish();
             }
-
 //            activity.overridePendingTransition(R.anim.in_fade,R.anim.out_fade);
             activity = null;
         }

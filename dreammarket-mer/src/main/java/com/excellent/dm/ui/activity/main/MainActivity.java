@@ -2,11 +2,13 @@ package com.excellent.dm.ui.activity.main;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.transition.TransitionInflater;
 import android.widget.FrameLayout;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
@@ -46,6 +48,9 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setEnterTransition(TransitionInflater.from(this).inflateTransition(R.transition.explode));
+        }
         StatusBarCompat.compat(this, CommonUtils.getColor(this,R.color.title_bg_color));
         if (null == savedInstanceState) {
             homefragment0 = new Homefragment0();

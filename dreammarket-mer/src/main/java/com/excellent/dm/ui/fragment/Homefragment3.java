@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.excellent.dm.R;
+import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseFragment;
+import com.excellent.dm.ui.activity.login.LoginActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -75,6 +77,8 @@ public class Homefragment3 extends BaseFragment {
             case R.id.ll_setting_account:
                 break;
             case R.id.tv_setting_exit_account:
+                AppManager.getInstance().killActivity(activity);
+                startActivity(LoginActivity.class);
                 break;
         }
     }

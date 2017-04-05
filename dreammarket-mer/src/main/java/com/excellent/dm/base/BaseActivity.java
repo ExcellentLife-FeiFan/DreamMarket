@@ -1,18 +1,10 @@
 package com.excellent.dm.base;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Fade;
-import android.transition.Slide;
-import android.transition.Visibility;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -27,7 +19,6 @@ import com.dm.excellent.baselibrary.views.ActionBarView;
 import com.dm.excellent.baselibrary.views.loadding.CustomDialog;
 import com.excellent.dm.R;
 import com.excellent.dm.event.EmptyEvent;
-import com.excellent.dm.utils.TransitionHelper;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -56,25 +47,107 @@ public class BaseActivity extends AppCompatActivity {
             EventBus.getDefault().register(this);
         }
         activity = this;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            setupWindowAnimations();
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            setupWindowAnimations();
+//        }
 
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    protected boolean isNetConnected() {
+        return AbWifiUtil.isConnectivity(this);
+    }
+
+    protected void showToast(String txt) {
+        ToastUtil.showToastShort(this, txt);
+    }
+
+
+    protected void startActivity(Class<?> cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
+
+    }
+
+    protected void startActivity(Class<?> cls, String... objs) {
+        Intent intent = new Intent(this, cls);
+        for (int i = 0; i < objs.length; i++) {
+            intent.putExtra(objs[i], objs[++i]);
+        }
+        startActivity(intent);
+    }
+
+    protected void startActivity(Class<?> cls, String[] keys, String[] values) {
+        if (keys.length == values.length) {
+            Intent intent = new Intent(this, cls);
+            for (int i = 0; i < keys.length; i++) {
+                intent.putExtra(keys[i], values[i]);
+            }
+            startActivity(intent);
+        } else {
+            LogUtils.e("keys和values的长度不一致！");
+        }
+    }
+
+    protected void startActivityForResult(Class<?> cls, int requestCode, String[] keys, String[] values) {
+        if (keys.length == values.length) {
+            Intent intent = new Intent(this, cls);
+            for (int i = 0; i < keys.length; i++) {
+                intent.putExtra(keys[i], values[i]);
+            }
+            startActivityForResult(intent, requestCode);
+        } else {
+            LogUtils.e("keys和values的长度不一致！");
+        }
+    }
+
+    protected void startActivity(Class<?> cls, String key, String value) {
+        Intent intent = new Intent(this, cls);
+        intent.putExtra(key, value);
+        startActivity(intent);
+    }
+
+    protected void startActivity(Class<?> cls, String key, Serializable value) {
+        Intent intent = new Intent(this, cls);
+        intent.putExtra(key, value);
+        startActivity(intent);
+    }
+
+    protected void startActivityForResult(Class<?> cls, int requestCode, String key, String value) {
+        Intent intent = new Intent(this, cls);
+        intent.putExtra(key, value);
+        startActivityForResult(intent, requestCode);
+    }
+
+    protected void startActivity(Class<?> cls, String key, Bundle data) {
+        Intent intent = new Intent(this, cls);
+        intent.putExtra(key, data);
+        startActivity(intent);
+    }
+
+    protected void startActivityForResult(Class<?> cls, int requestCode, String key, Bundle data) {
+        Intent intent = new Intent(this, cls);
+        intent.putExtra(key, data);
+        startActivityForResult(intent, requestCode);
+    }
+
+    protected void startActivityForResult(Class<?> cls, int requestCode) {
+        Intent intent = new Intent(this, cls);
+        startActivityForResult(intent, requestCode);
+    }
+
+    /* @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void setupWindowAnimations() {
         // Re-enter transition is executed when returning to this activity
         Slide slideTransition = new Slide();
         slideTransition.setSlideEdge(Gravity.LEFT);
         slideTransition.setDuration(500);
-        getWindow().setReenterTransition(slideTransition);
-        getWindow().setExitTransition(slideTransition);
-        getWindow().setReturnTransition(buildReturnTransition());
-        getWindow().setEnterTransition(buildEnterTransition());
+//        getWindow().setReenterTransition(slideTransition);
+//        getWindow().setExitTransition(buildEnterTransition());
+//        getWindow().setReturnTransition(buildReturnTransition());
+//        getWindow().setEnterTransition(slideTransition);
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+       @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private Visibility buildEnterTransition() {
         Fade enterTransition = new Fade();
         enterTransition.setDuration(500);
@@ -89,118 +162,7 @@ public class BaseActivity extends AppCompatActivity {
         enterTransition.setDuration(500);
         return enterTransition;
     }
-
-    private void transitionToActivity(Intent intent) {
-        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(activity, true);
-        ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pairs);
-//        i.putExtra("sample", sample);
-        activity.startActivity(intent, transitionActivityOptions.toBundle());
-    }
-
-    private void transitionToActivityForResult(Intent intent, int requestCode) {
-        final Pair<View, String>[] pairs = TransitionHelper.createSafeTransitionParticipants(activity, true);
-        ActivityOptionsCompat transitionActivityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, pairs);
-//        i.putExtra("sample", sample);
-        activity.startActivityForResult(intent, requestCode, transitionActivityOptions.toBundle());
-    }
-
-    protected boolean isNetConnected() {
-        return AbWifiUtil.isConnectivity(this);
-    }
-
-    protected void showToast(String txt) {
-        ToastUtil.showToastShort(this, txt);
-    }
-
-
-    protected void startActivity(Class<?> cls) {
-        Intent intent = new Intent(this, cls);
-        startActivityIntent(intent);
-
-    }
-
-    protected void startActivity(Class<?> cls, String... objs) {
-        Intent intent = new Intent(this, cls);
-        for (int i = 0; i < objs.length; i++) {
-            intent.putExtra(objs[i], objs[++i]);
-        }
-        startActivityIntent(intent);
-    }
-
-    protected void startActivity(Class<?> cls, String[] keys, String[] values) {
-        if (keys.length == values.length) {
-            Intent intent = new Intent(this, cls);
-            for (int i = 0; i < keys.length; i++) {
-                intent.putExtra(keys[i], values[i]);
-            }
-            startActivityIntent(intent);
-        } else {
-            LogUtils.e("keys和values的长度不一致！");
-        }
-    }
-
-    protected void startActivityForResult(Class<?> cls, int requestCode, String[] keys, String[] values) {
-        if (keys.length == values.length) {
-            Intent intent = new Intent(this, cls);
-            for (int i = 0; i < keys.length; i++) {
-                intent.putExtra(keys[i], values[i]);
-            }
-            startActivityForResultIntent(intent, requestCode);
-        } else {
-            LogUtils.e("keys和values的长度不一致！");
-        }
-    }
-
-    protected void startActivity(Class<?> cls, String key, String value) {
-        Intent intent = new Intent(this, cls);
-        intent.putExtra(key, value);
-        startActivityIntent(intent);
-    }
-
-    protected void startActivity(Class<?> cls, String key, Serializable value) {
-        Intent intent = new Intent(this, cls);
-        intent.putExtra(key, value);
-        startActivityIntent(intent);
-    }
-
-    protected void startActivityForResult(Class<?> cls, int requestCode, String key, String value) {
-        Intent intent = new Intent(this, cls);
-        intent.putExtra(key, value);
-        startActivityForResultIntent(intent, requestCode);
-    }
-
-    protected void startActivity(Class<?> cls, String key, Bundle data) {
-        Intent intent = new Intent(this, cls);
-        intent.putExtra(key, data);
-        startActivityIntent(intent);
-    }
-
-    protected void startActivityForResult(Class<?> cls, int requestCode, String key, Bundle data) {
-        Intent intent = new Intent(this, cls);
-        intent.putExtra(key, data);
-        startActivityForResultIntent(intent, requestCode);
-    }
-
-    protected void startActivityForResult(Class<?> cls, int requestCode) {
-        Intent intent = new Intent(this, cls);
-        startActivityForResultIntent(intent, requestCode);
-    }
-
-    private void startActivityIntent(Intent intent) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            transitionToActivity(intent);
-        } else {
-            startActivity(intent);
-        }
-    }
-
-    private void startActivityForResultIntent(Intent intent, int requestCode) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            transitionToActivityForResult(intent, requestCode);
-        } else {
-            startActivityForResult(intent, requestCode);
-        }
-    }
+    */
 
     // --------------------------------------------------------------------------------------
     protected ActionBarView getBar() {
