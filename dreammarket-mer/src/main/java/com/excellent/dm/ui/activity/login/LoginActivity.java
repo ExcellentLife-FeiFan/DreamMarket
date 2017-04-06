@@ -6,9 +6,7 @@ import android.animation.Keyframe;
 import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
-import android.os.Build;
 import android.os.Bundle;
-import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -72,10 +70,6 @@ public class LoginActivity extends BaseActivity {
         //设置给ViewGroup容器
         flLoginType.setLayoutTransition(mTransitioner);
         setupCustomAnimations();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setEnterTransition(TransitionInflater.from(this).inflateTransition(R.transition.slide));
-        }
-
     }
 
 
@@ -108,8 +102,13 @@ public class LoginActivity extends BaseActivity {
                 break;
             case R.id.btn_login:
                 new IntentUtils(this).startActivity(MainActivity.class);
-//                startActivity(MainActivity.class);
-                AppManager.getInstance().killActivity(activity);
+                llAccount.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        AppManager.getInstance().killActivity(activity);
+                    }
+                }, 2000);
+
                 break;
             case R.id.tv_register:
                 showDialog();
@@ -117,7 +116,7 @@ public class LoginActivity extends BaseActivity {
                     @Override
                     public void run() {
                         dismissDialog();
-                        startActivity(RegisterActivity.class);
+                        new IntentUtils(activity).startActivity(RegisterActivity.class);
                     }
                 }, 2000);
                 break;

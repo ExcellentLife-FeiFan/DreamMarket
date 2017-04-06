@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF4081</color>
-    <color name="colorPrimaryDark">#bbFF4081</color>
+    <color name="colorPrimary">#D2691E</color>
+    <color name="colorPrimaryDark">#bbD2691E</color>
     <color name="colorAccent">@color/colorPrimary</color>
-    <color name="colorPrimaryLow">#32FF4081</color>
-    <color name="colorPrimaryMiddle">#aaFF4081</color>
+    <color name="colorPrimaryLow">#32D2691E</color>
+    <color name="colorPrimaryMiddle">#aaD2691E</color>
 
     <color name="common_divider_color">#ECECEC</color>
     <color name="img_bg">#E8E8E8</color>
@@ -15,7 +15,8 @@
     <color name="black_overlay2">#5C5C5C</color>
     <color name="price_color">#FD2929</color>
     <color name="tab_unselect">#cc3E4757</color>
-
+    <color name="title_bg_color">#ff323a45</color>
+    <color name="press_gray">#dfdcdc</color>
 
 
 </resources>

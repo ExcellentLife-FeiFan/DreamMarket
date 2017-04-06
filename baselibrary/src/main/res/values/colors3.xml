@@ -193,7 +193,6 @@
     <color name="theme_color">#ff06c1ae</color>
     <color name="theme_color_half_transparent">#e006c1ae</color>
     <color name="third_grey">@color/white</color>
-    <color name="title_bg_color">#ff323a45</color>
     <color name="transparent_black">#7f000000</color>
     <color name="transparent_shadow">#5f000000</color>
     <color name="transparent_ten">#d7000000</color>

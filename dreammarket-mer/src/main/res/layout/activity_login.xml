@@ -98,9 +98,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="220.0dip">
 
-                <include layout="@layout/activity_account_login" />
+                <include layout="@layout/layout_account_login" />
 
-                <include layout="@layout/activity_mobile_login" />
+                <include layout="@layout/layout_mobile_login" />
             </FrameLayout>
 
 

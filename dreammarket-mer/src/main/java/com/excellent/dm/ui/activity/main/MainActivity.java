@@ -8,7 +8,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.transition.TransitionInflater;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.widget.FrameLayout;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
@@ -49,9 +50,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setEnterTransition(TransitionInflater.from(this).inflateTransition(R.transition.explode));
+            Slide slideTransition = new Slide();
+            slideTransition.setSlideEdge(Gravity.LEFT);
+            slideTransition.setDuration(500);
+            getWindow().setReenterTransition(slideTransition);
         }
-        StatusBarCompat.compat(this, CommonUtils.getColor(this,R.color.title_bg_color));
+        StatusBarCompat.compat(this, CommonUtils.getColor(this, R.color.title_bg_color));
         if (null == savedInstanceState) {
             homefragment0 = new Homefragment0();
             homefragment1 = new Homefragment1();

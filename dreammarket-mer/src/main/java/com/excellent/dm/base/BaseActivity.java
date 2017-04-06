@@ -1,10 +1,14 @@
 package com.excellent.dm.base;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -47,21 +51,13 @@ public class BaseActivity extends AppCompatActivity {
             EventBus.getDefault().register(this);
         }
         activity = this;
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            setupWindowAnimations();
-//        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            setupWindowAnimations();
+        }
 
     }
 
-    protected boolean isNetConnected() {
-        return AbWifiUtil.isConnectivity(this);
-    }
-
-    protected void showToast(String txt) {
-        ToastUtil.showToastShort(this, txt);
-    }
-
-
+    // --------------------------------------------------------------------------------------
     protected void startActivity(Class<?> cls) {
         Intent intent = new Intent(this, cls);
         startActivity(intent);
@@ -134,64 +130,33 @@ public class BaseActivity extends AppCompatActivity {
         Intent intent = new Intent(this, cls);
         startActivityForResult(intent, requestCode);
     }
+    // --------------------------------------------------------------------------------------
 
-    /* @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private void setupWindowAnimations() {
-        // Re-enter transition is executed when returning to this activity
-        Slide slideTransition = new Slide();
-        slideTransition.setSlideEdge(Gravity.LEFT);
-        slideTransition.setDuration(500);
-//        getWindow().setReenterTransition(slideTransition);
-//        getWindow().setExitTransition(buildEnterTransition());
-//        getWindow().setReturnTransition(buildReturnTransition());
-//        getWindow().setEnterTransition(slideTransition);
+    protected boolean isNetConnected() {
+        return AbWifiUtil.isConnectivity(this);
     }
 
-       @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private Visibility buildEnterTransition() {
-        Fade enterTransition = new Fade();
-        enterTransition.setDuration(500);
-        // This view will not be affected by enter transition animation
-//        enterTransition.excludeTarget(R.id.btn1, true);
-        return enterTransition;
+    protected void showToast(String txt) {
+        ToastUtil.showToastShort(this, txt);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private Visibility buildReturnTransition() {
-        Visibility enterTransition = new Slide();
-        enterTransition.setDuration(500);
-        return enterTransition;
+    private void setupWindowAnimations() {
+        Slide enter = new Slide();
+        enter.setSlideEdge(Gravity.LEFT);
+        enter.setDuration(500);
+        Slide exit = new Slide();
+        exit.setSlideEdge(Gravity.RIGHT);
+        exit.setDuration(500);
+        getWindow().setExitTransition(exit);
+        getWindow().setEnterTransition(enter);
+        //        getWindow().setReenterTransition(slideTransition);
+        //        getWindow().setReturnTransition(buildReturnTransition());
     }
-    */
 
-    // --------------------------------------------------------------------------------------
     protected ActionBarView getBar() {
         actionBar = (ActionBarView) findViewById(R.id.actionBar);
         return actionBar;
-    }
-
-    // --------------------------------------------------------------------------------------
-
-    public void onEvent(EmptyEvent event) {
-
-    }
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        startEnterViewAnimate();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
     }
 
 
@@ -273,15 +238,6 @@ public class BaseActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        System.gc();
-        if (EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-        }
-    }
-
-    @Override
     public void onBackPressed() {
         super.onBackPressed();
         AppManager.getInstance().killActivity(activity);
@@ -290,4 +246,34 @@ public class BaseActivity extends AppCompatActivity {
     protected void startEnterViewAnimate() {
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        startEnterViewAnimate();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.gc();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
+
+    public void onEvent(EmptyEvent event) {
+
+    }
 }
