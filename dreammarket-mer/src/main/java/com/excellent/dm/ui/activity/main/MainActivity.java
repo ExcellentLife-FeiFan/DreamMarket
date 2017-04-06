@@ -55,7 +55,7 @@ public class MainActivity extends BaseActivity {
             slideTransition.setDuration(500);
             getWindow().setReenterTransition(slideTransition);
         }
-        StatusBarCompat.compat(this, CommonUtils.getColor(this, R.color.title_bg_color));
+//        StatusBarCompat.compat(this, CommonUtils.getColor(this, R.color.title_bg_color));
         if (null == savedInstanceState) {
             homefragment0 = new Homefragment0();
             homefragment1 = new Homefragment1();
@@ -122,7 +122,7 @@ public class MainActivity extends BaseActivity {
         bottomBar.setOnNavigationPositionListener(new AHBottomNavigation.OnNavigationPositionListener() {
             @Override
             public void onPositionChange(int y) {
-                // Manage the new y position
+                // Manage the new y positi5gon
             }
         });
 
