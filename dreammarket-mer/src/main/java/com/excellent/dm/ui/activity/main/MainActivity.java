@@ -15,14 +15,12 @@ import android.widget.FrameLayout;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
-import com.dm.excellent.baselibrary.utils.StatusBarCompat;
 import com.excellent.dm.R;
 import com.excellent.dm.base.BaseActivity;
-import com.excellent.dm.ui.fragment.Homefragment0;
-import com.excellent.dm.ui.fragment.Homefragment1;
-import com.excellent.dm.ui.fragment.Homefragment2;
-import com.excellent.dm.ui.fragment.Homefragment3;
-import com.excellent.dm.utils.CommonUtils;
+import com.excellent.dm.ui.fragment.home.Homefragment0;
+import com.excellent.dm.ui.fragment.home.Homefragment1;
+import com.excellent.dm.ui.fragment.home.Homefragment2;
+import com.excellent.dm.ui.fragment.home.Homefragment3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +49,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Slide slideTransition = new Slide();
-            slideTransition.setSlideEdge(Gravity.LEFT);
+            slideTransition.setSlideEdge(Gravity.RIGHT);
             slideTransition.setDuration(500);
             getWindow().setReenterTransition(slideTransition);
         }
@@ -61,7 +59,7 @@ public class MainActivity extends BaseActivity {
             homefragment1 = new Homefragment1();
             homefragment2 = new Homefragment2();
             homefragment3 = new Homefragment3();
-            switchFragment(homefragment1);
+            switchFragment(homefragment0);
         }
 
         // Create items

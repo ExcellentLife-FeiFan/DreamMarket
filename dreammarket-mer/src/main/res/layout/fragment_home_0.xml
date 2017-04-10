@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/myScrollingContent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:background="@color/title_bg_color"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/title_bg_color">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionbar_height"
-            >
+            app:layout_scrollFlags="scroll|enterAlways|snap">
+
             <RelativeLayout
                 android:id="@+id/rl_title"
                 android:layout_width="match_parent"
@@ -69,6 +70,31 @@
                         android:visibility="visible" />
                 </FrameLayout>
             </RelativeLayout>
+
         </RelativeLayout>
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tab"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp40"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:tl_textsize="@dimen/text_size_little_small"
+            app:tl_tab_padding="@dimen/default_ui_margin_great"
+            app:tl_textSelectColor="@color/colorPrimaryDark"
+            app:tl_textUnselectColor="@color/gray"
+            app:tl_indicator_margin_left="2dp"
+            app:tl_indicator_margin_right="2dp"
+            app:tl_indicator_style="BLOCK" />
     </android.support.design.widget.AppBarLayout>
-</LinearLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+</android.support.design.widget.CoordinatorLayout>

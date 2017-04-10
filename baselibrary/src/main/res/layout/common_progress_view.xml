@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
     android:background="@drawable/bg_black_translucence">
 
     <com.dm.excellent.baselibrary.views.loadview.AVLoadingIndicatorView
         style="@style/AVLoadingIndicatorView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20.0dip"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/default_ui_margin_great"
         app:indicatorColor="@color/white"
         app:indicatorName="LineScalePulseOutRapidIndicator" />
 </RelativeLayout>

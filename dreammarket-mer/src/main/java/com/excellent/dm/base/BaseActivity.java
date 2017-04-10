@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
+import android.transition.TransitionInflater;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -146,10 +147,10 @@ public class BaseActivity extends AppCompatActivity {
         enter.setSlideEdge(Gravity.LEFT);
         enter.setDuration(500);
         Slide exit = new Slide();
-        exit.setSlideEdge(Gravity.RIGHT);
+        exit.setSlideEdge(Gravity.BOTTOM);
         exit.setDuration(500);
-        getWindow().setExitTransition(exit);
-        getWindow().setEnterTransition(enter);
+        getWindow().setExitTransition(TransitionInflater.from(this).inflateTransition(R.transition.slide_from_bottom));
+        getWindow().setEnterTransition(TransitionInflater.from(this).inflateTransition(R.transition.explode));
         //        getWindow().setReenterTransition(slideTransition);
         //        getWindow().setReturnTransition(buildReturnTransition());
     }

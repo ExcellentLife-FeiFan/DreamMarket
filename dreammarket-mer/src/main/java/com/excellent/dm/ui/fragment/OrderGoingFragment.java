@@ -7,11 +7,11 @@ import com.excellent.dm.base.BaseFragment;
  * Created by apple on 2017/3/29.
  */
 
-public class Homefragment0 extends BaseFragment {
+public class OrderGoingFragment extends BaseFragment {
 
     @Override
     public int getLayoutRes() {
-        return R.layout.fragment_home_0;
+        return R.layout.fragment_order_new;
     }
 
     @Override

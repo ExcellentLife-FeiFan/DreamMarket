@@ -1,4 +1,4 @@
-package com.excellent.dm.ui.fragment;
+package com.excellent.dm.ui.fragment.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.excellent.dm.R;
-import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseFragment;
 import com.excellent.dm.ui.activity.login.LoginActivity;
 import com.excellent.dm.ui.activity.mine.SPMActivity;
@@ -80,8 +79,8 @@ public class Homefragment3 extends BaseFragment {
             case R.id.ll_setting_account:
                 break;
             case R.id.tv_setting_exit_account:
-                AppManager.getInstance().killActivity(activity);
-                startActivity(LoginActivity.class);
+                new IntentUtils(activity).startActivity(LoginActivity.class);
+//                AppManager.getInstance().killActivity(activity);
                 break;
         }
     }
