@@ -70,31 +70,17 @@
                         android:visibility="visible" />
                 </FrameLayout>
             </RelativeLayout>
-
         </RelativeLayout>
 
-        <com.flyco.tablayout.SlidingTabLayout
+        <android.support.design.widget.TabLayout
             android:id="@+id/tab"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp40"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            app:tl_textsize="@dimen/text_size_little_small"
-            app:tl_tab_padding="@dimen/default_ui_margin_great"
-            app:tl_textSelectColor="@color/colorPrimaryDark"
-            app:tl_textUnselectColor="@color/gray"
-            app:tl_indicator_margin_left="2dp"
-            app:tl_indicator_margin_right="2dp"
-            app:tl_indicator_style="BLOCK" />
+            android:layout_width="match_parent"
+            android:layout_height="40.0dip" />
     </android.support.design.widget.AppBarLayout>
-
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-
 </android.support.design.widget.CoordinatorLayout>
