@@ -72,10 +72,19 @@
             </RelativeLayout>
         </RelativeLayout>
 
-        <android.support.design.widget.TabLayout
+        <com.flyco.tablayout.SlidingTabLayout
             android:id="@+id/tab"
-            android:layout_width="match_parent"
-            android:layout_height="40.0dip" />
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp40"
+            android:layout_gravity="center_horizontal"
+            app:tl_indicator_margin_left="2dp"
+            app:tl_indicator_margin_right="2dp"
+            app:tl_indicator_style="BLOCK"
+            app:tl_tab_padding="@dimen/dp30"
+            app:tl_tab_space_equal="true"
+            app:tl_textSelectColor="@color/colorPrimaryDark"
+            app:tl_textUnselectColor="@color/gray"
+            app:tl_textsize="@dimen/text_size_little_small" />
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
