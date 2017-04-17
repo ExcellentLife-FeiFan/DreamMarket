@@ -62,10 +62,10 @@ public class MainActivity extends BaseActivity {
         }
 
         // Create items
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.home_b_tab_0, R.drawable.ic_home, R.color.colorPrimary);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.home_b_tab_1, R.drawable.ic_classify, R.color.colorPrimary);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.home_b_tab_2, R.drawable.ic_shopping_cart_white_24dp, R.color.colorPrimary);
-        AHBottomNavigationItem item4 = new AHBottomNavigationItem(R.string.home_b_tab_3, R.drawable.ic_person, R.color.colorPrimary);
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.home_b_tab_0, R.mipmap.ic_home, R.color.colorPrimary);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.home_b_tab_1, R.mipmap.ic_find, R.color.colorPrimary);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.home_b_tab_2, R.mipmap.ic_order, R.color.colorPrimary);
+        AHBottomNavigationItem item4 = new AHBottomNavigationItem(R.string.home_b_tab_3, R.mipmap.ic_mine, R.color.colorPrimary);
 
 // Add items
         bottomBar.addItem(item1);
