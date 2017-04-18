@@ -134,6 +134,9 @@ public class CommonUtils {
     public static Drawable getDrawable(Context context, int res) {
         return context.getResources().getDrawable(res);
     }
+    public static String getString(Context context, int res) {
+        return context.getResources().getString(res);
+    }
 
 
 /*    public static String getUserCachePath() {

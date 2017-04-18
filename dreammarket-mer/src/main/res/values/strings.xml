@@ -5,4 +5,10 @@
     <string name="home_b_tab_1">订单管理</string>
     <string name="home_b_tab_2">超市运营</string>
     <string name="home_b_tab_3">我的</string>
+
+    <string name="poi_entry_1">活动配置</string>
+    <string name="poi_entry_2">商品管理</string>
+    <string name="poi_entry_3">用户评价</string>
+    <string name="poi_entry_4">消息中心</string>
+    <string name="poi_entry_5">营业统计</string>
 </resources>

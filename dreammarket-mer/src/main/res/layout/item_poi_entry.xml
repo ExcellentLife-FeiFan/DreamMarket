@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_bg_viewgroup_click">
+
+    <RelativeLayout
+        android:id="@+id/rl_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_icon"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginTop="15.0dip">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/indianred" />
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="25.0dip"
+                android:layout_height="25.0dip"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_msg_center" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-10.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="8.0dip"
+            android:layout_toRightOf="@+id/rl_icon"
+            android:background="@drawable/bg_poi_entry_count_rect"
+            android:gravity="center"
+            android:padding="3.0dip"
+            android:text="100"
+            android:textColor="@color/text_white"
+            android:textSize="12.0dip"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_icon"
+            android:layout_centerHorizontal="true"
+            android:padding="15.0dip"
+            android:text="活动配置"
+            android:textColor="#ff505050"
+            android:textSize="14.0dip" />
+    </RelativeLayout>
+</RelativeLayout>
