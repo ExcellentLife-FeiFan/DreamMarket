@@ -42,11 +42,33 @@ public class PoiEntryLA extends CommonListAdapter<PoiEntryBean> {
         } else {
             viewHolder.rlRoot.setVisibility(View.INVISIBLE);
         }
+        switch (position){
+            case 0:
+                viewHolder.civ.setImageDrawable(activity.getResources().getDrawable(R.color.royalblue));
+                break;
+            case 1:
+                viewHolder.civ.setImageDrawable(activity.getResources().getDrawable(R.color.darkgoldenrod));
+                break;
+            case 2:
+                viewHolder.civ.setImageDrawable(activity.getResources().getDrawable(R.color.burlywood));
+                break;
+            case 3:
+                viewHolder.civ.setImageDrawable(activity.getResources().getDrawable(R.color.salmon));
+                break;
+            case 4:
+                viewHolder.civ.setImageDrawable(activity.getResources().getDrawable(R.color.teal));
+                break;
+            case 5:
+                viewHolder.civ.setImageDrawable(activity.getResources().getDrawable(R.color.grassgreen));
+                break;
+        }
 
         return convertView;
     }
 
     static class ViewHolder {
+        @BindView(R.id.civ)
+        ImageView civ;
         @BindView(R.id.iv_icon)
         ImageView ivIcon;
         @BindView(R.id.tv_count)
