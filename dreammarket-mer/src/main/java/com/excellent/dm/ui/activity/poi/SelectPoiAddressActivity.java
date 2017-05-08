@@ -19,8 +19,18 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.model.LatLngBounds;
+import com.baidu.mapapi.search.core.PoiInfo;
+import com.baidu.mapapi.search.geocode.GeoCodeOption;
+import com.baidu.mapapi.search.geocode.GeoCodeResult;
+import com.baidu.mapapi.search.geocode.GeoCoder;
+import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
+import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
+import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener;
+import com.baidu.mapapi.search.poi.PoiBoundSearchOption;
 import com.baidu.mapapi.search.poi.PoiDetailResult;
+import com.baidu.mapapi.search.poi.PoiDetailSearchOption;
 import com.baidu.mapapi.search.poi.PoiIndoorResult;
 import com.baidu.mapapi.search.poi.PoiNearbySearchOption;
 import com.baidu.mapapi.search.poi.PoiResult;
@@ -34,12 +44,16 @@ import com.dm.excellent.baselibrary.utils.LogUtils;
 import com.excellent.dm.R;
 import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseActivity;
+import com.excellent.dm.ui.adapters.AddressSearchLV;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSearchResultListener, OnGetSuggestionResultListener {
+public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSearchResultListener, OnGetSuggestionResultListener,OnGetGeoCoderResultListener {
 
     // 定位相关
     LocationClient mLocClient;
@@ -59,12 +73,19 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
     private PoiSearch mPoiSearch = null;
     private SuggestionSearch mSuggestionSearch;
     LatLng center;
+    private GeoCoder mSearch;
+    AddressSearchLV  mNearAddAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_poi_address);
         ButterKnife.bind(this);
+        mNearAddAdapter = new AddressSearchLV(new ArrayList<PoiInfo>(),this);
+        lv.setAdapter(mNearAddAdapter);
+        mSearch = GeoCoder.newInstance();
+        mSearch.setOnGetGeoCodeResultListener(this);
         mPoiSearch = PoiSearch.newInstance();
         mPoiSearch.setOnGetPoiSearchResultListener(this);
         mSuggestionSearch = SuggestionSearch.newInstance();
@@ -159,6 +180,26 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
         LogUtils.e("");
     }
 
+    @Override
+    public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
+        LogUtils.e("");
+
+    }
+
+    @Override
+    public void onGetReverseGeoCodeResult(ReverseGeoCodeResult reverseGeoCodeResult) {
+        mNearAddAdapter.clearItems();
+        LogUtils.e("");
+        List<PoiInfo> pois = new ArrayList<>();
+        PoiInfo n = new PoiInfo();
+        n.address = reverseGeoCodeResult.getAddress();
+        n.location=reverseGeoCodeResult.getLocation();
+        n.name=reverseGeoCodeResult.getSematicDescription();
+        pois.add(n);
+        pois.addAll(reverseGeoCodeResult.getPoiList());
+        mNearAddAdapter.addItems(pois,false);
+    }
+
     /**
      * 定位SDK监听函数
      */
@@ -188,7 +229,7 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
                 MapStatus.Builder builder = new MapStatus.Builder();
                 builder.target(ll).zoom(18.0f);
                 mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
-//                searchNearby(center);
+                searchNearby(center);
             }
         }
 
@@ -229,12 +270,15 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
             showToast("未知出错");
             return;
         }
-        PoiNearbySearchOption nearbySearchOption = new PoiNearbySearchOption()
+        mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(center));
+
+/*        PoiNearbySearchOption nearbySearchOption = new PoiNearbySearchOption()
                 .keyword("方家")
                 .sortType(PoiSortType.distance_from_near_to_far)
                 .location(location)
+                .pageCapacity(20)
                 .radius(100).pageNum(1);
-        mPoiSearch.searchNearby(nearbySearchOption);
+        mPoiSearch.searchNearby(nearbySearchOption);*/
     }
 
 }

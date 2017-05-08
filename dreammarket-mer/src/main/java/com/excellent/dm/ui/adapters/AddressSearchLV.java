@@ -5,9 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.baidu.mapapi.search.core.PoiInfo;
 import com.dm.excellent.baselibrary.ui.adapter.CommonListAdapter;
 import com.excellent.dm.R;
 import com.excellent.dm.bean.PoiEntryBean;
+import com.excellent.dm.utils.CommonUtils;
 
 import java.util.List;
 
@@ -18,8 +20,8 @@ import butterknife.ButterKnife;
  * Created by apple on 2017/4/18.
  */
 
-public class AddressSearchLV extends CommonListAdapter<PoiEntryBean> {
-    public AddressSearchLV(List<PoiEntryBean> items, Activity activity) {
+public class AddressSearchLV extends CommonListAdapter<PoiInfo> {
+    public AddressSearchLV(List<PoiInfo> items, Activity activity) {
         super(items, activity);
     }
 
@@ -34,7 +36,8 @@ public class AddressSearchLV extends CommonListAdapter<PoiEntryBean> {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
+        CommonUtils.setText(viewHolder.tvTitle,item.name);
+        CommonUtils.setText(viewHolder.tvDesr,item.address);
 
         return convertView;
     }

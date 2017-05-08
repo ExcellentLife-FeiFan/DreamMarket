@@ -56,7 +56,7 @@ public class Homefragment3 extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_setting_poi_info:
-                new IntentUtils(activity).startActivity(SelectPoiAddressActivity.class);
+                /*new IntentUtils(activity).*/startActivity(SelectPoiAddressActivity.class);
                 break;
             case R.id.ll_setting_self_in:
                 break;
