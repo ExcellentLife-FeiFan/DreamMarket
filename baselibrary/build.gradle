@@ -23,13 +23,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
-
     compile 'com.android.support:appcompat-v7:' + supportVersion
     compile 'com.android.support:design:' + supportVersion
     compile 'com.android.support:recyclerview-v7:' + supportVersion
@@ -45,14 +44,11 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.roughike:bottom-bar:2.2.0'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.3'
-
     compile 'com.kyleduo.switchbutton:library:1.4.5'
-
-
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     compile 'com.aurelhubert:ahbottomnavigation:2.0.6'
-
     compile 'me.grantland:autofittextview:0.2.+'
-    compile "com.flyco.systembar:FlycoSystemBar_Lib:1.0.0@aar"
+    compile 'com.flyco.systembar:FlycoSystemBar_Lib:1.0.0@aar'
     compile 'com.airbnb.android:lottie:2.0.0-beta4'
+    compile project(':citypicker')
 }

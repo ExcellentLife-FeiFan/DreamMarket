@@ -53,7 +53,7 @@
             android:layout_marginRight="@dimen/padding_left"
             android:layout_marginTop="@dimen/default_ui_margin_medium_s"
             android:background="@drawable/bg_white_halfcircle"
-            android:drawableLeft="@mipmap/icon_search_gray"
+            android:drawableLeft="@mipmap/ic_et_search"
             android:drawablePadding="@dimen/default_ui_margin_medium_s"
             android:hint="地址关键字"
             android:paddingLeft="@dimen/padding_left2"
@@ -100,19 +100,24 @@
 
 
             <ListView
-                android:id="@+id/lv"
+                android:id="@+id/lv_nearly"
                 style="@style/Common_LV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/ll_search"
-            style="@style/Common_LV"
+        <RelativeLayout
+            android:id="@+id/rl_search"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_common_lv"></include>
+
+        </RelativeLayout>
+
+
     </FrameLayout>
 
 </LinearLayout>

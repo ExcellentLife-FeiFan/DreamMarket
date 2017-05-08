@@ -1,5 +1,6 @@
 package com.excellent.dm.ui.activity.poi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -7,7 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -21,6 +25,7 @@ import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.core.PoiInfo;
+import com.baidu.mapapi.search.geocode.GeoCodeOption;
 import com.baidu.mapapi.search.geocode.GeoCodeResult;
 import com.baidu.mapapi.search.geocode.GeoCoder;
 import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
@@ -35,12 +40,15 @@ import com.baidu.mapapi.search.poi.PoiSearch;
 import com.baidu.mapapi.search.sug.OnGetSuggestionResultListener;
 import com.baidu.mapapi.search.sug.SuggestionResult;
 import com.baidu.mapapi.search.sug.SuggestionSearch;
+import com.dm.excellent.baselibrary.utils.AbStrUtil;
 import com.dm.excellent.baselibrary.utils.LogUtils;
 import com.excellent.dm.R;
-import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseActivity;
+import com.excellent.dm.ui.activity.main.CityActivity;
 import com.excellent.dm.ui.adapters.AddressSearchLV;
 import com.excellent.dm.ui.adapters.AddressSearchLV2;
+import com.zaaach.citypicker.CityPickerActivity;
+import com.zaaach.citypicker.model.City;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,20 +66,29 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
     MapView map;
     @BindView(R.id.et_search)
     EditText etSearch;
-    @BindView(R.id.lv)
+    @BindView(R.id.tv_title_left)
+    TextView tvCity;
+    @BindView(R.id.lv_nearly)
     ListView lv;
+    @BindView(R.id.lv)
+    ListView lvSearch;
     @BindView(R.id.ll_map)
     LinearLayout llMap;
-    @BindView(R.id.ll_search)
-    ListView llSearch;
+    @BindView(R.id.rl_search)
+    RelativeLayout rlSearch;
+    @BindView(R.id.rl_progress)
+    RelativeLayout rl_progress;
+    @BindView(R.id.animation_view)
+    LottieAnimationView animation_view;
     private BaiduMap mBaiduMap;
     boolean isFirstLoc = true; // 是否首次定位
     private PoiSearch mPoiSearch = null;
     private SuggestionSearch mSuggestionSearch;
     LatLng center;
     private GeoCoder mSearch;
-    AddressSearchLV  mSearchAddAdapter;
+    AddressSearchLV mSearchAddAdapter;
     AddressSearchLV2 mNearAddAdapter;
+    private String cityCurrent = "北京";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +98,7 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
         mNearAddAdapter = new AddressSearchLV2(new ArrayList<PoiInfo>(), this);
         lv.setAdapter(mNearAddAdapter);
         mSearchAddAdapter = new AddressSearchLV(new ArrayList<PoiInfo>(), this);
-        llSearch.setAdapter(mSearchAddAdapter);
+        lvSearch.setAdapter(mSearchAddAdapter);
         mSearch = GeoCoder.newInstance();
         mSearch.setOnGetGeoCodeResultListener(this);
         mPoiSearch = PoiSearch.newInstance();
@@ -119,20 +136,15 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
             @Override
             public void onTextChanged(CharSequence cs, int arg1, int arg2,
                                       int arg3) {
+                mSearchAddAdapter.clearItems();
                 if (cs.length() <= 0) {
                     llMap.setVisibility(View.VISIBLE);
-                    llSearch.setVisibility(View.GONE);
+                    rlSearch.setVisibility(View.GONE);
                     return;
                 }
                 llMap.setVisibility(View.GONE);
-                llSearch.setVisibility(View.VISIBLE);
+                rlSearch.setVisibility(View.VISIBLE);
                 searchCity(cs.toString());
-             /*   *//**
-                 * 使用建议搜索服务获取建议列表，结果在onSuggestionResult()中更新
-                 *//*
-                mSuggestionSearch
-                        .requestSuggestion((new SuggestionSearchOption().city("北京").citylimit(true))
-                                .keyword(cs.toString()));*/
             }
         });
         mBaiduMap.setOnMapStatusChangeListener(new BaiduMap.OnMapStatusChangeListener() {
@@ -155,15 +167,14 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
 
     }
 
-    @OnClick(R.id.rl_back)
-    public void onViewClicked() {
-        AppManager.getInstance().killActivity(this);
-    }
 
     @Override
     public void onGetPoiResult(PoiResult poiResult) {
         LogUtils.e("");
+        rl_progress.setVisibility(View.GONE);
+        animation_view.pauseAnimation();
         mSearchAddAdapter.addItems(poiResult.getAllPoi(), true);
+
     }
 
     @Override
@@ -184,8 +195,9 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
 
     @Override
     public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
-        LogUtils.e("");
-
+        MapStatus.Builder builder = new MapStatus.Builder();
+        builder.target(geoCodeResult.getLocation()).zoom(18.0f);
+        mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
     }
 
     @Override
@@ -200,6 +212,18 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
         pois.add(n);
         pois.addAll(reverseGeoCodeResult.getPoiList());
         mNearAddAdapter.addItems(pois, false);
+    }
+
+    @OnClick({R.id.rl_back, R.id.tv_title_left})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.rl_back:
+                this.onBackPressed();
+                break;
+            case R.id.tv_title_left:
+                startActivityForResult(new Intent(this, CityActivity.class), REQUEST_CODE_PICK_CITY);
+                break;
+        }
     }
 
     /**
@@ -217,6 +241,9 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
             double mCurrentLat = location.getLatitude();
             double mCurrentLon = location.getLongitude();
             float mCurrentAccracy = location.getRadius();
+            if (!AbStrUtil.isEmpty(location.getCity())) {
+                cityCurrent = location.getCity();
+            }
             MyLocationData locData = new MyLocationData.Builder()
                     .accuracy(location.getRadius())
                     // 此处设置开发者获取到的方向信息，顺时针0-360
@@ -273,20 +300,45 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
             return;
         }
         mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(center));
-
-/*        PoiNearbySearchOption nearbySearchOption = new PoiNearbySearchOption()
-                .keyword("方家")
-                .sortType(PoiSortType.distance_from_near_to_far)
-                .location(location)
-                .pageCapacity(20)
-                .radius(100).pageNum(1);
-        mPoiSearch.searchNearby(nearbySearchOption);*/
     }
 
     public void searchCity(String keyword) {
+        rl_progress.setVisibility(View.VISIBLE);
+        animation_view.playAnimation();
         PoiCitySearchOption poiCitySearchOption = new PoiCitySearchOption().pageCapacity(20).pageNum(1)
-                .keyword(keyword).city("北京").isReturnAddr(true);
+                .keyword(keyword).city(cityCurrent).isReturnAddr(true);
         mPoiSearch.searchInCity(poiCitySearchOption);
     }
 
+    public void searchDetail(String keyword) {
+        mSearch.geocode(new GeoCodeOption().address(keyword).city(keyword));
+    }
+
+    private static final int REQUEST_CODE_PICK_CITY = 233;
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);   //this
+        if (requestCode == REQUEST_CODE_PICK_CITY && resultCode == RESULT_OK) {
+            if (data != null) {
+                City city = (City) data.getSerializableExtra(CityPickerActivity.KEY_PICKED_CITY);
+                tvCity.setText(city.getAreaName());
+                cityCurrent = city.getAreaName();
+                searchDetail(cityCurrent);
+            }
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (rlSearch.getVisibility() == View.VISIBLE) {
+            rl_progress.setVisibility(View.GONE);
+            animation_view.pauseAnimation();
+            rlSearch.setVisibility(View.GONE);
+            llMap.setVisibility(View.VISIBLE);
+            etSearch.setText("");
+        } else {
+            super.onBackPressed();
+        }
+    }
 }

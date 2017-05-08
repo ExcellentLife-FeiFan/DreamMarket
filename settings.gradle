@@ -1,1 +1,1 @@
-include ':baselibrary', ':dreammarket-mer', ':mobsharelibrary', ':pickerview', ':dreammarket-user'
+include ':baselibrary', ':dreammarket-mer', ':mobsharelibrary', ':pickerview', ':dreammarket-user', ':citypicker'
