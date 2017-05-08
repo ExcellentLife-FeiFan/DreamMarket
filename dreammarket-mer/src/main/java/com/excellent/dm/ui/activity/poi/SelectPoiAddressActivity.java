@@ -13,38 +13,34 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
-import com.baidu.mapapi.model.LatLngBounds;
 import com.baidu.mapapi.search.core.PoiInfo;
-import com.baidu.mapapi.search.geocode.GeoCodeOption;
 import com.baidu.mapapi.search.geocode.GeoCodeResult;
 import com.baidu.mapapi.search.geocode.GeoCoder;
 import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
 import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 import com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener;
-import com.baidu.mapapi.search.poi.PoiBoundSearchOption;
+import com.baidu.mapapi.search.poi.PoiCitySearchOption;
 import com.baidu.mapapi.search.poi.PoiDetailResult;
-import com.baidu.mapapi.search.poi.PoiDetailSearchOption;
 import com.baidu.mapapi.search.poi.PoiIndoorResult;
-import com.baidu.mapapi.search.poi.PoiNearbySearchOption;
 import com.baidu.mapapi.search.poi.PoiResult;
 import com.baidu.mapapi.search.poi.PoiSearch;
-import com.baidu.mapapi.search.poi.PoiSortType;
 import com.baidu.mapapi.search.sug.OnGetSuggestionResultListener;
 import com.baidu.mapapi.search.sug.SuggestionResult;
 import com.baidu.mapapi.search.sug.SuggestionSearch;
-import com.baidu.mapapi.search.sug.SuggestionSearchOption;
 import com.dm.excellent.baselibrary.utils.LogUtils;
 import com.excellent.dm.R;
 import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseActivity;
 import com.excellent.dm.ui.adapters.AddressSearchLV;
+import com.excellent.dm.ui.adapters.AddressSearchLV2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +49,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSearchResultListener, OnGetSuggestionResultListener,OnGetGeoCoderResultListener {
+public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSearchResultListener, OnGetSuggestionResultListener, OnGetGeoCoderResultListener {
 
     // 定位相关
     LocationClient mLocClient;
@@ -74,16 +70,18 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
     private SuggestionSearch mSuggestionSearch;
     LatLng center;
     private GeoCoder mSearch;
-    AddressSearchLV  mNearAddAdapter;
-
+    AddressSearchLV  mSearchAddAdapter;
+    AddressSearchLV2 mNearAddAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_poi_address);
         ButterKnife.bind(this);
-        mNearAddAdapter = new AddressSearchLV(new ArrayList<PoiInfo>(),this);
+        mNearAddAdapter = new AddressSearchLV2(new ArrayList<PoiInfo>(), this);
         lv.setAdapter(mNearAddAdapter);
+        mSearchAddAdapter = new AddressSearchLV(new ArrayList<PoiInfo>(), this);
+        llSearch.setAdapter(mSearchAddAdapter);
         mSearch = GeoCoder.newInstance();
         mSearch.setOnGetGeoCodeResultListener(this);
         mPoiSearch = PoiSearch.newInstance();
@@ -94,7 +92,8 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
         // 开启定位图层
         mBaiduMap.setMyLocationEnabled(true);
         mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(
-                MyLocationConfiguration.LocationMode.NORMAL, true, null));
+                MyLocationConfiguration.LocationMode.NORMAL, true, BitmapDescriptorFactory
+                .fromResource(R.color.transparent)));
         // 定位初始化
         mLocClient = new LocationClient(this);
         mLocClient.registerLocationListener(myListener);
@@ -127,12 +126,13 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
                 }
                 llMap.setVisibility(View.GONE);
                 llSearch.setVisibility(View.VISIBLE);
-                /**
+                searchCity(cs.toString());
+             /*   *//**
                  * 使用建议搜索服务获取建议列表，结果在onSuggestionResult()中更新
-                 */
+                 *//*
                 mSuggestionSearch
-                        .requestSuggestion((new SuggestionSearchOption())
-                                .keyword(cs.toString()).city(etSearch.getText().toString()));
+                        .requestSuggestion((new SuggestionSearchOption().city("北京").citylimit(true))
+                                .keyword(cs.toString()));*/
             }
         });
         mBaiduMap.setOnMapStatusChangeListener(new BaiduMap.OnMapStatusChangeListener() {
@@ -163,6 +163,7 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
     @Override
     public void onGetPoiResult(PoiResult poiResult) {
         LogUtils.e("");
+        mSearchAddAdapter.addItems(poiResult.getAllPoi(), true);
     }
 
     @Override
@@ -178,6 +179,7 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
     @Override
     public void onGetSuggestionResult(SuggestionResult suggestionResult) {
         LogUtils.e("");
+//        mSearchAddAdapter.addItems(suggestionResult.getAllSuggestions(), true);
     }
 
     @Override
@@ -193,11 +195,11 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
         List<PoiInfo> pois = new ArrayList<>();
         PoiInfo n = new PoiInfo();
         n.address = reverseGeoCodeResult.getAddress();
-        n.location=reverseGeoCodeResult.getLocation();
-        n.name=reverseGeoCodeResult.getSematicDescription();
+        n.location = reverseGeoCodeResult.getLocation();
+        n.name = reverseGeoCodeResult.getSematicDescription();
         pois.add(n);
         pois.addAll(reverseGeoCodeResult.getPoiList());
-        mNearAddAdapter.addItems(pois,false);
+        mNearAddAdapter.addItems(pois, false);
     }
 
     /**
@@ -266,7 +268,7 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
     }
 
     public void searchNearby(LatLng location) {
-        if(null==location){
+        if (null == location) {
             showToast("未知出错");
             return;
         }
@@ -279,6 +281,12 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
                 .pageCapacity(20)
                 .radius(100).pageNum(1);
         mPoiSearch.searchNearby(nearbySearchOption);*/
+    }
+
+    public void searchCity(String keyword) {
+        PoiCitySearchOption poiCitySearchOption = new PoiCitySearchOption().pageCapacity(20).pageNum(1)
+                .keyword(keyword).city("北京").isReturnAddr(true);
+        mPoiSearch.searchInCity(poiCitySearchOption);
     }
 
 }

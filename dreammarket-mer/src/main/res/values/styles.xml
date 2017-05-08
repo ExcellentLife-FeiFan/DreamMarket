@@ -28,6 +28,7 @@
         <item name="android:background">@drawable/selector_bg_viewgroup_click</item>
         <item name="android:paddingLeft">@dimen/padding_left2</item>
         <item name="android:paddingRight">@dimen/padding_left2</item>
+        <item name="android:gravity">center_vertical</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:paddingTop">@dimen/drawable_list_child_padding</item>
         <item name="android:paddingBottom">@dimen/drawable_list_child_padding</item>

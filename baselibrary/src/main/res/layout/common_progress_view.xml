@@ -4,14 +4,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_black_translucence">
-
-    <com.dm.excellent.baselibrary.views.loadview.AVLoadingIndicatorView
-        style="@style/AVLoadingIndicatorView"
-        android:layout_width="wrap_content"
+    android:background="@color/transparent">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="200.0dip"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="@dimen/default_ui_margin_great"
-        app:indicatorColor="@color/white"
-        app:indicatorName="LineScalePulseOutRapidIndicator" />
+        app:lottie_fileName="bounching_ball.json"
+        app:lottie_loop="true"
+        app:lottie_cacheStrategy="strong"
+        app:lottie_autoPlay="true" />
+    <!--<com.dm.excellent.baselibrary.views.loadview.AVLoadingIndicatorView-->
+        <!--style="@style/AVLoadingIndicatorView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_margin="@dimen/default_ui_margin_great"-->
+        <!--app:indicatorColor="@color/white"-->
+        <!--app:indicatorName="LineScalePulseOutRapidIndicator" />-->
 </RelativeLayout>

@@ -118,7 +118,7 @@ public class LoginActivity extends BaseActivity {
                         dismissDialog();
                         new IntentUtils(activity).startActivity(RegisterActivity.class);
                     }
-                }, 2000);
+                }, 5000);
                 break;
             case R.id.tv_findpwd:
                 break;

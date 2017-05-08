@@ -4,14 +4,14 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        style="@style/VG_padding"
+        style="@style/VG_padding_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25.0dip"
+            android:layout_height="28.0dip"
             android:layout_marginRight="@dimen/default_ui_margin_medium"
             android:src="@mipmap/address_serach_location" />
 
@@ -20,20 +20,36 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_title"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="后现代城"
-                android:textColor="@color/black_overlay2"
-                android:textSize="@dimen/text_size_actionbar_right" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="【当前】"
+                    android:textColor="@color/price_color"
+                    android:textSize="@dimen/text_size_actionbar_right"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/null_s"
+                    android:textColor="@color/black_overlay2"
+                    android:textSize="@dimen/text_size_actionbar_right" />
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/tv_desr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_ui_margin"
-                android:text="后现代城09号"
+                android:layout_marginTop="@dimen/default_ui_margin_medium_small"
+                android:text="@string/null_s"
                 android:textColor="@color/hint_gray"
                 android:textSize="@dimen/text_size_actionbar_right" />
 

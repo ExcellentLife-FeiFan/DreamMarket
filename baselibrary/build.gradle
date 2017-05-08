@@ -54,4 +54,5 @@ dependencies {
 
     compile 'me.grantland:autofittextview:0.2.+'
     compile "com.flyco.systembar:FlycoSystemBar_Lib:1.0.0@aar"
+    compile 'com.airbnb.android:lottie:2.0.0-beta4'
 }
