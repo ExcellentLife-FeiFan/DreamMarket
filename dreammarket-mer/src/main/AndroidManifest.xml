@@ -55,10 +55,10 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
-        <activity android:name=".ui.activity.poi.SelectPoiAddressActivity"></activity>
-        <activity android:name=".ui.activity.main.CityActivity"></activity>
+        <activity android:name=".ui.activity.poi.SelectSPMAddressActivity" />
+        <activity android:name=".ui.activity.main.CityActivity" />
     </application>
 
 </manifest>

@@ -56,7 +56,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSearchResultListener, OnGetSuggestionResultListener, OnGetGeoCoderResultListener {
+public class SelectSPMAddressActivity extends BaseActivity implements OnGetPoiSearchResultListener, OnGetSuggestionResultListener, OnGetGeoCoderResultListener {
 
     // 定位相关
     LocationClient mLocClient;

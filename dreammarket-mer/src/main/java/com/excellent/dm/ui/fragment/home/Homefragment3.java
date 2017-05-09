@@ -8,7 +8,8 @@ import android.view.ViewGroup;
 import com.excellent.dm.R;
 import com.excellent.dm.base.BaseFragment;
 import com.excellent.dm.ui.activity.login.LoginActivity;
-import com.excellent.dm.ui.activity.poi.SelectPoiAddressActivity;
+import com.excellent.dm.ui.activity.mine.SPMActivity;
+import com.excellent.dm.ui.activity.poi.SelectSPMAddressActivity;
 import com.excellent.dm.utils.IntentUtils;
 
 import butterknife.ButterKnife;
@@ -56,7 +57,7 @@ public class Homefragment3 extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_setting_poi_info:
-                /*new IntentUtils(activity).*/startActivity(SelectPoiAddressActivity.class);
+                new IntentUtils(activity).startActivity(SPMActivity.class);
                 break;
             case R.id.ll_setting_self_in:
                 break;
