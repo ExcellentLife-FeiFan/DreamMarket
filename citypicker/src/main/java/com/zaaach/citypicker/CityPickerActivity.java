@@ -42,7 +42,7 @@ public class CityPickerActivity extends AppCompatActivity implements View.OnClic
     private ImageView backBtn;
     private ViewGroup emptyView;
 
-    private CityListAdapter mCityAdapter;
+    protected CityListAdapter mCityAdapter;
     private ResultListAdapter mResultAdapter;
     private List<City> mAllCities;
     private DBManager dbManager;
@@ -56,7 +56,7 @@ public class CityPickerActivity extends AppCompatActivity implements View.OnClic
 
         initData();
         initView();
-        initLocation();
+//        initLocation();
     }
 
     private void initLocation() {
@@ -98,12 +98,15 @@ public class CityPickerActivity extends AppCompatActivity implements View.OnClic
 
             @Override
             public void onLocateClick() {
-                mCityAdapter.updateLocateState(LocateState.LOCATING, null);
-                mLocationClient.startLocation();
+                lacationCityClick();
             }
         });
 
         mResultAdapter = new ResultListAdapter(this, null);
+    }
+
+    protected void  lacationCityClick() {
+
     }
 
     private void initView() {
@@ -193,7 +196,7 @@ public class CityPickerActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mLocationClient.stopLocation();
+//        mLocationClient.stopLocation();
     }
 
     protected void setHotCities(List<City> cities) {

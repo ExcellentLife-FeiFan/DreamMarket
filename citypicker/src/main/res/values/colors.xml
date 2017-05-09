@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="cp_colorAccent">#FFCF3F</color>
+    <color name="cp_colorAccent">#00BFFF</color>
     <color name="cp_colorPrimary">@color/cp_colorAccent</color>
     <color name="cp_colorPrimaryDark">@color/cp_colorAccent</color>
 

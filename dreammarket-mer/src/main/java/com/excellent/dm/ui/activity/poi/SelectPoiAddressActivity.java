@@ -40,7 +40,6 @@ import com.baidu.mapapi.search.poi.PoiSearch;
 import com.baidu.mapapi.search.sug.OnGetSuggestionResultListener;
 import com.baidu.mapapi.search.sug.SuggestionResult;
 import com.baidu.mapapi.search.sug.SuggestionSearch;
-import com.dm.excellent.baselibrary.utils.AbStrUtil;
 import com.dm.excellent.baselibrary.utils.LogUtils;
 import com.excellent.dm.R;
 import com.excellent.dm.base.BaseActivity;
@@ -118,6 +117,7 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
         option.setOpenGps(true); // 打开gps
         option.setCoorType("bd09ll"); // 设置坐标类型
         option.setScanSpan(1000);
+        option.setIsNeedAddress(true);
         mLocClient.setLocOption(option);
         mLocClient.start();
         etSearch.addTextChangedListener(new TextWatcher() {
@@ -236,13 +236,8 @@ public class SelectPoiAddressActivity extends BaseActivity implements OnGetPoiSe
             if (location == null || map == null) {
                 return;
             }
-//            center=location.
-
-            double mCurrentLat = location.getLatitude();
-            double mCurrentLon = location.getLongitude();
-            float mCurrentAccracy = location.getRadius();
-            if (!AbStrUtil.isEmpty(location.getCity())) {
-                cityCurrent = location.getCity();
+            if (null != location.getAddress()) {
+                cityCurrent = location.getAddress().city;
             }
             MyLocationData locData = new MyLocationData.Builder()
                     .accuracy(location.getRadius())

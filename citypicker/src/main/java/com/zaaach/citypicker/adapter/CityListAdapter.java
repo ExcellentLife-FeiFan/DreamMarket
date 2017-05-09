@@ -42,6 +42,9 @@ public class CityListAdapter extends BaseAdapter {
         if (mCities == null) {
             mCities = new ArrayList<>();
         }
+        if (null == hotCityGridAdapter) {
+            hotCityGridAdapter = new HotCityGridAdapter(mContext);
+        }
         mCities.add(0, new City("定位", "0"));
         mCities.add(1, new City("热门", "1"));
         int size = mCities.size();
@@ -146,9 +149,6 @@ public class CityListAdapter extends BaseAdapter {
             case 1:     //热门
                 view = inflater.inflate(R.layout.cp_view_hot_city, parent, false);
                 WrapHeightGridView gridView = (WrapHeightGridView) view.findViewById(R.id.gridview_hot_city);
-                if (null == hotCityGridAdapter) {
-                    hotCityGridAdapter = new HotCityGridAdapter(mContext);
-                }
                 gridView.setAdapter(hotCityGridAdapter);
                 gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
