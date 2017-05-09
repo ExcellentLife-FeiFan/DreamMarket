@@ -120,7 +120,7 @@
                     <TextView style="@style/right_text_layout" />
                 </LinearLayout>
 
-                <include
+    <!--            <include
                     android:id="@+id/divider_expend_food"
                     layout="@layout/commom_line2" />
 
@@ -159,7 +159,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true" />
-                </RelativeLayout>
+                </RelativeLayout>-->
             </LinearLayout>
 
             <LinearLayout
