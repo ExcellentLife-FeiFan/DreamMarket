@@ -28,6 +28,32 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/ll_spm_0"
+                    style="@style/list_item_layout">
+
+                    <TextView
+                        style="@style/left_text_layout"
+                        android:text="头像" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="@dimen/dp50"
+                            android:layout_marginRight="@dimen/default_ui_margin"
+                            android:src="@drawable/ic_default_icon"
+                            android:layout_height="@dimen/dp50" />
+                        <ImageView
+                            style="@style/IV_toright_gray" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <include layout="@layout/commom_line" />
+                <LinearLayout
                     android:id="@+id/ll_spm_1"
                     style="@style/list_item_layout">
 

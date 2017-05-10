@@ -97,6 +97,21 @@
         <item name="android:singleLine">true</item>
     </style>
 
+    <style name="Common_Et_l">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black_overlay</item>
+        <item name="android:textColorHint">@color/text_input_hint</item>
+        <item name="android:paddingBottom">15.0dip</item>
+        <item name="android:paddingTop">15.0dip</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">@dimen/text_size_little_small</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
 
     <style name="Common_Text_btn">
         <item name="android:textSize">@dimen/text_size_little_small</item>
@@ -194,6 +209,13 @@
         <item name="android:layout_weight">1.0</item>
     </style>
 
+    <style name="IV_toright_gray">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_right</item>
+    </style>
+
     <style name="right_text_layout_audiotion" parent="@style/right_text_layout">
         <item name="android:textColor">@color/text_gray_middle</item>
         <item name="android:text">试听</item>
@@ -227,7 +249,8 @@
         <item name="android:textSize">@dimen/text_size_little_small</item>
         <item name="android:textAllCaps">false</item>
     </style>
-    <style name="Common_LV" >
+
+    <style name="Common_LV">
         <item name="android:divider">@color/common_divider_color</item>
         <item name="android:scrollbars">none</item>
         <item name="android:dividerHeight">@dimen/common_divider_height</item>

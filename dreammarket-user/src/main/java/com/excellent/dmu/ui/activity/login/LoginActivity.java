@@ -7,12 +7,19 @@ import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
+import com.dm.excellent.baselibrary.utils.HideUtil;
 import com.excellent.dmu.R;
 import com.excellent.dmu.base.AppManager;
 import com.excellent.dmu.base.BaseActivity;
@@ -56,6 +63,24 @@ public class LoginActivity extends BaseActivity {
     LinearLayout llTab;
     @BindView(R.id.ll_bottom)
     LinearLayout llBottom;
+    @BindView(R.id.et_phone_a)
+    EditText etPhoneA;
+    @BindView(R.id.clear_username_a)
+    ImageView clearUsernameA;
+    @BindView(R.id.et_pwd)
+    EditText etPwd;
+    @BindView(R.id.clear_password)
+    ImageView clearPassword;
+    @BindView(R.id.password_eye)
+    ToggleButton passwordEye;
+    @BindView(R.id.et_phone_p)
+    EditText etPhoneP;
+    @BindView(R.id.clear_phone_p)
+    ImageView clearPhoneP;
+    @BindView(R.id.et_smscode)
+    EditText etSmscode;
+    @BindView(R.id.clear_smscode)
+    ImageView clearSmscode;
     private LayoutTransition mTransitioner;
 
     @Override
@@ -63,14 +88,28 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        HideUtil.init(this);
         getBar().initActionBar("登录", false, false, null);
         //构建LayoutTransition
         mTransitioner = new LayoutTransition();
         //设置给ViewGroup容器
         flLoginType.setLayoutTransition(mTransitioner);
         setupCustomAnimations();
+        CommonUtils.setEtClearListener(etPhoneA, clearUsernameA);
+        CommonUtils.setEtClearListener(etPwd, clearPassword);
+        CommonUtils.setEtClearListener(etPhoneP, clearPhoneP);
+        CommonUtils.setEtClearListener(etSmscode, clearSmscode);
+        passwordEye.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    etPwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else{
+                    etPwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
     }
-
 
     @OnClick({R.id.ll_account_login, R.id.ll_mobile_login, R.id.tv_getsms, R.id.btn_login, R.id.tv_register, R.id.tv_findpwd})
     public void onViewClicked(View view) {
@@ -182,4 +221,17 @@ public class LoginActivity extends BaseActivity {
         });
 
     }
+
+    @OnClick({R.id.iv_weixin, R.id.iv_qq, R.id.iv_weibo})
+    public void onViewClicked2(View view) {
+        switch (view.getId()) {
+            case R.id.iv_weixin:
+                break;
+            case R.id.iv_qq:
+                break;
+            case R.id.iv_weibo:
+                break;
+        }
+    }
+
 }

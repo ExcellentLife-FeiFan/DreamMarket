@@ -21,12 +21,22 @@
             android:src="@drawable/icon_mobile" />
 
         <EditText
-            style="@style/Common_Et"
+            android:id="@+id/et_phone_p"
+            style="@style/Common_Et_l"
             android:layout_width="0.0dip"
             android:layout_weight="1.0"
             android:hint="@string/prompt_phone"
             android:inputType="phone"
             android:maxLength="11" />
+
+        <ImageView
+            android:id="@+id/clear_phone_p"
+            android:layout_width="13.0dip"
+            android:visibility="invisible"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/default_ui_margin"
+            android:layout_marginRight="@dimen/default_ui_margin"
+            android:src="@drawable/passport_ic_clear_enabled" />
 
         <TextView
             android:id="@+id/tv_getsms"
@@ -55,7 +65,17 @@
             android:src="@drawable/icon_captcha" />
 
         <EditText
-            style="@style/Common_Et"
+            android:id="@+id/et_smscode"
+            style="@style/Common_Et_l"
             android:hint="@string/prompt_captcha" />
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/clear_smscode"
+            android:layout_width="13.0dip"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/default_ui_margin"
+            android:layout_marginRight="@dimen/padding_left"
+            android:src="@drawable/passport_ic_clear_enabled" />
     </LinearLayout>
 </LinearLayout>

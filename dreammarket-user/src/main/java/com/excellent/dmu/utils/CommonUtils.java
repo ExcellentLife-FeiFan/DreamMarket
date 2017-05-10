@@ -2,8 +2,9 @@ package com.excellent.dmu.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,6 @@ import com.dm.excellent.baselibrary.utils.AbStrUtil;
 import com.dm.excellent.baselibrary.views.loadding.CustomDialog;
 import com.excellent.dmu.R;
 import com.excellent.dmu.base.App;
-
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -249,5 +249,32 @@ public class CommonUtils {
     public static void showDialog(Context context) {
         getDialog(context).show();
     }
+    public static void setEtClearListener(final EditText et, final View view) {
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                et.setText("");
+            }
+        });
+        et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (AbStrUtil.isEmpty(et.getText().toString())) {
+                    view.setVisibility(View.INVISIBLE);
+                } else {
+                    view.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+    }
 }

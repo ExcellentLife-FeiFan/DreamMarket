@@ -51,4 +51,8 @@ dependencies {
     compile 'com.flyco.systembar:FlycoSystemBar_Lib:1.0.0@aar'
     compile 'com.airbnb.android:lottie:2.0.0-beta4'
     compile project(':citypicker')
+    compile 'com.github.Kennyc1012:MultiStateView:1.3.0'
+
+    compile 'me.iwf.photopicker:PhotoPicker:0.9.5@aar'
+    compile 'com.nineoldandroids:library:2.4.0'
 }

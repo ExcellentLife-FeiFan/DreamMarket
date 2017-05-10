@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.PowerManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,23 +18,13 @@ import com.dm.excellent.baselibrary.utils.AbStrUtil;
 import com.dm.excellent.baselibrary.views.loadding.CustomDialog;
 import com.excellent.dm.R;
 import com.excellent.dm.base.App;
-import com.excellent.dm.base.G;
-import com.excellent.dm.bean.UserBean;
 import com.excellent.dm.ui.activity.login.LoginActivity;
-
-import com.google.gson.reflect.TypeToken;
-import com.lzy.okgo.OkGo;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import de.greenrobot.event.EventBus;
-import okhttp3.Call;
-import okhttp3.Response;
-
-import static android.content.Context.POWER_SERVICE;
 import static com.excellent.dm.base.App.userBean;
 
 
@@ -134,6 +125,7 @@ public class CommonUtils {
     public static Drawable getDrawable(Context context, int res) {
         return context.getResources().getDrawable(res);
     }
+
     public static String getString(Context context, int res) {
         return context.getResources().getString(res);
     }
@@ -159,10 +151,6 @@ public class CommonUtils {
     public static String getFloatString2(float f) {
         return new DecimalFormat("0.00").format(f);
     }
-
-
-
-
 
 
     /**
@@ -261,6 +249,36 @@ public class CommonUtils {
 
     public static void showDialog(Context context) {
         getDialog(context).show();
+    }
+
+
+    public static void setEtClearListener(final EditText et, final View view) {
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                et.setText("");
+            }
+        });
+        et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (AbStrUtil.isEmpty(et.getText().toString())) {
+                    view.setVisibility(View.INVISIBLE);
+                } else {
+                    view.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
 }

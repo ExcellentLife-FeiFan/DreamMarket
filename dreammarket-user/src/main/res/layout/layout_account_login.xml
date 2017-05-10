@@ -21,9 +21,18 @@
             android:src="@drawable/icon_user" />
 
         <EditText
-            style="@style/Common_Et"
+            android:id="@+id/et_phone_a"
+            style="@style/Common_Et_l"
             android:hint="@string/login_prompt_phone"
             android:inputType="text" />
+
+        <ImageView
+            android:id="@+id/clear_username_a"
+            android:layout_width="13.0dip"
+            android:visibility="invisible"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/dp15"
+            android:src="@drawable/passport_ic_clear_enabled" />
     </LinearLayout>
 
     <View
@@ -47,10 +56,33 @@
             android:src="@drawable/icon_password" />
 
         <EditText
-            style="@style/Common_Et"
+            android:id="@+id/et_pwd"
+            style="@style/Common_Et_l"
+            android:layout_marginRight="@dimen/dp20"
             android:hint="@string/prompt_password"
             android:imeActionLabel="@string/action_sign_in"
             android:imeOptions="normal|actionUnspecified"
             android:inputType="textPassword" />
+
+
+        <ImageView
+            android:id="@+id/clear_password"
+            android:layout_width="13.0dip"
+            android:visibility="invisible"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="20.0dip"
+            android:src="@drawable/passport_ic_clear_enabled" />
+
+        <ToggleButton
+            android:id="@+id/password_eye"
+            android:layout_width="20.0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/padding_left2"
+            android:background="@null"
+            android:button="@drawable/passport_password_eye_selector"
+            android:checked="false"
+            android:scaleType="center"
+            android:textOff="@null"
+            android:textOn="@null" />
     </LinearLayout>
 </LinearLayout>

@@ -13,7 +13,9 @@
         <activity android:name=".ui.activity.main.MainActivity">
 
         </activity>
-        <activity android:name=".ui.activity.login.LoginActivity">
+        <activity
+            android:name=".ui.activity.login.LoginActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

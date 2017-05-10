@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dm.excellent.baselibrary.utils.HideUtil;
 import com.excellent.dm.R;
 import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseActivity;
@@ -64,7 +65,7 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         getBar().initActionBar("登录", false, false, null);
-
+        HideUtil.init(this);
         //构建LayoutTransition
         mTransitioner = new LayoutTransition();
         //设置给ViewGroup容器

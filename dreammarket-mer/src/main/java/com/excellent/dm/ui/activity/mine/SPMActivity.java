@@ -10,6 +10,7 @@ import com.excellent.dm.ui.activity.poi.SelectSPMAddressActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.iwf.photopicker.PhotoPicker;
 
 public class SPMActivity extends BaseActivity implements View.OnClickListener {
 
@@ -38,9 +39,17 @@ public class SPMActivity extends BaseActivity implements View.OnClickListener {
         super.onDestroy();
     }
 
-    @OnClick({R.id.ll_spm_1, R.id.ll_spm_2, R.id.ll_spm_3, R.id.ll_spm_4, R.id.ll_spm_5, R.id.ll_spm_6, R.id.ll_spm_7, R.id.ll_spm_8, R.id.ll_spm_9, R.id.ll_spm_10})
+    @OnClick({R.id.ll_spm_0,R.id.ll_spm_1, R.id.ll_spm_2, R.id.ll_spm_3, R.id.ll_spm_4, R.id.ll_spm_5, R.id.ll_spm_6, R.id.ll_spm_7, R.id.ll_spm_8, R.id.ll_spm_9, R.id.ll_spm_10})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.ll_spm_0:
+                PhotoPicker.builder()
+                        .setPhotoCount(1)
+                        .setShowCamera(true)
+                        .setShowGif(false)
+                        .setPreviewEnabled(true)
+                        .start(this, PhotoPicker.REQUEST_CODE);
+                break;
             case R.id.ll_spm_1:
                 break;
             case R.id.ll_spm_2:
