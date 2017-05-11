@@ -7,9 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Slide;
 import android.transition.TransitionInflater;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -143,12 +141,12 @@ public class BaseActivity extends AppCompatActivity {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void setupWindowAnimations() {
-        Slide enter = new Slide();
+  /*      Slide enter = new Slide();
         enter.setSlideEdge(Gravity.LEFT);
         enter.setDuration(500);
         Slide exit = new Slide();
         exit.setSlideEdge(Gravity.BOTTOM);
-        exit.setDuration(500);
+        exit.setDuration(500);*/
         getWindow().setExitTransition(TransitionInflater.from(this).inflateTransition(R.transition.slide_from_bottom));
         getWindow().setEnterTransition(TransitionInflater.from(this).inflateTransition(R.transition.explode));
         //        getWindow().setReenterTransition(slideTransition);

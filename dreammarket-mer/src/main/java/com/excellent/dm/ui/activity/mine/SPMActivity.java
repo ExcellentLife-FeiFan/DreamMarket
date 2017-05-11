@@ -61,7 +61,7 @@ public class SPMActivity extends BaseActivity implements View.OnClickListener {
             case R.id.ll_spm_5:
                 break;
             case R.id.ll_spm_6:
-                startActivity(SelectSPMAddressActivity.class);
+               startActivity(SelectSPMAddressActivity.class);
                 break;
             case R.id.ll_spm_7:
                 break;
