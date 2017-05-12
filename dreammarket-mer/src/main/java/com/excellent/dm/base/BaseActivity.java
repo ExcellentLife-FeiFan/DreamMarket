@@ -188,7 +188,7 @@ public class BaseActivity extends AppCompatActivity {
     public CustomDialog getDialog() {
         if (dialog == null) {
             dialog = CustomDialog.instance(this);
-            dialog.setCancelable(true);
+            dialog.setCancelable(false);
         }
         return dialog;
     }

@@ -112,16 +112,10 @@ public class LoginActivity extends BaseActivity {
 
                 break;
             case R.id.tv_register:
-                showDialog();
-                llAccount.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        dismissDialog();
-                        new IntentUtils(activity).startActivity(RegisterActivity.class);
-                    }
-                }, 5000);
+                new IntentUtils(activity).startActivity(RegisterActivity.class);
                 break;
             case R.id.tv_findpwd:
+                new IntentUtils(activity).startActivity(FindPwdActivity.class);
                 break;
         }
     }

@@ -149,8 +149,10 @@ public class LoginActivity extends BaseActivity {
 
                 break;
             case R.id.tv_register:
+                new IntentUtils(this).startActivity(RegisterActivity.class);
                 break;
             case R.id.tv_findpwd:
+                new IntentUtils(this).startActivity(FindPwdActivity.class);
                 break;
         }
     }
