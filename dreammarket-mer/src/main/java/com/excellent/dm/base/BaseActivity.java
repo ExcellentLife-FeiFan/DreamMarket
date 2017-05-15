@@ -147,7 +147,7 @@ public class BaseActivity extends AppCompatActivity {
         Slide exit = new Slide();
         exit.setSlideEdge(Gravity.BOTTOM);
         exit.setDuration(500);*/
-        getWindow().setExitTransition(TransitionInflater.from(this).inflateTransition(R.transition.slide_from_bottom));
+//        getWindow().setExitTransition(TransitionInflater.from(this).inflateTransition(R.transition.slide_from_bottom));
         getWindow().setEnterTransition(TransitionInflater.from(this).inflateTransition(R.transition.explode));
         //        getWindow().setReenterTransition(slideTransition);
         //        getWindow().setReturnTransition(buildReturnTransition());

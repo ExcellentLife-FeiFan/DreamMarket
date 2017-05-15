@@ -21,6 +21,7 @@
             android:src="@drawable/icon_user" />
 
         <EditText
+            android:id="@+id/et_account"
             style="@style/Common_Et"
             android:hint="@string/prompt_username"
             android:inputType="text" />
@@ -47,6 +48,7 @@
             android:src="@drawable/icon_password" />
 
         <EditText
+            android:id="@+id/et_account_pwd"
             style="@style/Common_Et"
             android:hint="@string/prompt_password"
             android:imeActionLabel="@string/action_sign_in"

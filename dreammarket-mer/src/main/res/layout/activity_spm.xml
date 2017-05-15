@@ -42,6 +42,7 @@
                         android:layout_gravity="center_vertical"
                         android:orientation="horizontal">
                         <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/civ"
                             android:layout_width="@dimen/dp50"
                             android:layout_marginRight="@dimen/default_ui_margin"
                             android:src="@drawable/ic_default_icon"

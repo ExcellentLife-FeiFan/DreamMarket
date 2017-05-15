@@ -40,6 +40,7 @@ import com.baidu.mapapi.search.poi.PoiSearch;
 import com.baidu.mapapi.search.sug.OnGetSuggestionResultListener;
 import com.baidu.mapapi.search.sug.SuggestionResult;
 import com.baidu.mapapi.search.sug.SuggestionSearch;
+import com.dm.excellent.baselibrary.utils.AbStrUtil;
 import com.dm.excellent.baselibrary.utils.LogUtils;
 import com.excellent.dm.R;
 import com.excellent.dm.base.BaseActivity;
@@ -116,7 +117,7 @@ public class SelectSPMAddressActivity extends BaseActivity implements OnGetPoiSe
         LocationClientOption option = new LocationClientOption();
         option.setOpenGps(true); // 打开gps
         option.setCoorType("bd09ll"); // 设置坐标类型
-        option.setScanSpan(1000);
+        option.setScanSpan(60000);
         option.setIsNeedAddress(true);
         mLocClient.setLocOption(option);
         mLocClient.start();
@@ -298,6 +299,9 @@ public class SelectSPMAddressActivity extends BaseActivity implements OnGetPoiSe
     }
 
     public void searchCity(String keyword) {
+        if(AbStrUtil.isEmpty(cityCurrent)){
+            return;
+        }
         rl_progress.setVisibility(View.VISIBLE);
         animation_view.playAnimation();
         PoiCitySearchOption poiCitySearchOption = new PoiCitySearchOption().pageCapacity(20).pageNum(1)

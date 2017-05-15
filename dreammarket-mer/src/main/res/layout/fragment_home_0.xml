@@ -81,7 +81,7 @@
             app:tl_indicator_margin_right="2dp"
             app:tl_indicator_style="BLOCK"
             app:tl_tab_padding="@dimen/dp30"
-            app:tl_tab_space_equal="true"
+            app:tl_tab_space_equal="false"
             app:tl_textSelectColor="@color/colorPrimaryDark"
             app:tl_textUnselectColor="@color/gray"
             app:tl_textsize="@dimen/text_size_little_small" />

@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.excellent.dm.R;
+import com.excellent.dm.base.App;
+import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseFragment;
 import com.excellent.dm.ui.activity.login.LoginActivity;
 import com.excellent.dm.ui.activity.mine.SPMActivity;
@@ -31,6 +33,7 @@ public class Homefragment3 extends BaseFragment {
 
     @Override
     public void initView() {
+
 
     }
 
@@ -78,8 +81,9 @@ public class Homefragment3 extends BaseFragment {
             case R.id.ll_setting_account:
                 break;
             case R.id.tv_setting_exit_account:
+                App.userBean=null;
                 new IntentUtils(activity).startActivity(LoginActivity.class);
-//                AppManager.getInstance().killActivity(activity);
+                AppManager.getInstance().killActivity(activity);
                 break;
         }
     }

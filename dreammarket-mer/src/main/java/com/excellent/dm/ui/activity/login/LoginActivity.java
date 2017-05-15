@@ -9,21 +9,32 @@ import android.animation.PropertyValuesHolder;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dm.excellent.baselibrary.utils.AbStrUtil;
 import com.dm.excellent.baselibrary.utils.HideUtil;
 import com.excellent.dm.R;
+import com.excellent.dm.base.App;
 import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseActivity;
+import com.excellent.dm.bean.UserBean;
+import com.excellent.dm.net.ApiResult;
+import com.excellent.dm.net.JsonCallback;
+import com.excellent.dm.net.Urls;
 import com.excellent.dm.ui.activity.main.MainActivity;
 import com.excellent.dm.utils.CommonUtils;
 import com.excellent.dm.utils.IntentUtils;
+import com.google.gson.reflect.TypeToken;
+import com.lzy.okgo.OkGo;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.Call;
+import okhttp3.Response;
 
 public class LoginActivity extends BaseActivity {
 
@@ -57,6 +68,10 @@ public class LoginActivity extends BaseActivity {
     LinearLayout llTab;
     @BindView(R.id.ll_bottom)
     LinearLayout llBottom;
+    @BindView(R.id.et_account)
+    EditText etAccount;
+    @BindView(R.id.et_account_pwd)
+    EditText etAccountPwd;
     private LayoutTransition mTransitioner;
 
     @Override
@@ -102,14 +117,20 @@ public class LoginActivity extends BaseActivity {
             case R.id.tv_getsms:
                 break;
             case R.id.btn_login:
-                new IntentUtils(this).startActivity(MainActivity.class);
-                llAccount.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        AppManager.getInstance().killActivity(activity);
+                if (llAccount.getVisibility() == View.VISIBLE) {
+                    String name = etAccount.getText().toString();
+                    String pwd = etAccountPwd.getText().toString();
+                    if (AbStrUtil.isEmpty(name)) {
+                        showToast("请输入账户");
+                    } else if (AbStrUtil.isEmpty(pwd)) {
+                        showToast("请输入密码");
+                    } else {
+                        actionLogin(name, pwd);
                     }
-                }, 2000);
 
+                } else {
+
+                }
                 break;
             case R.id.tv_register:
                 new IntentUtils(activity).startActivity(RegisterActivity.class);
@@ -118,6 +139,37 @@ public class LoginActivity extends BaseActivity {
                 new IntentUtils(activity).startActivity(FindPwdActivity.class);
                 break;
         }
+    }
+
+    private void actionLogin(String name, String pwd) {
+        showDialog();
+        OkGo.get(Urls.LOGIN)
+                .params("LoginName", name)
+                .params("LoginPwd", pwd)
+                .execute(new JsonCallback<ApiResult<UserBean>>(new TypeToken<ApiResult<UserBean>>() {
+                }.getType()) {
+                    @Override
+                    public void onSuccess(ApiResult<UserBean> result, Call call, Response response) {
+                        dismissDialog();
+                        if (result.isSuccess()) {
+                            App.userBean = result.getObj();
+                            new IntentUtils(activity).startActivity(MainActivity.class);
+                            AppManager.getInstance().killActivity(activity);
+                        } else {
+                            showToast(result.getMsg());
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Call call, Response response, Exception e) {
+                        super.onError(call, response, e);
+                        dismissDialog();
+                        showToast(getResources().getString(R.string.action_failure));
+                    }
+                });
+
+
     }
 
 
