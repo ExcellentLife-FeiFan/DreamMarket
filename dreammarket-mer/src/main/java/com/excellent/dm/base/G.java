@@ -1,6 +1,7 @@
 package com.excellent.dm.base;
 
 
+import com.dm.excellent.baselibrary.utils.FileUtils;
 import com.dm.excellent.baselibrary.utils.SdCardUtil;
 
 /**
@@ -23,5 +24,8 @@ public class G {
 
 
     public static final int CONNECT_TIME_OUT = 5 * 1000;
+
+
+    public static String PATH_DATA = FileUtils.createRootPath(App.context)/* + "/cache"*/;
 
 }

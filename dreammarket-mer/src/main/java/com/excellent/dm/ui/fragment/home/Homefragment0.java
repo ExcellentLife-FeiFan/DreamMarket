@@ -1,9 +1,13 @@
 package com.excellent.dm.ui.fragment.home;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.excellent.dm.R;
 import com.excellent.dm.base.BaseFragment;
@@ -13,6 +17,7 @@ import com.excellent.dm.ui.fragment.OrderUrgeFragment;
 import com.flyco.tablayout.SlidingTabLayout;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
@@ -44,6 +49,14 @@ public class Homefragment0 extends BaseFragment {
     @Override
     protected void initData() {
 
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder = ButterKnife.bind(this, rootView);
+        return rootView;
     }
 
     public class MyPagerAdapter extends FragmentPagerAdapter {
@@ -81,7 +94,7 @@ public class Homefragment0 extends BaseFragment {
 
     @Override
     public void onDestroyView() {
-        super.onDestroyView();
         unbinder.unbind();
+        super.onDestroyView();
     }
 }
