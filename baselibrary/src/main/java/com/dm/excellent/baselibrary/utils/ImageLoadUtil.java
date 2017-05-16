@@ -9,6 +9,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.dm.excellent.baselibrary.Api;
 import com.dm.excellent.baselibrary.R;
 
 /**
@@ -93,7 +94,7 @@ public class ImageLoadUtil {
         if (AbStrUtil.isEmpty(imageUrl)) {
             return;
         }
-//        imageUrl = Urls.AddPATH(imageUrl);
+        imageUrl = Api.AddPATH(imageUrl);
         Glide.with(activity).load(imageUrl)
                 .error(R.mipmap.app_no_data_icon)           //设置错误图片
                 .placeholder(R.mipmap.app_no_data_icon)     //设置占位图片
@@ -105,7 +106,7 @@ public class ImageLoadUtil {
         if (AbStrUtil.isEmpty(imageUrl)) {
             return;
         }
-//        imageUrl = Urls.AddPATH(imageUrl);
+        imageUrl = Api.AddPATH(imageUrl);
         Glide.with(activity).load(imageUrl)
                 .error(R.mipmap.app_no_data_icon)           //设置错误图片
                 .placeholder(R.mipmap.app_no_data_icon)     //设置占位图片

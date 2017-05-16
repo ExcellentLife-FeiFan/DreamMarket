@@ -11,7 +11,6 @@ import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseFragment;
 import com.excellent.dm.ui.activity.login.LoginActivity;
 import com.excellent.dm.ui.activity.mine.SPMActivity;
-import com.excellent.dm.ui.activity.poi.SelectSPMAddressActivity;
 import com.excellent.dm.utils.IntentUtils;
 
 import butterknife.ButterKnife;
@@ -81,7 +80,7 @@ public class Homefragment3 extends BaseFragment {
             case R.id.ll_setting_account:
                 break;
             case R.id.tv_setting_exit_account:
-                App.userBean=null;
+                App.spm =null;
                 new IntentUtils(activity).startActivity(LoginActivity.class);
                 AppManager.getInstance().killActivity(activity);
                 break;

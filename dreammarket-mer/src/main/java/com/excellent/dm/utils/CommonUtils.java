@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.excellent.dm.base.App.userBean;
+import static com.excellent.dm.base.App.spm;
 
 
 /**
@@ -37,7 +37,7 @@ public class CommonUtils {
     private static CustomDialog dialog;
 
     public static boolean isLogined(final Activity context) {
-        if (null != userBean) {
+        if (null != spm) {
             return true;
         } else {
             context.startActivity(new Intent(context, LoginActivity.class));
@@ -56,7 +56,7 @@ public class CommonUtils {
     }
 
     public static boolean isLogined2() {
-        if (null != userBean) {
+        if (null != spm) {
             return true;
         } else {
             return false;
@@ -132,8 +132,8 @@ public class CommonUtils {
 
 
 /*    public static String getUserCachePath() {
-        if (null != userBean) {
-            return G.STORAGEPATH + userBean.getUserName() + "/";
+        if (null != spm) {
+            return G.STORAGEPATH + spm.getUserName() + "/";
         } else {
             return G.STORAGEPATH;
         }

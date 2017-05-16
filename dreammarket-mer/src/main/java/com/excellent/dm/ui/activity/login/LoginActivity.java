@@ -20,7 +20,7 @@ import com.excellent.dm.R;
 import com.excellent.dm.base.App;
 import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseActivity;
-import com.excellent.dm.bean.UserBean;
+import com.excellent.dm.bean.SPMBean;
 import com.excellent.dm.net.ApiResult;
 import com.excellent.dm.net.JsonCallback;
 import com.excellent.dm.net.Urls;
@@ -146,13 +146,13 @@ public class LoginActivity extends BaseActivity {
         OkGo.get(Urls.LOGIN)
                 .params("LoginName", name)
                 .params("LoginPwd", pwd)
-                .execute(new JsonCallback<ApiResult<UserBean>>(new TypeToken<ApiResult<UserBean>>() {
+                .execute(new JsonCallback<ApiResult<SPMBean>>(new TypeToken<ApiResult<SPMBean>>() {
                 }.getType()) {
                     @Override
-                    public void onSuccess(ApiResult<UserBean> result, Call call, Response response) {
+                    public void onSuccess(ApiResult<SPMBean> result, Call call, Response response) {
                         dismissDialog();
                         if (result.isSuccess()) {
-                            App.userBean = result.getObj();
+                            App.spm = result.getObj();
                             new IntentUtils(activity).startActivity(MainActivity.class);
                             AppManager.getInstance().killActivity(activity);
                         } else {

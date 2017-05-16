@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
-import com.excellent.dm.bean.UserBean;
+import com.excellent.dm.bean.SPMBean;
 import com.excellent.dm.utils.SPUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -25,7 +25,7 @@ import static com.excellent.dm.base.G.CONNECT_TIME_OUT;
 public class App extends Application {
 
     public static Context context;
-    public static UserBean userBean;
+    public static SPMBean spm;
 
 
     @Override
