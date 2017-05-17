@@ -10,8 +10,10 @@ import com.dm.excellent.baselibrary.views.InGridView;
 import com.excellent.dm.R;
 import com.excellent.dm.base.BaseFragment;
 import com.excellent.dm.bean.PoiEntryBean;
+import com.excellent.dm.ui.activity.operate.GoodManaActivity;
 import com.excellent.dm.ui.adapters.PoiEntryLA;
 import com.excellent.dm.utils.CommonUtils;
+import com.excellent.dm.utils.IntentUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +52,13 @@ public class Homefragment2 extends BaseFragment {
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        break;
+                    case 1:
+                        new IntentUtils(activity).startActivity(GoodManaActivity.class);
+                        break;
+                }
 
             }
         });

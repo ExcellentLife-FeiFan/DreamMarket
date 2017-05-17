@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <include layout="@layout/layout_mytoolbar"></include>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/ll_add_food_bottom_container"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/fl_edit_food_info_pic"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_edit_food_info_pic"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center|right"
+                        android:layout_marginBottom="@dimen/default_ui_margin"
+                        android:layout_marginRight="@dimen/default_ui_margin"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_camera" />
+
+                    <TextView
+                        android:id="@+id/txt_edit_food_sold_out"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/foodinfo_sold_out_height"
+                        android:layout_gravity="top"
+                        android:background="@color/o_orange_transparent"
+                        android:gravity="center"
+                        android:text="@string/food_info_sold_out"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/foodinfo_sold_out_size"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_ui_margin_large"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/default_ui_margin"
+                    android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+                    android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+                    android:paddingTop="@dimen/foodinfo_edit_top_margin">
+
+                    <TextView
+                        android:id="@+id/txt_title_edit_food_info_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/default_ui_margin"
+                        android:text="@string/title_activity_edit_food_info_name"
+                        android:textSize="@dimen/foodinfo_default_txt_size" />
+
+                    <EditText
+                        android:id="@+id/et_edit_food_info_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:gravity="right"
+                        android:hint="@string/hint_activity_edit_food_info_name"
+                        android:inputType="text"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/foodinfo_default_txt_size" />
+                </LinearLayout>
+
+                <include layout="@layout/edit_food_type_layout" />
+
+                <include layout="@layout/edit_food_attri_layout" />
+
+                <include layout="@layout/edit_food_aid_layout" />
+
+                <include layout="@layout/edit_food_describtion_layout" />
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@id/ll_add_food_bottom_container"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:layout_alignParentBottom="true">
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_alignParentTop="true"
+                android:background="@color/gray_bg" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_edit_food_stop_start"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/bg_list_item"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_edit_food_stop_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edit_food_stop_sale"
+                        android:textSize="@dimen/foodinfo_bottom_txt_size" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent"
+                    android:background="@color/gray_bg" />
+
+                <LinearLayout
+                    android:id="@+id/ll_edit_food_delete"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/bg_list_item"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_edit_food_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="删除"
+                        android:textSize="@dimen/foodinfo_bottom_txt_size" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent"
+                    android:background="@color/gray_bg" />
+
+                <LinearLayout
+                    android:id="@+id/ll_edit_food_preview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/bg_list_item"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_edit_food_preview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edit_food_preview"
+                        android:textColor="@color/o_pre_green"
+                        android:textSize="@dimen/foodinfo_bottom_txt_size" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

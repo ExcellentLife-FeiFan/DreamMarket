@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:id="@+id/tv_food_info_aid_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:text="单位及配备"
+        android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingTop="@dimen/default_ui_margin_large"
+        android:textSize="@dimen/foodinfo_edit_title_small" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/divider" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingTop="@dimen/default_ui_margin">
+
+        <TextView
+            android:id="@+id/tv_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="单位"
+            android:layout_marginRight="@dimen/default_ui_margin"
+            android:textSize="@dimen/foodinfo_default_txt_size" />
+
+        <EditText
+            android:id="@+id/et_edit_food_info_unit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="right"
+            android:hint="份"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/foodinfo_default_txt_size" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/divider" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingTop="@dimen/default_ui_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/default_ui_margin"
+            android:text="@string/food_info_min_order_count"
+            android:textSize="@dimen/foodinfo_default_txt_size" />
+
+        <EditText
+            android:id="@+id/et_edit_food_info_min_order_count"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="right"
+            android:hint="1"
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/foodinfo_default_txt_size" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/divider" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingTop="@dimen/default_ui_margin">
+
+        <TextView
+            android:id="@+id/food_info_box_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="餐盒"
+            android:layout_marginRight="@dimen/default_ui_margin"
+            android:textSize="@dimen/foodinfo_default_txt_size" />
+
+        <EditText
+            android:id="@+id/et_edit_food_info_box_num"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="right"
+            android:hint="0个"
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/foodinfo_default_txt_size" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/divider" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingTop="@dimen/default_ui_margin">
+
+        <TextView
+            android:id="@+id/food_info_box_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/default_ui_margin"
+            android:text="餐盒费"
+            android:textSize="@dimen/foodinfo_default_txt_size" />
+
+        <EditText
+            android:id="@+id/et_edit_food_info_box_price"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="right"
+            android:hint="0.0元"
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/foodinfo_default_txt_size" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/divider" />
+</LinearLayout>

@@ -15,6 +15,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by apple on 2017/4/18.
@@ -42,8 +43,28 @@ public class PoiEntryLA extends CommonListAdapter<PoiEntryBean> {
         } else {
             viewHolder.rlRoot.setVisibility(View.INVISIBLE);
         }
+        viewHolder.civ.setImageResource(getColor(position));
 
         return convertView;
+    }
+
+    private int getColor(int position) {
+        switch (position) {
+            case 0:
+                return R.color.chocolate;
+            case 1:
+                return R.color.grassgreen;
+            case 2:
+                return R.color.violet;
+            case 3:
+                return R.color.salmon;
+            case 4:
+                return R.color.skyblue;
+            case 5:
+                return R.color.olive;
+            default:
+                return R.color.olive;
+        }
     }
 
     static class ViewHolder {
@@ -55,6 +76,8 @@ public class PoiEntryLA extends CommonListAdapter<PoiEntryBean> {
         TextView tvTitle;
         @BindView(R.id.rl_root)
         RelativeLayout rlRoot;
+        @BindView(R.id.civ)
+        CircleImageView civ;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

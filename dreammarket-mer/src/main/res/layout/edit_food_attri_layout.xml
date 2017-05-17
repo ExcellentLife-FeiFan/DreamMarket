@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingTop="@dimen/default_ui_margin_large"
+        android:text="@string/food_info_attri" />
+
+    <LinearLayout
+        android:id="@+id/ll_food_attri_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <ImageView
+        android:id="@+id/img_food_attri_devider"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/divider" />
+
+    <TextView
+        android:id="@+id/txt_add_foodinfo_attri"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/ic_add_food"
+        android:drawablePadding="@dimen/foodinfo_drawable_margin"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingTop="@dimen/default_ui_margin"
+        android:text="@string/food_info_add_attri"
+        android:textSize="@dimen/foodinfo_default_txt_size" />
+</merge>

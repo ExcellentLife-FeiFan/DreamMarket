@@ -34,5 +34,46 @@
         <item name="android:paddingBottom">@dimen/drawable_list_child_padding</item>
     </style>
 
+    <style name="star_img">
+        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_width">@dimen/icon_star_size</item>
+        <item name="android:layout_height">@dimen/icon_star_size</item>
+        <item name="android:layout_marginTop">4.0dip</item>
+        <item name="android:layout_marginRight">4.0dip</item>
+        <item name="android:src">@drawable/icon_text_star</item>
+    </style>
+
+    <style name="food_label">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/text_color_gray_light</item>
+        <item name="android:background">@drawable/bg_grey_unselect_label</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:paddingTop">5.0dip</item>
+        <item name="android:paddingRight">10.0dip</item>
+        <item name="android:paddingBottom">5.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5.0dip</item>
+    </style>
+
+
+    <style name="food_category_tips">
+        <item name="android:textSize">@dimen/text_size_micro</item>
+        <item name="android:textColor">@color/text_color_gray</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/food_margin</item>
+        <item name="android:layout_marginTop">15.0dip</item>
+        <item name="android:layout_marginBottom">5.0dip</item>
+    </style>
+    <style name="food_edit_text">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textColorHint">@color/order_text_light_gray</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingTop">13.0dip</item>
+        <item name="android:paddingBottom">12.0dip</item>
+    </style>
+
+
 
 </resources>

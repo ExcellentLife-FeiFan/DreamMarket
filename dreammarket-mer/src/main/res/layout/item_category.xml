@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_category_item_gray_selector"
+    android:paddingBottom="8.0dip"
+    android:paddingTop="8.0dip">
+
+    <ImageView
+        android:id="@+id/iv_right_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="8.0dip"
+        android:src="@drawable/d_icon_right_arrow_selector" />
+
+    <ImageView
+        android:id="@+id/iv_indicator"
+        android:layout_width="2.0dip"
+        android:layout_height="12.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/food_first_category_choose_selector" />
+
+    <TextView
+        android:id="@+id/tv_category_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8.0dip"
+        android:layout_toLeftOf="@id/iv_right_arrow"
+        android:layout_toRightOf="@id/iv_indicator"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:text="营养早餐"
+        android:textColor="@color/black_overlay"
+        android:textSize="14.0sp" />
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="15.0dip">
+
+    <ImageView
+        android:id="@+id/img_food_category_edit_drag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/d_bg_drag_selector" />
+
+    <ImageView
+        android:id="@+id/img_food_category_edit_settop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15.0dip"
+        android:layout_toLeftOf="@+id/img_food_category_edit_drag"
+        android:background="@drawable/d_bg_settop_selector" />
+
+    <RelativeLayout
+        android:id="@+id/rl_food_category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/img_food_category_edit_settop">
+
+        <ImageView
+            android:id="@+id/img_food_category_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="5.0dip"
+            android:scaleType="center"
+            android:src="@drawable/ic_list_item_delete" />
+
+        <TextView
+            android:id="@+id/tv_food_category_edit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/img_food_category_delete"
+            android:text="营养早餐"
+            android:textSize="16.0dip" />
+
+        <TextView
+            android:id="@+id/tv_product_spu_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_food_category_edit_name"
+            android:layout_toRightOf="@+id/img_food_category_delete"
+            android:text="12个商品"
+            android:textColor="@color/text_secondary"
+            android:textSize="12.0sp" />
+    </RelativeLayout>
+</RelativeLayout>

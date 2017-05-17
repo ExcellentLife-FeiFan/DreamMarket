@@ -7,14 +7,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.widget.FrameLayout;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
-import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
 import com.excellent.dm.R;
 import com.excellent.dm.base.BaseActivity;
 import com.excellent.dm.ui.fragment.home.Homefragment0;
@@ -88,14 +86,14 @@ public class MainActivity extends BaseActivity {
         // Use colored navigation with circle reveal effect
         bottomBar.setColored(false);
         // Add or remove notification for each item
-        bottomBar.setNotification("1", 0);
+//        bottomBar.setNotification("1", 0);
         // OR
-        AHNotification notification = new AHNotification.Builder()
-                .setText("1")
-                .setBackgroundColor(ContextCompat.getColor(this, R.color.yellow))
-                .setTextColor(ContextCompat.getColor(this, R.color.black_overlay))
-                .build();
-        bottomBar.setNotification(notification, 2);
+//        AHNotification notification = new AHNotification.Builder()
+//                .setText("1")
+//                .setBackgroundColor(ContextCompat.getColor(this, R.color.yellow))
+//                .setTextColor(ContextCompat.getColor(this, R.color.black_overlay))
+//                .build();
+//        bottomBar.setNotification(notification, 2);
 
         // Set listeners
         bottomBar.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {

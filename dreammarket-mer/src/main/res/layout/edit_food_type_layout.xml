@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:paddingTop="@dimen/default_ui_margin_large"
+        android:text="@string/food_info_type"
+        android:textSize="@dimen/foodinfo_edit_title_small" />
+
+    <LinearLayout
+        android:id="@+id/ll_food_type_single"
+        android:layout_width="fill_parent"
+        android:layout_height="120.0dip"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_ui_margin"
+            android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+            android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+            android:paddingTop="@dimen/default_ui_margin">
+
+            <TextView
+                android:id="@+id/txt_edit_food_info_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_ui_margin"
+                android:text="@string/title_activity_edit_food_info_price"
+                android:textSize="@dimen/foodinfo_default_txt_size" />
+
+            <EditText
+                android:id="@+id/et_edit_food_info_price"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:gravity="right"
+                android:hint="@string/hint_activity_edit_food_info_price"
+                android:inputType="numberDecimal"
+                android:textColor="@color/o_pre_green"
+                android:textSize="@dimen/foodinfo_default_txt_size" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/divider" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_ui_margin"
+            android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+            android:paddingTop="@dimen/default_ui_margin">
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_ui_margin"
+                android:layout_weight="1.0"
+                android:text="@string/title_activity_edit_food_info_use_stock"
+                android:textSize="@dimen/foodinfo_default_txt_size" />
+
+            <Switch
+                android:id="@+id/switch_setting_vibrator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/divider" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_ui_margin"
+            android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+            android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+            android:paddingTop="@dimen/default_ui_margin">
+
+            <TextView
+                android:id="@+id/txt_edit_food_info_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_ui_margin"
+                android:text="@string/title_activity_edit_food_info_stock"
+                android:textSize="@dimen/foodinfo_default_txt_size" />
+
+            <EditText
+                android:id="@+id/et_edit_food_info_stock"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:gravity="right"
+                android:hint="@string/hint_activity_edit_food_info_stock"
+                android:inputType="number"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/foodinfo_default_txt_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_food_type_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/divider" />
+
+    <TextView
+        android:id="@+id/txt_food_info_add_type"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/ic_add_food"
+        android:drawablePadding="@dimen/foodinfo_drawable_margin"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:text="@string/food_info_add_type"
+        android:textSize="@dimen/foodinfo_default_txt_size" />
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/foodinfo_edit_leftright_margin"
+        android:layout_marginRight="@dimen/foodinfo_edit_leftright_margin"
+        android:layout_marginTop="@dimen/foodinfo_type_topmargin"
+        android:gravity="center_vertical"
+        android:text="ssss"
+        android:textColor="@color/foodinfo_type_description"
+        android:textSize="@dimen/foodinfo_edit_title_small" />
+</LinearLayout>
