@@ -175,7 +175,7 @@
     <string name="food_info_add_attri">添加属性(如辣度、热度)</string>
     <string name="food_info_add_attri_gray">(如辣度、热度)</string>
     <string name="food_info_add_attri_orange">添加属性</string>
-    <string name="food_info_add_type">添加规格(为%1$s设置不同价格)</string>
+    <string name="food_info_add_type">添加规格(为不同规格设置不同价格)</string>
     <string name="food_info_add_type_gray">(为%1$s设置不同价格)</string>
     <string name="food_info_add_type_orange">添加规格</string>
     <string name="food_info_aid_title">购买单位及%1$s配备</string>
@@ -215,9 +215,10 @@
     <string name="handle_remind_order">已处理催单</string>
     <string name="has_not_logistics_scope">您尚未设置配送方案，请在商家端PC版中设置</string>
     <string name="hello_world">Hello world!</string>
-    <string name="hint_activity_edit_food_info_name">请输入%1$s</string>
+    <string name="hint_activity_edit_food_info_name">请输入名称</string>
     <string name="hint_activity_edit_food_info_price">请输入价格</string>
     <string name="hint_activity_edit_food_info_stock">默认不限</string>
+    <string name="hint_activity_edit_food_info_weight">单位g</string>
     <string name="hint_activity_modify_food_category_description">请输入分类描述</string>
     <string name="hint_activity_modify_food_category_name">请输入分类名字</string>
     <string name="hint_comment_addtional">补充评价一下吧(140字内)</string>
@@ -462,11 +463,11 @@
     <string name="title_activity_edit_food_info_add">新增%1$s</string>
     <string name="title_activity_edit_food_info_choose_food_picture">请选择图片</string>
     <string name="title_activity_edit_food_info_label">%1$s标签</string>
-    <string name="title_activity_edit_food_info_name">%1$s(*必填)</string>
+    <string name="title_activity_edit_food_info_name">商品名称(*必填)</string>
     <string name="title_activity_edit_food_info_price">价格(*必填)</string>
     <string name="title_activity_edit_food_info_stock">库存</string>
     <string name="title_activity_edit_food_info_update">更新%1$s</string>
-    <string name="title_activity_edit_food_info_use_stock">使用库存</string>
+    <string name="title_activity_edit_food_info_good_weight">重量</string>
     <string name="title_activity_feedback">我的反馈</string>
     <string name="title_activity_feedback_detail">反馈详情</string>
     <string name="title_activity_food_list">%1$s管理</string>

@@ -3,12 +3,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
+
     <include layout="@layout/layout_mytoolbar"></include>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.dm.excellent.baselibrary.views.ReboundScrollView
+        <ScrollView
             android:id="@+id/scroller"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
@@ -17,7 +19,7 @@
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -45,6 +47,7 @@
                 <include layout="@layout/commom_line" />
 
                 <LinearLayout
+                    android:id="@+id/ll_category"
                     style="@style/list_item_layout"
                     android:paddingLeft="0.0dip">
 
@@ -107,98 +110,146 @@
                         android:src="@drawable/ic_add_img" />
                 </RelativeLayout>
 
-                <LinearLayout
-                    android:id="@+id/ll_multi_fomats"
-                    style="@style/list_item_layout"
-                    android:layout_marginTop="10.0dip"
-                    android:paddingLeft="@dimen/food_null_margin">
-
-                    <TextView
-                        style="@style/left_text_layout"
-                        android:layout_width="0.0dip"
-                        android:layout_weight="1.0"
-                        android:text="商品规格" />
-
-                    <TextView
-                        android:id="@+id/tv_edit_tomats"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_edit_attr"
-                        android:gravity="right"
-                        android:text="编辑规格"
-                        android:textColor="@color/colorPrimary" />
-                </LinearLayout>
-
-                <include layout="@layout/commom_line" />
-
-                <LinearLayout
-                    android:id="@+id/ll_formats"
+                <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:orientation="vertical">
-
-                    <View
-                        android:id="@+id/ll_food_format_view"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" />
-
-                    <View
-                        android:id="@+id/ll_food_format_show_view"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" />
-
-                    <TextView
-                        android:id="@+id/tv_edit_multi_formats"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center|right"
-                        android:drawableLeft="@drawable/icon_add_green"
-                        android:drawablePadding="5.0dip"
-                        android:gravity="right"
-                        android:padding="10.0dip"
-                        android:text="多规格(多种价格设置)"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="16.0sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ll_emputy_attr"
-                    style="@style/list_item_layout"
+                    android:padding="19.0dip"
                     android:layout_marginTop="10.0dip"
-                    android:paddingLeft="@dimen/food_null_margin">
-
-                    <TextView
-                        style="@style/left_text_layout"
-                        android:layout_width="0.0dip"
-                        android:layout_weight="1.0"
-                        android:text="商品属性" />
-
-                    <TextView
-                        android:id="@+id/tv_edit_attr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_edit_attr"
-                        android:gravity="right"
-                        android:text="编辑属性"
-                        android:textColor="@color/colorPrimary" />
-                </LinearLayout>
-
-                <include layout="@layout/commom_line" />
+                    android:paddingLeft="@dimen/food_null_margin"
+                    android:text="商品规格"
+                    android:textColor="@color/text_black"
+                    android:textSize="16.0sp" />
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10.0dip"
                     android:orientation="vertical">
 
-                    <View
-                        android:id="@+id/ll_attr_view"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/default_ui_margin"
+                        android:paddingLeft="@dimen/food_null_margin"
+                        android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+                        android:paddingTop="@dimen/default_ui_margin">
+
+                        <TextView
+                            android:id="@+id/txt_edit_food_info_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/default_ui_margin"
+                            android:text="@string/title_activity_edit_food_info_price"
+                            android:textSize="@dimen/foodinfo_default_txt_size" />
+
+                        <EditText
+                            android:id="@+id/et_edit_food_info_price"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:gravity="right"
+                            android:hint="@string/hint_activity_edit_food_info_price"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/o_pre_green"
+                            android:textSize="@dimen/foodinfo_default_txt_size" />
+                    </LinearLayout>
+
+                    <ImageView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical" />
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/divider" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/default_ui_margin"
+                        android:paddingLeft="@dimen/food_null_margin"
+                        android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+                        android:paddingTop="@dimen/default_ui_margin">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/default_ui_margin"
+                            android:text="@string/title_activity_edit_food_info_good_weight"
+                            android:textSize="@dimen/foodinfo_default_txt_size" />
+
+                        <EditText
+                            android:id="@+id/et_edit_food_info_weight"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:gravity="right"
+                            android:hint="@string/hint_activity_edit_food_info_weight"
+                            android:inputType="number"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/foodinfo_default_txt_size" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/divider" />
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/default_ui_margin"
+                        android:paddingLeft="@dimen/food_null_margin"
+                        android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+                        android:paddingTop="@dimen/default_ui_margin">
+
+                        <TextView
+                            android:id="@+id/txt_edit_food_info_stock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/default_ui_margin"
+                            android:text="@string/title_activity_edit_food_info_stock"
+                            android:textSize="@dimen/foodinfo_default_txt_size" />
+
+                        <EditText
+                            android:id="@+id/et_edit_food_info_stock"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:gravity="right"
+                            android:hint="@string/hint_activity_edit_food_info_stock"
+                            android:inputType="number"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/foodinfo_default_txt_size" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/divider" />
+
+                    <TextView
+                        android:id="@+id/txt_food_info_add_type"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50.0dip"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/ic_add_food"
+                        android:drawablePadding="@dimen/foodinfo_drawable_margin"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/food_null_margin"
+                        android:text="@string/food_info_add_type"
+                        android:textSize="@dimen/foodinfo_default_txt_size" />
                 </LinearLayout>
+
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
@@ -239,30 +290,6 @@
                 </RelativeLayout>
 
                 <include layout="@layout/commom_line" />
-
-                <LinearLayout
-                    android:id="@+id/ll_sub_attr"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        style="@style/list_item_layout"
-                        android:paddingLeft="@dimen/food_null_margin">
-
-                        <TextView
-                            style="@style/left_text_layout"
-                            android:text="套餐适用人数" />
-
-                        <EditText
-                            android:id="@+id/ed_sub_attr"
-                            style="@style/list_item_right_edit_text"
-                            android:hint="请输入1-9间的数字"
-                            android:inputType="number" />
-                    </LinearLayout>
-
-                    <include layout="@layout/commom_line" />
-                </LinearLayout>
 
                 <LinearLayout
                     style="@style/list_item_layout"
@@ -309,7 +336,7 @@
                     android:id="@+id/ed_food_desc"
                     android:layout_width="fill_parent"
                     android:layout_height="100.0dip"
-                    android:layout_marginBottom="10.0dip"
+                    android:layout_marginBottom="45.0dip"
                     android:background="@color/white"
                     android:gravity="left"
                     android:hint="介绍一下你的产品吧,200字以内就可以哦"
@@ -319,7 +346,7 @@
                     android:textColorHint="@color/text_input_hint"
                     android:textSize="14.0sp" />
             </LinearLayout>
-        </com.dm.excellent.baselibrary.views.ReboundScrollView>
+        </ScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -364,40 +391,6 @@
                     android:textSize="16.0dip" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_edit_action"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_delete_spu"
-                    android:layout_width="0.0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.0"
-                    android:background="@color/white"
-                    android:gravity="center"
-                    android:padding="@dimen/default_ui_margin_medium"
-                    android:singleLine="true"
-                    android:text="删除"
-                    android:textColor="@color/red"
-                    android:textSize="16.0dip" />
-
-                <include layout="@layout/view_divider_vertical" />
-
-                <TextView
-                    android:id="@+id/tv_shelf_control"
-                    android:layout_width="0.0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.0"
-                    android:background="@color/white"
-                    android:gravity="center"
-                    android:padding="@dimen/default_ui_margin_medium"
-                    android:singleLine="true"
-                    android:text="下架"
-                    android:textColor="@color/text_black"
-                    android:textSize="16.0dip" />
-            </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

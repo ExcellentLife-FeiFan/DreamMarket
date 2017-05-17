@@ -73,7 +73,9 @@
             android:name="me.iwf.photopicker.PhotoPagerActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".ui.activity.operate.GoodManaActivity" />
-        <activity android:name=".ui.activity.operate.EditGoodActivity"></activity>
+        <activity
+            android:name=".ui.activity.operate.EditGoodActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden"></activity>
     </application>
 
 </manifest>

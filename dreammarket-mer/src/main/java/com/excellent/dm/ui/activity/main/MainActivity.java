@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Slide slideTransition = new Slide();
             slideTransition.setSlideEdge(Gravity.RIGHT);
-            slideTransition.setDuration(500);
+            slideTransition.setDuration(300);
             getWindow().setReenterTransition(slideTransition);
         }
 //        StatusBarCompat.compat(this, CommonUtils.getColor(this, R.color.title_bg_color));

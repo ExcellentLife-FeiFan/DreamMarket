@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:orientation="vertical"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_describe"
-        android:text="描述"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/default_ui_margin"
         android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
         android:paddingTop="@dimen/default_ui_margin_large"
+        android:text="描述"
         android:textSize="@dimen/foodinfo_edit_title_small" />
 
     <ImageView
@@ -36,11 +36,11 @@
 
         <TextView
             android:id="@+id/tv_label"
-            android:text="标签"
             android:layout_width="0.0dip"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/default_ui_margin"
             android:layout_weight="1.0"
+            android:text="标签"
             android:textSize="@dimen/foodinfo_default_txt_size" />
 
         <LinearLayout
@@ -63,8 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_ui_margin"
         android:background="@color/white"
-        android:maxLength="50"
         android:hint="食物描述"
+        android:maxLength="50"
         android:paddingBottom="@dimen/default_ui_margin_large"
         android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
         android:paddingRight="@dimen/foodinfo_edit_leftright_margin"

@@ -89,7 +89,6 @@
 
                 <include layout="@layout/edit_food_type_layout" />
 
-                <include layout="@layout/edit_food_attri_layout" />
 
                 <include layout="@layout/edit_food_aid_layout" />
 

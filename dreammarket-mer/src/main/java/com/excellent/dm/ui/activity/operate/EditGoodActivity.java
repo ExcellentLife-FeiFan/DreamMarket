@@ -17,7 +17,7 @@ public class EditGoodActivity extends BaseActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_good);
         ButterKnife.bind(this);
-        getBar().initActionBar("编辑增加商品", this);
+        getBar().initActionBar("增加商品", this);
     }
 
     @Override

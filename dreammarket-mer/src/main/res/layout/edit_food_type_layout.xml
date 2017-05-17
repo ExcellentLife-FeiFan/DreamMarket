@@ -15,9 +15,15 @@
         android:textSize="@dimen/foodinfo_edit_title_small" />
 
     <LinearLayout
+        android:id="@+id/ll_food_type_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <LinearLayout
         android:id="@+id/ll_food_type_single"
         android:layout_width="fill_parent"
-        android:layout_height="120.0dip"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
@@ -58,38 +64,6 @@
             android:scaleType="fitXY"
             android:src="@drawable/divider" />
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingBottom="@dimen/default_ui_margin"
-            android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
-            android:paddingTop="@dimen/default_ui_margin">
-
-            <TextView
-                android:layout_width="0.0dip"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/default_ui_margin"
-                android:layout_weight="1.0"
-                android:text="@string/title_activity_edit_food_info_use_stock"
-                android:textSize="@dimen/foodinfo_default_txt_size" />
-
-            <Switch
-                android:id="@+id/switch_setting_vibrator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical" />
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="@null"
-            android:scaleType="fitXY"
-            android:src="@drawable/divider" />
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -123,12 +97,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_food_type_container"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" />
-
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -147,16 +115,4 @@
         android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
         android:text="@string/food_info_add_type"
         android:textSize="@dimen/foodinfo_default_txt_size" />
-
-    <TextView
-        android:id="@+id/tv_text"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/foodinfo_edit_leftright_margin"
-        android:layout_marginRight="@dimen/foodinfo_edit_leftright_margin"
-        android:layout_marginTop="@dimen/foodinfo_type_topmargin"
-        android:gravity="center_vertical"
-        android:text="ssss"
-        android:textColor="@color/foodinfo_type_description"
-        android:textSize="@dimen/foodinfo_edit_title_small" />
 </LinearLayout>
