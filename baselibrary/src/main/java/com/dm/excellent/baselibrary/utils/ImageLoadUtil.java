@@ -114,6 +114,30 @@ public class ImageLoadUtil {
                 .into(imageView);
     }
 
+    public static void setImage(String imageUrl, final ImageView imageView, Activity activity, int res) {
+        if (AbStrUtil.isEmpty(imageUrl)) {
+            return;
+        }
+        imageUrl = Api.AddPATH(imageUrl);
+        Glide.with(activity).load(imageUrl)
+                .error(res)           //设置错误图片
+                .placeholder(res)     //设置占位图片
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)//缓存全尺寸
+                .into(imageView);
+    }
+
+    public static void setImage(String imageUrl, final ImageView imageView, Context activity, int res) {
+        if (AbStrUtil.isEmpty(imageUrl)) {
+            return;
+        }
+        imageUrl = Api.AddPATH(imageUrl);
+        Glide.with(activity).load(imageUrl)
+                .error(res)           //设置错误图片
+                .placeholder(res)     //设置占位图片
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)//缓存全尺寸
+                .into(imageView);
+    }
+
     public static void setCircleImage(final String imageUrl, final ImageView imageView, Context context) {
         Glide.with(context)
                 .load(imageUrl)

@@ -16,7 +16,6 @@ import com.excellent.dm.net.JsonCallback;
 import com.excellent.dm.net.Urls;
 import com.excellent.dm.ui.activity.poi.SelectSPMAddressActivity;
 import com.excellent.dm.utils.CommonUtils;
-import com.excellent.dm.utils.IntentUtils;
 import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.request.PostRequest;
@@ -37,8 +36,6 @@ public class SPMActivity extends BaseCameraActivity implements View.OnClickListe
     CircleImageView civ;
 
     String Name = "-1", Confines = "-1", Notice = "-1", Contacts = "-1", Phone = "-1", BusinessBeginTime = "-1", BusinessEndTime = "-1";
-    @BindView(R.id.tv_spm_1)
-    TextView tvSpm1;
     @BindView(R.id.tv_spm_2)
     TextView tvSpm2;
     @BindView(R.id.tv_spm_3)
@@ -70,7 +67,7 @@ public class SPMActivity extends BaseCameraActivity implements View.OnClickListe
         CommonUtils.setText(tvSpm4, App.spm.getContacts());
         CommonUtils.setText(tvSpm5, App.spm.getPhone());
         CommonUtils.setText(tvSpm6, App.spm.getAddressContent());
-        CommonUtils.setText(tvSpm7, App.spm.getBusinessBeginTime()+"-"+App.spm.getBusinessEndTime());
+        CommonUtils.setText(tvSpm7, App.spm.getBusinessBeginTime() + "-" + App.spm.getBusinessEndTime());
         CommonUtils.setText(tvSpm10, App.spm.getNotice());
     }
 
@@ -89,14 +86,11 @@ public class SPMActivity extends BaseCameraActivity implements View.OnClickListe
         super.onDestroy();
     }
 
-    @OnClick({R.id.ll_spm_0, R.id.ll_spm_1, R.id.ll_spm_2, R.id.ll_spm_3, R.id.ll_spm_4, R.id.ll_spm_5, R.id.ll_spm_6, R.id.ll_spm_7, R.id.ll_spm_8, R.id.ll_spm_9, R.id.ll_spm_10})
+    @OnClick({R.id.ll_spm_0, R.id.ll_spm_2, R.id.ll_spm_3, R.id.ll_spm_4, R.id.ll_spm_5, R.id.ll_spm_6, R.id.ll_spm_7, R.id.ll_spm_8, R.id.ll_spm_9, R.id.ll_spm_10})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_spm_0:
                 openAlbum(400, 400, true, 101);
-                break;
-            case R.id.ll_spm_1:
-                new IntentUtils(activity).startActivity(SPMStatusSettingActivity.class);
                 break;
             case R.id.ll_spm_2:
                 break;

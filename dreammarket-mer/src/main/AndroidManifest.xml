@@ -87,6 +87,7 @@
         <activity android:name=".ui.activity.mine.SPMStatusSettingActivity" />
         <activity android:name=".ui.activity.mine.CurrentAccountActivity" />
         <activity android:name=".ui.activity.login.GuideActivity"></activity>
+        <activity android:name=".ui.activity.mine.SPMQCodeActivity"></activity>
     </application>
 
 </manifest>

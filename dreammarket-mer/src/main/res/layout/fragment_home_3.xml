@@ -6,25 +6,16 @@
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/actionbar_height"
+        android:layout_height="wrap_content"
         android:background="@color/title_bg_color">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layout_scrollFlags="scroll|enterAlways|snap">
 
-            <TextView
-                android:id="@+id/tv_title_middle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/default_ui_margin"
-                android:paddingRight="@dimen/default_ui_margin"
-                android:text="梦想工厂"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_actionbar_title" />
+            <include layout="@layout/view_poi_headerview"></include>
+
         </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -45,22 +36,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_ui_margin_large"
                 android:background="@color/white"
                 android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/ll_setting_poi_info"
-                    style="@style/list_item_layout">
-
-                    <TextView
-                        style="@style/left_text_layout"
-                        android:text="@string/setting_poi_info" />
-
-                    <TextView style="@style/right_text_layout" />
-                </LinearLayout>
-
-                <include layout="@layout/commom_line2" />
 
                 <LinearLayout
                     android:id="@+id/ll_setting_self_in"
@@ -120,46 +97,46 @@
                     <TextView style="@style/right_text_layout" />
                 </LinearLayout>
 
-    <!--            <include
-                    android:id="@+id/divider_expend_food"
-                    layout="@layout/commom_line2" />
+                <!--            <include
+                                android:id="@+id/divider_expend_food"
+                                layout="@layout/commom_line2" />
 
-                <RelativeLayout
-                    android:id="@+id/ll_setting_expand_food_info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_list_item"
-                    android:paddingBottom="@dimen/default_ui_margin_large"
-                    android:paddingLeft="@dimen/default_ui_margin_large"
-                    android:paddingTop="@dimen/default_ui_margin_large">
+                            <RelativeLayout
+                                android:id="@+id/ll_setting_expand_food_info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_list_item"
+                                android:paddingBottom="@dimen/default_ui_margin_large"
+                                android:paddingLeft="@dimen/default_ui_margin_large"
+                                android:paddingTop="@dimen/default_ui_margin_large">
 
-                    <TextView
-                        android:id="@+id/tv_expand_food_info"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:gravity="center_vertical"
-                        android:maxLines="1"
-                        android:text="@string/setting_expand_food_info"
-                        android:textColor="@color/text_list_item_left"
-                        android:textSize="@dimen/text_list_item_left" />
+                                <TextView
+                                    android:id="@+id/tv_expand_food_info"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:gravity="center_vertical"
+                                    android:maxLines="1"
+                                    android:text="@string/setting_expand_food_info"
+                                    android:textColor="@color/text_list_item_left"
+                                    android:textSize="@dimen/text_list_item_left" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@+id/tv_expand_food_info"
-                        android:layout_below="@+id/tv_expand_food_info"
-                        android:layout_marginTop="12.0dip"
-                        android:text="@string/setting_expand_food_info_tips"
-                        android:textColor="@color/text_color_gray" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignLeft="@+id/tv_expand_food_info"
+                                    android:layout_below="@+id/tv_expand_food_info"
+                                    android:layout_marginTop="12.0dip"
+                                    android:text="@string/setting_expand_food_info_tips"
+                                    android:textColor="@color/text_color_gray" />
 
-                    <Switch
-                        android:id="@+id/switch_setting_expand_food_info"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true" />
-                </RelativeLayout>-->
+                                <Switch
+                                    android:id="@+id/switch_setting_expand_food_info"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true" />
+                            </RelativeLayout>-->
             </LinearLayout>
 
             <LinearLayout
