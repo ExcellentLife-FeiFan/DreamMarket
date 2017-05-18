@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_logistics_scope"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_ui_margin_large"
+        android:text="配送范围1"
+        android:textColor="#ff00abe4"
+        android:textSize="@dimen/text_size_small" />
+
+    <RelativeLayout
+        android:id="@+id/ll_send_price_level"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/default_ui_margin_large"
+        android:paddingRight="@dimen/default_ui_margin_large"
+        android:paddingTop="@dimen/default_ui_margin">
+
+        <TextView
+            android:id="@+id/txt_send_price_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="起送价"
+            android:textColor="@color/text_gray_middle"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/txt_price_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="元" />
+
+        <EditText
+            android:id="@+id/edit_send_price_level"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_ui_margin_large"
+            android:layout_marginRight="@dimen/default_ui_margin_large"
+            android:layout_toLeftOf="@+id/txt_price_unit"
+            android:layout_toRightOf="@+id/txt_send_price_level"
+            android:background="@null"
+            android:numeric="decimal"
+            android:padding="@dimen/default_ui_margin"
+            android:textSize="@dimen/text_size_little_small" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_marginLeft="@dimen/default_ui_margin_large"
+            android:background="@color/divider_logistic_fee" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_losgistics_change_fee"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/default_ui_margin_large"
+        android:paddingRight="@dimen/default_ui_margin_large"
+        android:paddingTop="@dimen/default_ui_margin">
+
+        <TextView
+            android:id="@+id/txt_logistics_change_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="配送费"
+            android:textColor="@color/text_gray_middle"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:id="@+id/txt_price_unit_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="元" />
+
+        <EditText
+            android:id="@+id/edit_logistics_change_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_ui_margin_large"
+            android:layout_marginRight="@dimen/default_ui_margin_large"
+            android:layout_toLeftOf="@+id/txt_price_unit_second"
+            android:layout_toRightOf="@+id/txt_logistics_change_fee"
+            android:background="@null"
+            android:numeric="decimal"
+            android:padding="@dimen/default_ui_margin"
+            android:textSize="@dimen/text_size_little_small" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_logistics_fee_changge"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_ui_margin_large"
+        android:layout_marginRight="@dimen/default_ui_margin_large"
+        android:layout_marginTop="@dimen/default_ui_margin_huge"
+        android:background="@drawable/d_bg_btn_gray_focus"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/default_ui_margin_medium"
+        android:text="@string/str_submmit"
+        android:textColor="@color/white"
+        android:textSize="18.0sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/default_ui_margin_large"
+        android:gravity="center_horizontal"
+        android:text="@string/logistics_fee_change_desc"
+        android:textColor="@color/text_gray_middle" />
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_ui_margin"
+        android:text="@string/title_activity_open_hours_choose_open_day"
+        android:textColor="@color/text_secondary" />
+
+    <LinearLayout
+        android:id="@+id/ll_open_hours_update_open_day"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/default_ui_margin_large"
+        android:paddingRight="@dimen/default_ui_margin_large"
+        android:paddingTop="@dimen/default_ui_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/default_ui_margin"
+            android:layout_marginRight="@dimen/default_ui_margin"
+            android:text="@string/open_day"
+            android:textSize="@dimen/text_size_medium" />
+
+        <TextView
+            android:id="@+id/txt_open_hours_open_day"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center|right"
+            android:textColor="@color/text_secondary" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/default_ui_margin"
+        android:text="@string/title_activity_open_hours_setting_open_hours"
+        android:textColor="@color/text_secondary" />
+
+    <ListView
+        android:id="@+id/list_open_hours_open_hours"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:scrollbars="none" />
+
+    <Button
+        android:id="@+id/btn_open_hours_add_open_hour"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_ui_margin_large"
+        android:layout_marginRight="@dimen/default_ui_margin_large"
+        android:layout_marginTop="@dimen/default_ui_margin_large"
+        android:text="@string/action_open_hours_add_open_hour" />
+
+    <LinearLayout
+        android:id="@+id/ll_delivery_time"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_ui_margin_large"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingLeft="@dimen/default_ui_margin_large"
+        android:paddingRight="@dimen/default_ui_margin_large"
+        android:paddingTop="@dimen/default_ui_margin_large"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_delivery_time_modify_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_ui_margin"
+            android:layout_marginRight="@dimen/default_ui_margin"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/text_size_little_small" />
+
+        <TextView
+            android:id="@+id/txt_delivery_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/default_ui_margin_large"
+            android:text="@string/delivery_time_default"
+            android:textColor="@color/text_secondary" />
+    </LinearLayout>
+</LinearLayout>

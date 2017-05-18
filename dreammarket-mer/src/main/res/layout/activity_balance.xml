@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ll_withdraw">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_balance"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_balance_could_withdraw"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/bg_list_item"
+                    android:orientation="vertical"
+                    android:paddingBottom="20.0dip"
+                    android:paddingTop="22.0dip">
+
+                    <TextView
+                        android:id="@+id/txt_account_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30.0dip"
+                        android:drawableLeft="@drawable/ic_balance_cash"
+                        android:drawablePadding="@dimen/default_ui_margin_large"
+                        android:text="@string/string_withdrawals_balance"
+                        android:textColor="#ff505050"
+                        android:textSize="16.0sp" />
+
+                    <TextView
+                        android:id="@+id/txt_account_balance_sum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="56.0dip"
+                        android:layout_marginTop="8.0dip"
+                        android:gravity="center"
+                        android:text="--"
+                        android:textColor="#ff06c1ae"
+                        android:textSize="24.0sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:background="#ffeaeaea" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_earnest_money"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/bg_list_item"
+                        android:orientation="vertical"
+                        android:paddingBottom="15.0dip"
+                        android:paddingTop="15.0dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30.0dip"
+                            android:drawableLeft="@drawable/ic_deposit_cash"
+                            android:drawablePadding="@dimen/default_ui_margin_large"
+                            android:text="保证金"
+                            android:textColor="#ff505050"
+                            android:textSize="16.0sp" />
+
+                        <TextView
+                            android:id="@+id/txt_earnest_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="56.0dip"
+                            android:layout_marginTop="8.0dip"
+                            android:text="--"
+                            android:textColor="#ff909090"
+                            android:textSize="24.0sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1.0dip"
+                        android:layout_height="fill_parent"
+                        android:background="#ffeaeaea" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_delivery_money"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/bg_list_item"
+                        android:orientation="vertical"
+                        android:paddingBottom="15.0dip"
+                        android:paddingTop="15.0dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30.0dip"
+                            android:drawableLeft="@drawable/ic_delivery_cash"
+                            android:drawablePadding="@dimen/default_ui_margin_large"
+                            android:text="配送费"
+                            android:textColor="#ff505050"
+                            android:textSize="16.0sp" />
+
+                        <TextView
+                            android:id="@+id/txt_delivery_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="56.0dip"
+                            android:layout_marginTop="8.0dip"
+                            android:text="--"
+                            android:textColor="#ff909090"
+                            android:textSize="24.0sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txt_gift_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="56.0dip"
+                            android:textColor="#ff909090"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:background="#ffeaeaea" />
+
+                <TextView
+                    android:id="@+id/txt_account_total_money"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginTop="12.0dip"
+                    android:text="总余额:--"
+                    android:textColor="#ff909090"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+
+            <include layout="@layout/view_divider_horizontal" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/default_ui_margin_large"
+                android:background="@color/white_background" />
+
+            <LinearLayout
+                android:id="@+id/ll_balance_flow"
+                style="@style/list_item_layout"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/left_text_layout"
+                    android:text="账单流水" />
+
+                <TextView style="@style/right_text_layout" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/divider_balance_flow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_ui_margin_large"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/divider"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_balance_billcheck"
+                    style="@style/list_item_layout">
+
+                    <TextView
+                        style="@style/left_text_layout"
+                        android:text="订单记录" />
+
+                    <TextView
+                        style="@style/right_text_layout"
+                        android:text="含待入账订单" />
+                </LinearLayout>
+
+                <include layout="@layout/view_divider_leftmargin" />
+
+                <LinearLayout
+                    android:id="@+id/ll_balance_account"
+                    style="@style/list_item_layout">
+
+                    <TextView
+                        style="@style/left_text_layout"
+                        android:text="账户信息" />
+
+                    <TextView style="@style/right_text_layout" />
+                </LinearLayout>
+
+                <include layout="@layout/view_divider_leftmargin" />
+
+                <LinearLayout
+                    android:id="@+id/ll_balance_help"
+                    style="@style/list_item_layout">
+
+                    <TextView
+                        style="@style/left_text_layout"
+                        android:text="帮助" />
+
+                    <TextView
+                        android:id="@+id/txt_balance_help"
+                        style="@style/right_text_layout" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_withdraw"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/default_ui_margin"
+        android:paddingTop="@dimen/default_ui_margin"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/ll_balance_withdraw"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_marginLeft="@dimen/default_ui_margin_large"
+            android:layout_marginRight="@dimen/default_ui_margin_large"
+            android:layout_weight="1.0"
+            android:background="@drawable/d_bg_btn_green_focus"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:drawableLeft="@drawable/ic_withdraw"
+                android:drawablePadding="@dimen/default_ui_margin_large"
+                android:gravity="center"
+                android:text="提现"
+                android:textColor="@color/white"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_balance_transfer_record"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/d_bg_btn_gray_disable"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:drawableLeft="@drawable/ic_tobeadd"
+                android:drawablePadding="@dimen/default_ui_margin_large"
+                android:gravity="center"
+                android:text="充值"
+                android:textColor="#ffc2c2c2"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_ui_margin"
+                android:gravity="center"
+                android:text="敬请期待"
+                android:textColor="#ffc2c2c2"
+                android:textSize="10.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

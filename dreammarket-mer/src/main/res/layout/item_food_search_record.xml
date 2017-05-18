@@ -57,7 +57,7 @@
         android:paddingRight="15.0dip"
         android:paddingTop="6.0dip"
         android:text="下架"
-        android:textColor="@color/d_color_text_green_selector"
+        android:textColor="@color/colorPrimary"
         android:textSize="14.0sp" />
 
     <TextView
@@ -73,7 +73,7 @@
         android:paddingRight="15.0dip"
         android:paddingTop="6.0dip"
         android:text="编辑"
-        android:textColor="@color/d_color_text_green_selector"
+        android:textColor="@color/colorPrimary"
         android:textSize="14.0sp" />
 
     <RelativeLayout

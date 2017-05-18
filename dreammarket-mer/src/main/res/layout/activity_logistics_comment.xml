@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:id="@+id/txt_comment_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/default_ui_margin"
+        android:layout_marginLeft="@dimen/default_ui_margin_large"
+        android:layout_marginRight="@dimen/default_ui_margin_large"
+        android:background="@drawable/d_bg_btn_green_selector"
+        android:gravity="center"
+        android:padding="@dimen/default_ui_margin"
+        android:text="@string/delivery_comment_bottom"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/bottom_text_btn_size"
+        android:visibility="visible" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txt_comment_bottom"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white_background"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/default_ui_margin_large"
+            android:paddingRight="@dimen/default_ui_margin_large">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="55.0dip"
+                android:layout_marginTop="55.0dip"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_comment_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comment_delivery_txt_desc"
+                    android:textSize="@dimen/text_size_little_small" />
+
+                <RatingBar
+                    android:id="@+id/rb_logistic_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_ui_margin" />
+            </LinearLayout>
+
+            <com.sankuai.meituan.meituanwaimaibusiness.util.widget.flowlayout.MutilChooseFlowLayout
+                android:id="@+id/ll_logistics_comment_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txt_comment_promot"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_ui_margin_large"
+                android:gravity="center_horizontal"
+                android:text="@string/delivery_comment_promot"
+                android:textColor="@color/orange"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edit_comment_addtional"
+                android:layout_width="fill_parent"
+                android:layout_height="150.0dip"
+                android:layout_marginTop="@dimen/default_ui_margin_large"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="@string/hint_comment_addtional"
+                android:paddingBottom="@dimen/default_ui_margin_large"
+                android:paddingLeft="@dimen/foodinfo_edit_leftright_margin"
+                android:paddingRight="@dimen/foodinfo_edit_leftright_margin"
+                android:paddingTop="@dimen/default_ui_margin_large"
+                android:textSize="@dimen/bottom_text_btn_size" />
+
+            <TextView
+                android:id="@+id/txt_comment_addtional"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_ui_margin_large"
+                android:background="@color/logistic_comment_background"
+                android:padding="@dimen/default_ui_margin_large"
+                android:text=""
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

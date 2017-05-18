@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white_background">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_marginTop="15.0dip"
+            android:background="#ffe3e3e3" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="90.0dip"
+            android:background="#ffffffff"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="30.0dip"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="全\n部"
+                android:textColor="#ffa2a2a2"
+                android:textSize="12.0dip" />
+
+            <View
+                android:layout_width="1.0px"
+                android:layout_height="fill_parent"
+                android:background="#ffe3e3e3" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_total_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="12.0dip"
+                        android:text="12"
+                        android:textColor="#ff505050"
+                        android:textSize="24.0dip" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日有效订单"
+                        android:textSize="12.0dip" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1.0px"
+                    android:layout_height="fill_parent"
+                    android:background="#ffe3e3e3" />
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="12"
+                        android:id="@+id/tv_total_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="12.0dip"
+                        android:textColor="#ff505050"
+                        android:textSize="24.0dip" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="用户支付金额"
+                        android:textSize="12.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="#ffe3e3e3" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="90.0dip"
+            android:background="#ffffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="30.0dip"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="在\n线\n支\n付"
+                android:textColor="#ffa2a2a2"
+                android:textSize="12.0dip" />
+
+            <View
+                android:layout_width="1.0px"
+                android:layout_height="fill_parent"
+                android:background="#ffe3e3e3" />
+
+            <TextView
+                android:id="@+id/tv_online_count"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="12"
+                android:padding="12.0dip"
+                android:textColor="#ff505050"
+                android:textSize="12.0dip" />
+
+            <View
+                android:layout_width="1.0px"
+                android:layout_height="fill_parent"
+                android:background="#ffe3e3e3"
+                android:paddingBottom="15.0dip"
+                android:paddingTop="15.0dip" />
+
+            <TextView
+                android:id="@+id/tv_online_amount"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="12"
+                android:padding="12.0dip"
+                android:textColor="#ff505050"
+                android:textSize="12.0dip" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="#ffe3e3e3" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="90.0dip"
+            android:background="#ffffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="30.0dip"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="现\n金\n支\n付"
+                android:textColor="#ffa2a2a2"
+                android:textSize="12.0dip" />
+
+            <View
+                android:layout_width="1.0px"
+                android:layout_height="fill_parent"
+                android:background="#ffe3e3e3" />
+
+            <TextView
+                android:id="@+id/tv_offline_count"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:padding="12.0dip"
+                android:text="12"
+                android:textColor="#ff505050"
+                android:textSize="12.0dip" />
+
+            <View
+                android:layout_width="1.0px"
+                android:layout_height="fill_parent"
+                android:background="#ffe3e3e3"
+                android:paddingBottom="15.0dip"
+                android:paddingTop="15.0dip" />
+
+            <TextView
+                android:id="@+id/tv_offline_amount"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="12"
+                android:padding="12.0dip"
+                android:textColor="#ff505050"
+                android:textSize="12.0dip" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="#ffe3e3e3" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15.0dip"
+            android:paddingTop="10.0dip"
+            android:text="1.有效订单包括商家接单后，尚未被取消的订单数量\n2.如需在线支付订单对账，请返回至门店管理页面，点击财务对账→订单记录"
+            android:textColor="#ffa2a2a2"
+            android:textSize="12.0dip" />
+
+        <TextView
+            android:id="@+id/tv_orde_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15.0dip"
+            android:background="@drawable/bg_list_item"
+            android:drawableRight="@drawable/ic_right"
+            android:padding="15.0dip"
+            android:text="查看订单"
+            android:textColor="#ff505050"
+            android:textSize="14.0dip" />
+    </LinearLayout>
+</ScrollView>
