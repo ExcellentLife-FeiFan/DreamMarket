@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_action_divider_line"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/order_divider_size"
+        android:background="@color/order_divider" />
+
+    <LinearLayout
+        android:id="@+id/ll_action_new"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/order_default_padding"
+        android:layout_marginLeft="@dimen/order_card_margin"
+        android:layout_marginRight="@dimen/order_card_margin"
+        android:layout_marginTop="@dimen/order_default_padding"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/d_bg_btn_green_selector"
+            android:gravity="center"
+            android:paddingBottom="@dimen/order_default_padding"
+            android:paddingTop="@dimen/order_default_padding"
+            android:text="@string/adapter_order_cancel"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/order_txt_size_large" />
+
+        <TextView
+            android:id="@+id/btn_accept_print"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/order_default_padding"
+            android:layout_weight="2.0"
+            android:background="@drawable/bg_btn_blue"
+            android:gravity="center"
+            android:paddingBottom="@dimen/order_default_padding"
+            android:paddingTop="@dimen/order_default_padding"
+            android:text="@string/adapter_order_print"
+            android:textColor="@color/order_txt_white"
+            android:textSize="@dimen/order_txt_size_large" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_action_accepted"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginLeft="@dimen/order_card_margin"
+        android:layout_marginRight="@dimen/order_card_margin"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="@dimen/default_ui_margin_medium_small"
+            android:layout_marginTop="@dimen/order_default_padding"
+            android:background="@drawable/d_bg_btn_green_selector"
+            android:paddingBottom="5.0dip"
+            android:paddingLeft="@dimen/order_default_padding"
+            android:paddingRight="@dimen/order_default_padding"
+            android:paddingTop="5.0dip"
+            android:text="@string/adapter_order_cancel"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/order_txt_size_large" />
+
+        <TextView
+            android:id="@+id/tv_print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/default_ui_margin_medium_small"
+            android:layout_marginTop="@dimen/order_default_padding"
+            android:background="@drawable/d_bg_btn_green_selector"
+            android:paddingBottom="5.0dip"
+            android:paddingLeft="@dimen/order_default_padding"
+            android:paddingRight="@dimen/order_default_padding"
+            android:paddingTop="5.0dip"
+            android:text="@string/adapter_order_print"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/order_txt_size_large" />
+
+        <TextView
+            android:id="@+id/tv_logistic"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_ui_margin_top"
+            android:layout_marginTop="@dimen/order_default_padding"
+            android:layout_toLeftOf="@+id/tv_print"
+            android:layout_weight="1.0"
+            android:background="@drawable/d_bg_btn_green_fill_selector"
+            android:gravity="center_horizontal"
+            android:paddingBottom="5.0dip"
+            android:paddingLeft="@dimen/order_default_padding"
+            android:paddingRight="@dimen/order_default_padding"
+            android:paddingTop="5.0dip"
+            android:text="发货"
+            android:textColor="@color/white"
+            android:textSize="@dimen/order_txt_size_large" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/title_bg_color"
+    android:orientation="vertical"
+    android:paddingTop="20.0dip">
+
+    <RelativeLayout
+        android:id="@+id/rl_poi_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="15.0dip">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_poi_logo"
+            android:layout_width="60.0dip"
+            android:layout_height="60.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10.0dip"
+            android:src="@drawable/ic_poi_logo_default" />
+
+        <ImageView
+            android:id="@+id/img_poi_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5.0dip"
+            android:src="@drawable/ic_next_page" />
+
+        <TextView
+            android:id="@+id/tv_poi_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/img_poi_info"
+            android:layout_toLeftOf="@+id/img_poi_info"
+            android:layout_toRightOf="@+id/iv_poi_logo"
+            android:ellipsize="end"
+            android:padding="5.0dip"
+            android:singleLine="true"
+            android:text="望京华强北店"
+            android:textColor="#ffffffff"
+            android:textSize="16.0dip" />
+
+        <View
+            android:id="@+id/ll_act"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_below="@+id/tv_poi_name"
+            android:layout_toLeftOf="@+id/img_poi_info"
+            android:layout_toRightOf="@+id/iv_poi_logo"
+            android:orientation="horizontal"
+            android:padding="5.0dip" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="15.0dip"
+        android:background="#ff434b54" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip"
+        android:background="@color/title_bg_color"
+        android:orientation="horizontal"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="15.0dip">
+
+        <LinearLayout
+            android:id="@+id/ll_poi_qr"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center|top"
+            android:paddingBottom="15.0dip">
+
+            <TextView
+                android:id="@+id/tv_poi_qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_qr"
+                android:drawablePadding="@dimen/default_ui_margin"
+                android:gravity="center"
+                android:paddingBottom="3.0dip"
+                android:paddingLeft="6.0dip"
+                android:paddingRight="6.0dip"
+                android:paddingTop="3.0dip"
+                android:text="门店二维码"
+                android:textColor="@color/text_input_hint" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="5.0dip"
+            android:layout_marginTop="5.0dip"
+            android:background="#ff4e555e" />
+
+        <LinearLayout
+            android:id="@+id/ll_poi_status"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:gravity="center|top"
+            android:paddingBottom="15.0dip">
+
+            <TextView
+                android:id="@+id/tv_poi_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_restraunt"
+                android:drawablePadding="@dimen/default_ui_margin"
+                android:gravity="center"
+                android:paddingBottom="3.0dip"
+                android:paddingLeft="6.0dip"
+                android:paddingRight="6.0dip"
+                android:paddingTop="3.0dip"
+                android:text="正在运营"
+                android:textColor="@color/text_input_hint" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

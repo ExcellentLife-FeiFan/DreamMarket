@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/first_list"
+        android:layout_width="90.0dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@color/first_grey"
+        android:choiceMode="singleChoice"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="@color/transparent"
+        android:scrollbars="none" />
+
+    <ListView
+        android:id="@+id/second_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@+id/first_list"
+        android:background="@color/second_grey"
+        android:choiceMode="singleChoice"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="@color/transparent"
+        android:scrollbars="none" />
+
+    <ListView
+        android:id="@+id/third_list"
+        android:layout_width="@dimen/three_list_marginring"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="@color/third_grey"
+        android:choiceMode="singleChoice"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="@color/transparent"
+        android:dividerHeight="0.0dip"
+        android:scrollbars="none" />
+</RelativeLayout>

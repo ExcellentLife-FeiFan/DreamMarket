@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reminder_item"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/order_highlight"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/default_ui_margin_medium">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_ui_margin_medium"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/order_card_margin"
+        android:paddingRight="@dimen/order_card_margin">
+
+        <TextView
+            android:id="@+id/tv_reminder_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="用户第3次催单"
+            android:textColor="@color/order_txt_black"
+            android:textSize="@dimen/order_txt_size_medium"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:id="@+id/fl_reminder_reply_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/tv_reminder_reply_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未回复"
+                android:textColor="@color/order_txt_gray"
+                android:textSize="@dimen/text_size_micro" />
+
+            <TextView
+                android:id="@+id/tv_reminder_reply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/bg_green"
+                android:paddingBottom="5.0dip"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:paddingTop="5.0dip"
+                android:text="回复"
+                android:textColor="@color/order_txt_white"
+                android:textSize="@dimen/order_txt_size_medium"
+                android:visibility="gone" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_reminder_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/default_ui_margin_medium_small"
+        android:paddingLeft="@dimen/order_card_margin"
+        android:text="于08-16 12:20催单"
+        android:textColor="@color/order_txt_gray"
+        android:textSize="@dimen/order_txt_size_small" />
+</LinearLayout>
