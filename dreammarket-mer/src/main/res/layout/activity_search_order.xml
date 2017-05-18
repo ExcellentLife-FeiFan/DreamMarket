@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:elevation="1dip">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/actionbar_height"
+                android:background="@color/title_bg_color"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rl_back"
+                    android:layout_width="@dimen/dp40"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/selector_bg_view_click">
+
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/ic_navigate_before_white" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30.0dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10.0dip"
+                        android:background="@drawable/selectable_login_btn_bg"
+                        android:gravity="center"
+                        android:paddingLeft="5.0dip"
+                        android:paddingRight="5.0dip"
+                        android:text="搜索"
+                        android:textColor="@color/white"
+                        android:textSize="14.0sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_search_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30.0dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8.0dip"
+                        android:layout_toLeftOf="@+id/tv_search"
+                        android:background="@drawable/bg_gray_border"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/img_search_order"
+                            android:layout_width="12.0dip"
+                            android:layout_height="12.0dip"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/default_ui_margin_medium"
+                            android:src="@drawable/ic_order_search"
+                            android:visibility="visible" />
+
+                        <EditText
+                            android:id="@+id/et_search_order_keyword"
+                            android:layout_width="0.0dip"
+                            android:layout_height="36.0dip"
+                            android:layout_weight="1.0"
+                            android:background="@color/transparent"
+                            android:ellipsize="end"
+                            android:gravity="center|left"
+                            android:hint="@string/search_hint"
+                            android:imeOptions="actionSearch"
+                            android:paddingLeft="12.0dip"
+                            android:singleLine="true"
+                            android:textColor="@color/text_white"
+                            android:textColorHint="#ffc2c2c2"
+                            android:textSize="@dimen/text_size_small" />
+
+                        <ImageView
+                            android:id="@+id/img_search_order_content_clear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/default_ui_margin"
+                            android:src="@drawable/icon_search_clear"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_search_keyword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/default_ui_margin_large"
+                android:paddingLeft="@dimen/default_ui_margin_medium"
+                android:paddingRight="@dimen/default_ui_margin_medium"
+                android:paddingTop="@dimen/default_ui_margin_large">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:text="点击标签直接搜索:"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="13.0sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="30.0dip"
+                    android:layout_marginTop="@dimen/default_ui_margin_large"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_keyword_pre"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/bg_border_keyword_gray"
+                        android:gravity="center"
+                        android:text="待发预订单"
+                        android:textColor="@color/text_color_middle_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <View
+                        android:layout_width="@dimen/default_ui_margin_medium"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent" />
+
+                    <TextView
+                        android:id="@+id/tv_keyword_delivery"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/bg_border_keyword_gray"
+                        android:gravity="center"
+                        android:text="待发配送"
+                        android:textColor="@color/text_color_middle_black"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <View
+                        android:layout_width="@dimen/default_ui_margin_medium"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent" />
+
+                    <TextView
+                        android:id="@+id/tv_keyword_pay_offline"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/bg_border_keyword_gray"
+                        android:gravity="center"
+                        android:text="货到付款"
+                        android:textColor="@color/text_color_middle_black"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</android.support.design.widget.CoordinatorLayout>

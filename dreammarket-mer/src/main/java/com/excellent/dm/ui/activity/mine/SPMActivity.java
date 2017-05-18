@@ -16,6 +16,7 @@ import com.excellent.dm.net.JsonCallback;
 import com.excellent.dm.net.Urls;
 import com.excellent.dm.ui.activity.poi.SelectSPMAddressActivity;
 import com.excellent.dm.utils.CommonUtils;
+import com.excellent.dm.utils.IntentUtils;
 import com.google.gson.reflect.TypeToken;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.request.PostRequest;
@@ -95,6 +96,7 @@ public class SPMActivity extends BaseCameraActivity implements View.OnClickListe
                 openAlbum(400, 400, true, 101);
                 break;
             case R.id.ll_spm_1:
+                new IntentUtils(activity).startActivity(SPMStatusSettingActivity.class);
                 break;
             case R.id.ll_spm_2:
                 break;

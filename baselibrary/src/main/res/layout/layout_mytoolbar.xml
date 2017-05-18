@@ -8,5 +8,6 @@
     <com.dm.excellent.baselibrary.views.ActionBarView
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/actionbar_height" />
+        android:layout_height="@dimen/actionbar_height"
+        app:layout_scrollFlags="scroll|enterAlways|snap"/>
 </android.support.design.widget.AppBarLayout>

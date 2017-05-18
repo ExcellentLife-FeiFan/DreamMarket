@@ -8,5 +8,6 @@
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
         app:is_dark="true"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
         android:layout_height="@dimen/actionbar_height" />
 </android.support.design.widget.AppBarLayout>

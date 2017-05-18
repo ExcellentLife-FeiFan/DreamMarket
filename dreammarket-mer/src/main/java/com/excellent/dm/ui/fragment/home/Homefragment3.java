@@ -10,6 +10,7 @@ import com.excellent.dm.base.App;
 import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseFragment;
 import com.excellent.dm.ui.activity.login.LoginActivity;
+import com.excellent.dm.ui.activity.mine.CurrentAccountActivity;
 import com.excellent.dm.ui.activity.mine.SPMActivity;
 import com.excellent.dm.utils.IntentUtils;
 
@@ -78,6 +79,7 @@ public class Homefragment3 extends BaseFragment {
             case R.id.ll_restaurant_contact_bd:
                 break;
             case R.id.ll_setting_account:
+                new IntentUtils(activity).startActivity(CurrentAccountActivity.class);
                 break;
             case R.id.tv_setting_exit_account:
                 App.spm =null;

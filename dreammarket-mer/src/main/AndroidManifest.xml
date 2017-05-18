@@ -41,15 +41,19 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="KlVzooDznlz7kE8flrbE6MPExPvavzN6" />
 
-        <activity
-            android:name=".ui.activity.login.LoginActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden">
+        <activity android:name=".ui.activity.login.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activity.login.LoginActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden">
+
+        </activity>
+        <activity android:name="com.dm.excellent.baselibrary.utils.PermissionsActivity" />
         <activity android:name=".ui.activity.main.MainActivity" />
         <activity
             android:name=".ui.activity.login.RegisterActivity"
@@ -75,7 +79,14 @@
         <activity android:name=".ui.activity.operate.GoodManaActivity" />
         <activity
             android:name=".ui.activity.operate.EditGoodActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden"></activity>
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".ui.activity.ordermana.SearchOrderActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".ui.activity.ordermana.PreOrderActivity" />
+        <activity android:name=".ui.activity.mine.SPMStatusSettingActivity" />
+        <activity android:name=".ui.activity.mine.CurrentAccountActivity" />
+        <activity android:name=".ui.activity.login.GuideActivity"></activity>
     </application>
 
 </manifest>

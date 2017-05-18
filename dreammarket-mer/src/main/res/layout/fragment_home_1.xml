@@ -38,6 +38,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/ll_search"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/default_ui_margin_medium"
@@ -73,6 +74,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="@dimen/default_ui_margin_great"
+                    android:background="@drawable/selector_bg_view_click"
                     android:gravity="center_vertical"
                     android:text="预订单"
                     android:textColor="@color/text_white"
