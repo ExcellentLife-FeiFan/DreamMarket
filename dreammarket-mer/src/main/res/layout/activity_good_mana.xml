@@ -19,8 +19,9 @@
             android:orientation="horizontal">
 
             <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_category"
                 android:layout_width="100.0dip"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:listSelector="@android:color/transparent" />
 
             <FrameLayout
@@ -62,9 +63,9 @@
                         android:layout_width="fill_parent"
                         android:layout_height="45.0dip"
                         android:layout_alignParentBottom="true"
+                        android:background="@drawable/selector_bg_view_click"
                         android:drawableTop="@drawable/divider"
                         android:gravity="center"
-                        android:background="@drawable/selector_bg_view_click"
                         android:text="批量编辑下架商品"
                         android:textColor="@color/theme_color"
                         android:textSize="14.0sp" />
@@ -84,7 +85,7 @@
                         android:layout_above="@id/txt_edit_offine_foodlist">
 
                         <android.support.v7.widget.RecyclerView
-                            android:id="@+id/list_food"
+                            android:id="@+id/rv_food"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:listSelector="@android:color/transparent" />
@@ -149,9 +150,9 @@
                     android:layout_width="0.0dip"
                     android:layout_height="fill_parent"
                     android:layout_weight="1.0"
+                    android:background="@drawable/selector_bg_view_click"
                     android:gravity="center"
                     android:text="新建商品"
-                    android:background="@drawable/selector_bg_view_click"
                     android:textColor="#ff505050"
                     android:textSize="14.0sp" />
 
