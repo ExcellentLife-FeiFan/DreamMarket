@@ -5,6 +5,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.dm.excellent.baselibrary.views.SimpleDividerDecoration;
 import com.excellent.dm.R;
 import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseActivity;
@@ -36,12 +38,14 @@ public class GoodManaActivity extends BaseActivity implements View.OnClickListen
         getBar().initActionBar("商品管理", this);
 
         List<GMCategory1> strings = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
             strings.add(new GMCategory1());
         }
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rvCategory.setLayoutManager(linearLayoutManager);
+        rvCategory.addItemDecoration(new SimpleDividerDecoration(activity, R.color.divider_line, R.dimen.common_divider_height));
         categoryA=new GoodMCategoryA(strings);
+        categoryA.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
         rvCategory.setAdapter(categoryA);
 
     }

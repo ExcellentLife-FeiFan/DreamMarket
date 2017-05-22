@@ -3,6 +3,6 @@
     android:id="@+id/lv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:divider="@color/common_divider_color"
+    android:divider="@color/red"
     android:dividerHeight="@dimen/common_divider_height"
     android:scrollbars="none" />

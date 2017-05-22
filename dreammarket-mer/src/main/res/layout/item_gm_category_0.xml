@@ -5,7 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     expandable:el_contentLayout="@layout/item_gm_category_sub"
-    expandable:el_headerLayout="@layout/item_gm_category"
-    />
-  <!--  expandable:contentLayout="@layout/item_gm_category_sub"
-    expandable:headerLayout="@layout/item_gm_category"-->
+    expandable:el_headerLayout="@layout/item_gm_category" />

@@ -23,22 +23,13 @@
         app:eiv_roundedCorners="true"
         app:eiv_switchColor="true" />
 
-    <!--    <ImageView
-            android:id="@+id/iv_right_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="8.0dip"
-            android:src="@drawable/d_icon_right_arrow_selector" />-->
-
     <ImageView
         android:id="@+id/iv_indicator"
         android:layout_width="2.0dip"
         android:layout_height="12.0dip"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/food_first_category_choose_selector" />
+        android:src="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/tv_category_name"
