@@ -12,7 +12,7 @@ public class HomeFM4 extends BaseFragment {
 
     @Override
     public int getLayoutRes() {
-        return R.layout.fm_home_1;
+        return R.layout.fm_home_4;
     }
 
     @Override

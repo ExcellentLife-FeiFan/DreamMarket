@@ -2,14 +2,11 @@ package com.excellent.dmu.ui.activity.main;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.transition.Slide;
-import android.view.Gravity;
 import android.widget.FrameLayout;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
@@ -21,6 +18,7 @@ import com.excellent.dmu.ui.fm.home.HomeFM1;
 import com.excellent.dmu.ui.fm.home.HomeFM2;
 import com.excellent.dmu.ui.fm.home.HomeFM3;
 import com.excellent.dmu.ui.fm.home.HomeFM4;
+import com.flyco.systembar.SystemBarHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,13 +44,14 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        SystemBarHelper.tintStatusBar(this, getResources().getColor(R.color.colorPrimary));
+     /*   if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Slide slideTransition = new Slide();
+            slideTransition.excludeTarget(android.R.id.statusBarBackground, false);
             slideTransition.setSlideEdge(Gravity.RIGHT);
             slideTransition.setDuration(500);
             getWindow().setReenterTransition(slideTransition);
-        }
-//        StatusBarCompat.compat(this, CommonUtils.getColor(this, R.color.title_bg_color));
+        }*/
         if (null == savedInstanceState) {
             fm1 = new HomeFM1();
             fm2 = new HomeFM2();

@@ -25,7 +25,6 @@ import com.dm.excellent.baselibrary.views.loadding.CustomDialog;
 import com.excellent.dmu.R;
 import com.excellent.dmu.event.EmptyEvent;
 
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +48,7 @@ public class BaseActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         AppManager.getInstance().addActivity(this);
+//        SystemBarHelper.tintStatusBar(this, getResources().getColor(R.color.title_bg_color));
         if (!EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().register(this);
         }

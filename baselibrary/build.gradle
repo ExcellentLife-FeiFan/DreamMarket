@@ -55,4 +55,6 @@ dependencies {
     compile 'me.iwf.photopicker:PhotoPicker:0.9.8@aar'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.github.zagum:Android-ExpandIcon:1.2.0'
+
+    compile 'com.github.todou:appbarspring:1.0.3'
 }
