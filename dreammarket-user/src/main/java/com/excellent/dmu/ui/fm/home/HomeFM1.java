@@ -8,10 +8,10 @@ import android.support.v4.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
 import com.excellent.dmu.R;
 import com.excellent.dmu.base.BaseFragment;
 import com.excellent.dmu.ui.activity.main.HomeSearchActivity;
@@ -27,7 +27,7 @@ import butterknife.Unbinder;
  * Created by apple on 2017/3/29.
  */
 
-public class HomeFM1 extends BaseFragment {
+public class HomeFM1 extends BaseFragment implements FireworkyPullToRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.rl_search)
     RelativeLayout rlSearch;
@@ -35,7 +35,9 @@ public class HomeFM1 extends BaseFragment {
     @BindView(R.id.tv_address)
     TextView tvAddress;
     @BindView(R.id.et)
-    EditText et;
+    TextView et;
+    @BindView(R.id.pullToRefresh)
+    FireworkyPullToRefreshLayout pullToRefresh;
 
     @Override
     public int getLayoutRes() {
@@ -44,7 +46,7 @@ public class HomeFM1 extends BaseFragment {
 
     @Override
     public void initView() {
-
+        pullToRefresh.setOnRefreshListener(this);
     }
 
     @Override
@@ -74,9 +76,19 @@ public class HomeFM1 extends BaseFragment {
                 break;
             case R.id.rl_search:
                 Intent intent = new Intent(activity, HomeSearchActivity.class);
-                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, new Pair<View, String>(rlSearch, "search_box"),new Pair<View, String>(et, "search_et"));
+                ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, new Pair<View, String>(rlSearch, "search_box"), new Pair<View, String>(et, "search_et"));
                 startActivity(intent, activityOptionsCompat.toBundle());
                 break;
         }
+    }
+
+    @Override
+    public void onRefresh() {
+        rlSearch.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                pullToRefresh.setRefreshing(false);
+            }
+        }, 3000);
     }
 }

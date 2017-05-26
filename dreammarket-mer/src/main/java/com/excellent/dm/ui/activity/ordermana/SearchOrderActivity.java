@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.dm.excellent.baselibrary.utils.HideUtil;
 import com.excellent.dm.R;
 import com.excellent.dm.base.AppManager;
 import com.excellent.dm.base.BaseActivity;
@@ -26,6 +27,7 @@ public class SearchOrderActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_order);
         ButterKnife.bind(this);
+        HideUtil.init(this);
         CommonUtils.setEtClearListener(etSearchOrderKeyword,imgSearchOrderContentClear);
     }
 

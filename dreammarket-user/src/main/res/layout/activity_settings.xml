@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:fitsSystemWindows="true"
+    tools:context="com.excellent.dmu.ui.activity.mine.SettingsActivity">
 
-    <android.support.v4.widget.NestedScrollView
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:scrollbars="none">
-
-
-
-    </android.support.v4.widget.NestedScrollView>
-
+        android:layout_height="50dp"
+        android:background="@null"
+        android:hint="哈哈" />
 </LinearLayout>

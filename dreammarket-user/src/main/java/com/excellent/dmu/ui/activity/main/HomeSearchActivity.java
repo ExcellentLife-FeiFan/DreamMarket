@@ -23,9 +23,9 @@ public class HomeSearchActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_search);
-        SystemBarHelper.tintStatusBar(this, getResources().getColor(R.color.colorPrimary));
         ButterKnife.bind(this);
         HideUtil.init(this);
+        SystemBarHelper.tintStatusBar(this, getResources().getColor(R.color.colorPrimary));
     }
 
     @OnClick({R.id.rl_back, R.id.tv_right})

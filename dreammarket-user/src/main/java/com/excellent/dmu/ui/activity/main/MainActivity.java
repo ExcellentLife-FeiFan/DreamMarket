@@ -74,7 +74,7 @@ public class MainActivity extends BaseActivity {
 
         bottomBar.setBehaviorTranslationEnabled(false);
 // Manage titles
-        bottomBar.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
+        bottomBar.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
 
         // Set background color
         bottomBar.setDefaultBackgroundColor(Color.parseColor("#FFFFFF"));
