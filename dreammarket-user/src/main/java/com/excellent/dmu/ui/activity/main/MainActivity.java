@@ -44,7 +44,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        SystemBarHelper.tintStatusBar(this, getResources().getColor(R.color.colorPrimary));
+        SystemBarHelper.immersiveStatusBar(this, 0f);
      /*   if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Slide slideTransition = new Slide();
             slideTransition.excludeTarget(android.R.id.statusBarBackground, false);

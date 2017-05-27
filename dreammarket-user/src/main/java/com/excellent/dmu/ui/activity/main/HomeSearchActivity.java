@@ -1,6 +1,8 @@
 package com.excellent.dmu.ui.activity.main;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.transition.ChangeBounds;
 import android.view.View;
 import android.widget.EditText;
 
@@ -26,6 +28,9 @@ public class HomeSearchActivity extends BaseActivity {
         ButterKnife.bind(this);
         HideUtil.init(this);
         SystemBarHelper.tintStatusBar(this, getResources().getColor(R.color.colorPrimary));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setSharedElementEnterTransition(new ChangeBounds());
+        }
     }
 
     @OnClick({R.id.rl_back, R.id.tv_right})

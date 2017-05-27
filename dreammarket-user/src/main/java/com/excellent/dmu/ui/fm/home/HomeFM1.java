@@ -11,23 +11,23 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.cleveroad.pulltorefresh.firework.FireworkyPullToRefreshLayout;
 import com.excellent.dmu.R;
 import com.excellent.dmu.base.BaseFragment;
 import com.excellent.dmu.ui.activity.main.HomeSearchActivity;
 import com.excellent.dmu.ui.activity.main.HomeSelectAddressActivity;
-import com.excellent.dmu.utils.IntentUtils;
+import com.yalantis.phoenix.PullToRefreshView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
+
 /**
  * Created by apple on 2017/3/29.
  */
 
-public class HomeFM1 extends BaseFragment implements FireworkyPullToRefreshLayout.OnRefreshListener {
+public class HomeFM1 extends BaseFragment implements PullToRefreshView.OnRefreshListener {
 
     @BindView(R.id.rl_search)
     RelativeLayout rlSearch;
@@ -37,7 +37,7 @@ public class HomeFM1 extends BaseFragment implements FireworkyPullToRefreshLayou
     @BindView(R.id.et)
     TextView et;
     @BindView(R.id.pullToRefresh)
-    FireworkyPullToRefreshLayout pullToRefresh;
+    PullToRefreshView pullToRefresh;
 
     @Override
     public int getLayoutRes() {
@@ -72,7 +72,7 @@ public class HomeFM1 extends BaseFragment implements FireworkyPullToRefreshLayou
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_address:
-                new IntentUtils(activity).startActivity(HomeSelectAddressActivity.class);
+                startActivity(HomeSelectAddressActivity.class);
                 break;
             case R.id.rl_search:
                 Intent intent = new Intent(activity, HomeSearchActivity.class);
@@ -89,6 +89,16 @@ public class HomeFM1 extends BaseFragment implements FireworkyPullToRefreshLayou
             public void run() {
                 pullToRefresh.setRefreshing(false);
             }
-        }, 3000);
+        }, 1000);
+    }
+
+    @Override
+    public void onFinish() {
+
+    }
+
+    @Override
+    public void ondragDistanceChange(float distance, float percent, float offset) {
+
     }
 }

@@ -12,6 +12,11 @@
         android:fillViewport="true"
         android:scrollbars="none">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:gravity="center"
+            android:text="TTTT" />
 
 
     </android.support.v4.widget.NestedScrollView>
