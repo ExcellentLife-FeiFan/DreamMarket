@@ -32,6 +32,12 @@
         tools:overrideLibrary="uk.co.imallan.jellyrefresh"
         tools:replace="android:icon">
         <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b75430a98f1f5abe68532c6e1bd4525e"/>
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService"></service>
+
+        <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="KlVzooDznlz7kE8flrbE6MPExPvavzN6" />
 
@@ -63,6 +69,7 @@
             android:name=".ui.activity.main.HomeSearchActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".ui.activity.main.HomeSelectAddressActivity" />
+        <activity android:name=".ui.activity.main.HomeSelectAddressActivity2" />
         <activity android:name=".ui.activity.main.CityActivity" />
         <activity android:name=".ui.activity.mine.SettingsActivity"></activity>
     </application>
