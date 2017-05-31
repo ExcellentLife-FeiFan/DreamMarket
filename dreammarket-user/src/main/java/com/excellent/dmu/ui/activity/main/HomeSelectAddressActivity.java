@@ -20,11 +20,12 @@ import com.amap.api.maps2d.AMap;
 import com.amap.api.maps2d.CameraUpdateFactory;
 import com.amap.api.maps2d.LocationSource;
 import com.amap.api.maps2d.MapView;
-
 import com.amap.api.maps2d.UiSettings;
 import com.amap.api.maps2d.model.CameraPosition;
+import com.amap.api.maps2d.model.LatLng;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.core.PoiItem;
+import com.amap.api.services.geocoder.GeocodeQuery;
 import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeQuery;
@@ -36,11 +37,8 @@ import com.dm.excellent.baselibrary.utils.HideUtil;
 import com.dm.excellent.baselibrary.utils.LogUtils;
 import com.excellent.dmu.R;
 import com.excellent.dmu.base.BaseActivity;
-import com.excellent.dmu.event.AMapLocationUpdateEvent;
-import com.excellent.dmu.event.EmptyEvent;
 import com.excellent.dmu.ui.adapter.AddressSearchLV;
 import com.excellent.dmu.ui.adapter.AddressSearchLV2;
-import com.excellent.dmu.utils.AMapLocationUtil;
 import com.flyco.systembar.SystemBarHelper;
 import com.zaaach.citypicker.CityPickerActivity;
 import com.zaaach.citypicker.model.City;
@@ -52,7 +50,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class HomeSelectAddressActivity2 extends BaseActivity implements LocationSource, AMapLocationListener, PoiSearch.OnPoiSearchListener, GeocodeSearch.OnGeocodeSearchListener {
+public class HomeSelectAddressActivity extends BaseActivity implements LocationSource, AMapLocationListener, PoiSearch.OnPoiSearchListener, GeocodeSearch.OnGeocodeSearchListener {
 
 
     @BindView(R.id.map)
@@ -73,6 +71,11 @@ public class HomeSelectAddressActivity2 extends BaseActivity implements Location
     RelativeLayout rl_progress;
     @BindView(R.id.animation_view)
     LottieAnimationView animation_view;
+
+    @BindView(R.id.rl_progress_n)
+    RelativeLayout rl_progressN;
+    @BindView(R.id.animation_view_n)
+    LottieAnimationView animation_viewN;
 
     AddressSearchLV mSearchAddAdapter;
     AddressSearchLV2 mNearAddAdapter;
@@ -146,16 +149,15 @@ public class HomeSelectAddressActivity2 extends BaseActivity implements Location
 
     private void setUp(AMap amap) {
         UiSettings uiSettings = amap.getUiSettings();
-        uiSettings.setCompassEnabled(true);
-        uiSettings.setScaleControlsEnabled(true);
-        uiSettings.setMyLocationButtonEnabled(true);
+        uiSettings.setCompassEnabled(false);
+        uiSettings.setScaleControlsEnabled(false);
         aMap1.setLocationSource(this);// 设置定位监听
-        aMap1.getUiSettings().setMyLocationButtonEnabled(true);// 设置默认定位按钮是否显示
         aMap1.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
         aMap1.setOnCameraChangeListener(new AMap.OnCameraChangeListener() {
             @Override
             public void onCameraChange(CameraPosition cameraPosition) {
-
+                rl_progressN.setVisibility(View.VISIBLE);
+                animation_viewN.playAnimation();
             }
 
             @Override
@@ -165,7 +167,6 @@ public class HomeSelectAddressActivity2 extends BaseActivity implements Location
                     return;
                 }
                 isFirst = false;
-//                searchNearby(new LatLonPoint(cameraPosition.target.longitude, cameraPosition.target.latitude));
             }
         });
 
@@ -210,7 +211,7 @@ public class HomeSelectAddressActivity2 extends BaseActivity implements Location
         super.onDestroy();
     }
 
-    public void searchNearby(LatLonPoint point) {
+/*    public void searchNearby(LatLonPoint point) {
         query = new PoiSearch.Query("", "", cityCurrent);// 第一个参数表示搜索字符串，第二个参数表示poi搜索类型，第三个参数表示poi搜索区域（空字符串代表全国）
         query.setPageSize(20);// 设置每页最多返回多少条poiitem
         query.setPageNum(1);// 设置查第一页
@@ -218,7 +219,7 @@ public class HomeSelectAddressActivity2 extends BaseActivity implements Location
         poiSearch.setOnPoiSearchListener(this);
         poiSearch.setBound(new PoiSearch.SearchBound(point, 5000, true));//
         poiSearch.searchPOIAsyn();// 异步搜索
-    }
+    }*/
 
     public void searchN(LatLonPoint point) {
         if (null == geocoderSearch) {
@@ -229,8 +230,8 @@ public class HomeSelectAddressActivity2 extends BaseActivity implements Location
         geocoderSearch.getFromLocationAsyn(query);
     }
 
-    public void  searchCity(String keyword) {
-        if(AbStrUtil.isEmpty(cityCurrent)){
+    public void searchCity(String keyword) {
+        if (AbStrUtil.isEmpty(cityCurrent)) {
             return;
         }
         rl_progress.setVisibility(View.VISIBLE);
@@ -244,7 +245,12 @@ public class HomeSelectAddressActivity2 extends BaseActivity implements Location
     }
 
     public void searchDetail(String keyword) {
-//        mSearch.geocode(new GeoCodeOption().address(keyword).city(keyword));
+        if (null == geocoderSearch) {
+            geocoderSearch = new GeocodeSearch(this);
+            geocoderSearch.setOnGeocodeSearchListener(this);
+        }
+        GeocodeQuery query = new GeocodeQuery(keyword, keyword);
+        geocoderSearch.getFromLocationNameAsyn(query);
     }
 
     private static final int REQUEST_CODE_PICK_CITY = 233;
@@ -315,9 +321,9 @@ public class HomeSelectAddressActivity2 extends BaseActivity implements Location
                 mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
                 aMap1.moveCamera(CameraUpdateFactory.zoomTo(18));
                 searchN(new LatLonPoint(amapLocation.getLatitude(), amapLocation.getLongitude()));
-//                searchNearby(new LatLonPoint(amapLocation.getLatitude(), amapLocation.getLongitude()));
             } else {
                 String errText = "定位失败," + amapLocation.getErrorCode() + ": " + amapLocation.getErrorInfo();
+                showToast(errText);
             }
         }
     }
@@ -337,12 +343,23 @@ public class HomeSelectAddressActivity2 extends BaseActivity implements Location
 
     @Override
     public void onRegeocodeSearched(RegeocodeResult regeocodeResult, int i) {
-        mNearAddAdapter.addItems(regeocodeResult.getRegeocodeAddress().getPois(), true);
+        List<PoiItem> items = regeocodeResult.getRegeocodeAddress().getPois();
+        if (items.size() > 0) {
+            items.get(0).setCityName(regeocodeResult.getRegeocodeAddress().getCity());
+            items.get(0).setAdName(regeocodeResult.getRegeocodeAddress().getDistrict());
+        }
+        mNearAddAdapter.addItems(items, true);
+        rl_progressN.setVisibility(View.GONE);
+        animation_viewN.pauseAnimation();
         LogUtils.e(i + "");
     }
 
     @Override
     public void onGeocodeSearched(GeocodeResult geocodeResult, int i) {
+        LogUtils.e(i + "");
+        if (geocodeResult.getGeocodeAddressList().size() > 0) {
+            aMap1.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(geocodeResult.getGeocodeAddressList().get(0).getLatLonPoint().getLatitude(), geocodeResult.getGeocodeAddressList().get(0).getLatLonPoint().getLongitude()), 18));
+        }
 
     }
 }

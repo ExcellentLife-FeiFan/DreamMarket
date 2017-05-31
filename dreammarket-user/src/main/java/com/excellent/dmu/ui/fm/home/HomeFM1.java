@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.excellent.dmu.R;
 import com.excellent.dmu.base.BaseFragment;
 import com.excellent.dmu.ui.activity.main.HomeSearchActivity;
-import com.excellent.dmu.ui.activity.main.HomeSelectAddressActivity2;
+import com.excellent.dmu.ui.activity.main.HomeSelectAddressActivity;
 import com.yalantis.phoenix.PullToRefreshView;
 
 import butterknife.BindView;
@@ -72,7 +72,7 @@ public class HomeFM1 extends BaseFragment implements PullToRefreshView.OnRefresh
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_address:
-                startActivity(HomeSelectAddressActivity2.class);
+                startActivity(HomeSelectAddressActivity.class);
                 break;
             case R.id.rl_search:
                 Intent intent = new Intent(activity, HomeSearchActivity.class);

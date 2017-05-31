@@ -69,7 +69,6 @@
             android:name=".ui.activity.main.HomeSearchActivity"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".ui.activity.main.HomeSelectAddressActivity" />
-        <activity android:name=".ui.activity.main.HomeSelectAddressActivity2" />
         <activity android:name=".ui.activity.main.CityActivity" />
         <activity android:name=".ui.activity.mine.SettingsActivity"></activity>
     </application>

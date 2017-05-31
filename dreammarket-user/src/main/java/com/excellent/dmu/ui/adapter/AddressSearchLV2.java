@@ -6,11 +6,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.amap.api.services.core.PoiItem;
-import com.baidu.mapapi.search.core.PoiInfo;
 import com.dm.excellent.baselibrary.ui.adapter.CommonListAdapter;
 import com.excellent.dmu.R;
 import com.excellent.dmu.utils.CommonUtils;
-
 
 import java.util.List;
 
@@ -43,7 +41,7 @@ public class AddressSearchLV2 extends CommonListAdapter<PoiItem> {
             viewHolder.tv_current.setVisibility(View.GONE);
         }
         CommonUtils.setText(viewHolder.tvTitle, item.getTitle());
-        CommonUtils.setText(viewHolder.tvDesr, item.getSnippet());
+        CommonUtils.setText(viewHolder.tvDesr, item.getCityName()+item.getAdName()+item.getSnippet());
 
         return convertView;
     }
